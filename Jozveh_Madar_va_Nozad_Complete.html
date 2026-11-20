@@ -1,0 +1,2688 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزوه جامع دانشگاهی سلامت مادر و نوزاد</title>
+    <!-- Vazirmatn Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+    <!-- Mermaid for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme:'neutral', fontFamily:'Vazirmatn'});</script>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --gold-border: #f59e0b;
+            --gold-bg: #fffbeb;
+            --exam-border: #6366f1;
+            --exam-bg: #eef2ff;
+            --warn-border: #ef4444;
+            --warn-bg: #fef2f2;
+            --info-border: #06b6d4;
+            --info-bg: #ecfeff;
+        }
+        
+        * {
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', Tahoma, -apple-system, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 2.0;
+            font-size: 16px;
+        }
+        
+        /* Layout */
+        .wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar TOC */
+        .sidebar {
+            width: 320px;
+            background: #ffffff;
+            border-left: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 24px 16px;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.03);
+            flex-shrink: 0;
+        }
+        
+        .sidebar h2 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar li {
+            margin-bottom: 10px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+        
+        .sidebar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .sidebar a:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Main Content Container */
+        .content-area {
+            flex: 1;
+            padding: 40px 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .handbook-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 48px 56px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            margin-bottom: 40px;
+        }
+        
+        /* Typography */
+        h1 {
+            color: #1e3a8a;
+            font-size: 2.1rem;
+            font-weight: 800;
+            margin-top: 36px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #cbd5e1;
+            scroll-margin-top: 30px;
+        }
+        
+        h2 {
+            color: #0f172a;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            padding-right: 12px;
+            border-right: 4px solid var(--primary);
+            scroll-margin-top: 30px;
+        }
+        
+        h3 {
+            color: #334155;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        
+        h4 {
+            color: #475569;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1.3rem;
+            text-align: justify;
+        }
+        
+        strong {
+            color: #0f172a;
+            font-weight: 700;
+        }
+        
+        /* Custom Callout Cards */
+        .callout {
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin: 24px 0;
+            border-right: 5px solid;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            page-break-inside: avoid;
+        }
+        
+        .callout-header {
+            font-weight: 800;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+        
+        .callout-body p {
+            margin-bottom: 0.6rem;
+        }
+        .callout-body p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .callout-star {
+            background-color: var(--gold-bg);
+            border-color: var(--gold-border);
+            color: #78350f;
+        }
+        .callout-star .callout-header { color: #92400e; }
+        
+        .callout-exam {
+            background-color: var(--exam-bg);
+            border-color: var(--exam-border);
+            color: #312e81;
+        }
+        .callout-exam .callout-header { color: #4338ca; }
+        
+        .callout-warning {
+            background-color: var(--warn-bg);
+            border-color: var(--warn-border);
+            color: #7f1d1d;
+        }
+        .callout-warning .callout-header { color: #991b1b; }
+        
+        .callout-question {
+            background-color: var(--info-bg);
+            border-color: var(--info-border);
+            color: #164e63;
+        }
+        .callout-question .callout-header { color: #0e7490; }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 28px 0;
+            font-size: 0.95rem;
+            page-break-inside: avoid;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 14px 18px;
+            border: 1px solid var(--border-color);
+            text-align: right;
+        }
+        
+        th {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-weight: 700;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        /* Mermaid Diagram Container */
+        pre.mermaid {
+            background: #ffffff !important;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 28px 0;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .sidebar {
+                display: none !important;
+            }
+            .content-area {
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            .handbook-card {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+            }
+            body {
+                background: #ffffff !important;
+                font-size: 13pt;
+                line-height: 1.8;
+            }
+            .callout, table, pre.mermaid {
+                page-break-inside: avoid !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+            }
+            a {
+                text-decoration: none !important;
+                color: inherit !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sticky TOC Sidebar -->
+        <nav class="sidebar">
+            <h2>فهرست فصول جزوه</h2>
+            <ul>
+                <li><a href="#ch_01">۱. مقدمه و تئوری بحران</a></li>
+                <li><a href="#ch_02">۲. آناتومی دستگاه تناسلی و لگن</a></li>
+                <li><a href="#ch_03">۳. فیزیولوژی قاعدگی و هورمون‌ها</a></li>
+                <li><a href="#ch_04">۴. چرخه پاسخ جنسی انسان</a></li>
+                <li><a href="#ch_05">۵. لقاح، پرده‌ها، آمنیوتیک و جفت</a></li>
+                <li><a href="#ch_06">۶. گردش خون جنین و نمو</a></li>
+                <li><a href="#ch_07">۷. شرح حال، علائم و روش تحقیق</a></li>
+                <li><a href="#ch_08">۸. سازگاری قلب، خون و کلیه</a></li>
+                <li><a href="#ch_09">۹. سازگاری تنفس، گوارش و پوست</a></li>
+                <li><a href="#ch_10">۱۰. تغذیه بارداری و پدیده پیکا</a></li>
+                <li><a href="#ch_11">۱۱. سلامت روان و اختلالات پس از زایمان</a></li>
+                <li><a href="#ch_12">۱۲. مراقبت‌های پریناتال و ورزش</a></li>
+                <li><a href="#ch_13">۱۳. سلامت جنین، تست‌ها و واکسن‌ها</a></li>
+                <li><a href="#ch_14">۱۴. مشاوره ژنتیک و غربالگری‌ها</a></li>
+                <li><a href="#ch_15">۱۵. ضمیمه ایمنی بیمار در اتاق عمل</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <article class="handbook-card">
+                <h1 id="maternal-and-newborn-health">جزوه جامع و دانشگاهی سلامت مادر و نوزاد (Maternal and Newborn Health)</h1>
+<blockquote>
+<p><strong>مجموعه درسنامه‌های جامع بر اساس تدریس دانشگاهی، همراه با تحلیل بالینی، بانک سوالات امتحانی و نکات کلیدی</strong><br />
+<strong>گردآوری و تنظیم:</strong> عامل خودکار مهندسی دانشگاهی و نگارش پزشکی در Google Antigravity<br />
+<strong>تاریخ تدوین:</strong> سال تحصیلی ۱۴۰۳–۱۴۰۴<br />
+<strong>محتوا:</strong> ۱۵ جلسه آموزشی (~۱۴ ساعت تدریس پیوسته) شامل جلسات ۱ تا ۷ و ضمیمه تخصصی جراحی</p>
+</blockquote>
+<hr />
+<h2 id="_1">📑 فهرست تفصیلی مطالب و عناوین فصول</h2>
+<ol>
+<li><a href="#ch_01"><strong>جلسه ۱ (پارت ۱) — مقدمه بر سلامت مادر و نوزاد، تئوری بحران و الگوهای خانواده</strong></a></li>
+<li><a href="#ch_02"><strong>جلسه ۱ (پارت ۲) — آناتومی و فیزیولوژی دستگاه تناسلی زن و لگن زایمانی</strong></a></li>
+<li><a href="#ch_03"><strong>جلسه ۲ (پارت ۱) — فیزیولوژی سیکل قاعدگی، هورمون‌ها و بهداشت پریود</strong></a></li>
+<li><a href="#ch_04"><strong>جلسه ۲ (پارت ۲) — فیزیولوژی چرخه پاسخ جنسی انسان و سلامت جنسی</strong></a></li>
+<li><a href="#ch_05"><strong>جلسه ۲ (پارت ۳) — لقاح، رشد جنینی، پرده‌ها، مایع آمنیوتیک و جفت</strong></a></li>
+<li><a href="#ch_06"><strong>جلسه ۳ (پارت ۱) — گردش خون جنینی، تعیین سن بارداری و نمو جنین</strong></a></li>
+<li><a href="#ch_07"><strong>جلسه ۳ (پارت ۲) — شرح حال مامایی، علائم تشخیصی بارداری و روش تحقیق</strong></a></li>
+<li><a href="#ch_08"><strong>جلسه ۴ (پارت ۱) — سازگاری‌های فیزیولوژیک بارداری: قلب، عروق، خون و کلیه</strong></a></li>
+<li><a href="#ch_09"><strong>جلسه ۴ (پارت ۲) — سازگاری‌های تنفسی، گوارشی، پوستی و غدد بارداری</strong></a></li>
+<li><a href="#ch_10"><strong>جلسه ۵ (پارت ۱) — تغذیه دوران بارداری، مکمل‌ها و پدیده پیکا</strong></a></li>
+<li><a href="#ch_11"><strong>جلسه ۵ (پارت ۲) — بهداشت روانی در بارداری و طیف اختلالات خلقی پس از زایمان</strong></a></li>
+<li><a href="#ch_12"><strong>جلسه ۶ (پارت ۱) — مراقبت‌های پریناتال، ورزش، مسافرت و روابط جنسی در بارداری</strong></a></li>
+<li><a href="#ch_13"><strong>جلسه ۶ (پارت ۲) — پایش سلامت جنین، تست‌های NST/CST، واکسیناسیون و روگام</strong></a></li>
+<li><a href="#ch_14"><strong>جلسه ۷ (پارت ۱) — مشاوره ژنتیک، شجره‌نامه و غربالگری‌های دوران بارداری</strong></a></li>
+<li><a href="#ch_15"><strong>جلسه ۷ (پارت ۲) — ضمیمه تخصصی بالینی: ایمنی بیمار در اتاق عمل و چک‌لیست‌های جراحی</strong></a></li>
+</ol>
+<hr />
+<p><a id="ch_01"></a></p>
+<h1 id="_2">جلسه ۱ (پارت ۱) — مقدمه بر سلامت مادر و نوزاد، تئوری بحران و الگوهای خانواده</h1>
+<h2 id="1-1m4a"><strong>فایل‌های منبع:</strong> <code>مادر نوزاد 1-1.m4a</code> | <strong>مدت زمان تدریس:</strong> ۱:۲۲:۳۰</h2>
+<h2 id="maternal-and-newborn-health_1">۱. رسالت و اهداف بنیادین بهداشت مادر و نوزاد (Maternal and Newborn Health)</h2>
+<p>مراقبت‌های سلامت مادر و نوزاد یکی از ارکان اصلی خدمات بهداشتی-درمانی در هر نظام سلامت به شمار می‌آید. هدف غایی این رشته علمی، ارتقای سطح سلامت جسمی، روانی و اجتماعی مادر باردار، جنین و نوزاد از دوران پیش از بارداری (Preconception)، حین بارداری (Antepartum)، حین زایمان (Intrapartum) و دوره پس از زایمان (Postpartum) است.</p>
+<h3 id="_3">نقش‌ها و رسالت‌های حرفه‌ای پرستار و ماما:</h3>
+<ol>
+<li><strong>نقش حامی و مدافع بیمار (Patient Advocate):</strong> حمایت از حقوق بیمار، توانمندسازی مادر برای تصمیم‌گیری آگاهانه و احترام به ترجیحات و فرهنگ خانواده.</li>
+<li><strong>نقش ارائه‌دهنده مراقبت مستقیم (Caregiver):</strong> پایش علائم حیاتی، ارزیابی رشد جنین، تشخیص زودهنگام علائم هشدار و ارائه مراقبت‌های ایمن مبتنی بر شواهد.</li>
+<li><strong>نقش آموزش‌دهنده (Educator):</strong> آموزش رفتارهای ارتقادهنده سلامت، تغذیه صحیح، علائم خطر بارداری، آمادگی برای زایمان و مهارت‌های فرزندپروری.</li>
+<li><strong>نقش مشاور و تسهیل‌کننده (Counselor):</strong> شناسایی استرس‌های روان‌شناختی، کاهش اضطراب مادر و خانواده، و تسهیل پذیرش نقش والدینی.</li>
+<li><strong>نقش هماهنگ‌کننده و رابط تیمی (Coordinator):</strong> برقراری ارتباط بین رشته‌ای میان پزشک متخصص زنان، متخصص نوزادان، کارشناس تغذیه و مددکار اجتماعی.</li>
+</ol>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**دیدگاه کل‌نگر (Holistic Care) در پرستاری مادر و نوزاد** — مراقبت نباید صرفاً به وضعیت فیزیکی رحم و جنین محدود شود؛ بلکه مادر باید در کانون خانواده، با در نظر گرفتن ابعاد روحی، اجتماعی، فرهنگی و باورهای خانوادگی مورد ارزیابی و مراقبت قرار گیرد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="crisis-theory">۲. تئوری بحران (Crisis Theory) در فرآیند بارداری و زایمان</h2>
+<p>بحران وضعیتی است که در آن فرد یا سیستم خانواده با موقعیتی روبرو می‌شود که مکانیسم‌های معمول و روزمره مقابله‌ای (Coping Mechanisms) قادر به برطرف کردن آن نیستند و تعادل روان‌شناختی به طور موقت برهم می‌خورد. فرآیند بارداری و زایش، فی‌نفسه یک دگرگونی عظیم هورمونی، جسمی و اجتماعی برای زن و خانواده است.</p>
+<h3 id="_4">انواع بحران:</h3>
+<ol>
+<li><strong>بحران‌های تکاملی یا رشدی (Developmental / Maturation Crises):</strong></li>
+<li>وقایعی طبیعی، پیش‌بینی‌پذیر و جهان‌شمول در طول چرخه زندگی انسان هستند.</li>
+<li><strong>مصادیق بارز:</strong> بلوغ، ازدواج، اولین تجربه بارداری، ورود اولین فرزند، یائسگی و دوران سالمندی.</li>
+<li>هر یک از این مراحل نیازمند بازتعریف نقش‌ها و انطباق با وظایف تکاملی جدید است.</li>
+<li><strong>بحران‌های وضعیتی یا موقعیتی (Situational Crises):</strong></li>
+<li>رویدادهایی ناگهانی، غیرمترقبه و پیش‌بینی‌نشده هستند که تعادل خانواده را مختل می‌سازند.</li>
+<li><strong>مصادیق در حوزه بارداری و مامایی:</strong> سقط جنین (Abortion)، مرگ داخل رحمی جنین (IUFD)، زایمان زودرس اورژانسی، تولد نوزاد با ناهنجاری ساختاری یا ژنتیکی شدید، ترومای بارداری، بستری طولانی‌مدت نوزاد در NICU، شوک‌های اقتصادی ناگهانی، جنگ و از دست دادن همسر.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">نوع بحران</th>
+<th style="text-align: left;">ماهیت و قابلیت پیش‌بینی</th>
+<th style="text-align: left;">نمونه‌های بالینی در مادر و نوزاد</th>
+<th style="text-align: left;">مداخله اصلی تیم درمان</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>بحران تکاملی (Developmental)</strong></td>
+<td style="text-align: left;">طبیعی، تدریجی و قابل پیش‌بینی</td>
+<td style="text-align: left;">اولین بارداری، زایمان اول، تغییر نقش از همسر به مادر</td>
+<td style="text-align: left;">آموزش‌های پیش‌دوران، کارگاه‌های آمادگی زایمان، تقویت مهارت والدینی</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>بحران وضعیتی (Situational)</strong></td>
+<td style="text-align: left;">ناگهانی، شدید و غیرمترقبه</td>
+<td style="text-align: left;">سقط جنین، زایمان زودرس نارس، تولد نوزاد معلول، دکولمان جفت</td>
+<td style="text-align: left;">مداخله فوری در بحران، حمایت روانی حاد، مشاوره ژنتیک و مددکاری</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** آیا تجربه بارداری اول همیشه یک بحران محسوب می‌شود حتی اگر کاملاً برنامه‌ریزی‌شده و با اشتیاق باشد؟
+**پاسخ و توضیح استاد:** بله، زیرا بارداری اول تعریف دقیق یک بحران تکاملی است. ساختار زندگی دو نفره زن و شوهر به طور بنیادین دستخوش تغییر می‌شود، استقلال فردی مادر دچار محدودیت موقت شده و احساس تعهد و اضطراب ناشی از مسئولیت جان یک موجود زنده دیگر ایجاد می‌گردد. حتی برنامه‌ریزی‌شده‌ترین بارداری‌ها نیز نیازمند بازآرایی مکانیسم‌های تطابقی خانواده هستند.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_5">۳. شیوه‌های مواجهه و مدیریت بحران در خانواده</h2>
+<p>استاد در تشریح این مبحث بر سه عامل تعیین‌کننده بر اساس مدل ارزیابی شناختی و تعادل روانی تأکید نمودند:</p>
+<pre class="mermaid">flowchart LR
+    A["عامل استرس‌زا<br/>(Stress Event)"] --> B["ادراک واقع‌بینانه از رویداد<br/>(Realistic Perception)"]
+    A --> C["سیستم‌های حمایتی محیطی<br/>(Adequate Support Systems)"]
+    A --> D["مکانیسم‌های انطباقی مؤثر<br/>(Coping Mechanisms)"]
+    B & C & D --> E["حفظ تعادل روانی و حل بحران<br/>(Resolution & Growth)"]</pre>
+
+<ol>
+<li><strong>پذیرش و ادراک واقع‌بینانه از رخداد (Realistic Perception):</strong></li>
+<li>انکار (Denial) واکنشی اولیه است، اما تداوم آن مانع از آغاز فرآیند درمانی و مراقبتی می‌شود. مادر و خانواده باید موقعیت را آن‌گونه که هست درک کنند.</li>
+<li><strong>پشتیبانی مناسب و شبکه حمایتی قوی (Adequate Situational Supports):</strong></li>
+<li>حضور فعال و همدلانه همسر مهم‌ترین عامل محافظت‌کننده در برابر افسردگی و اضطراب بارداری است.</li>
+<li>حمایت‌های خانواده گسترده (مادربزرگ‌ها، خواهران) و سیستم‌های درمانی و حمایتی جامعه.</li>
+<li><strong>مکانیسم‌های تطابقی کارآمد (Adequate Coping Mechanisms):</strong></li>
+<li>تمایز میان رفتارهای انطباقی سازنده (بیان احساسات، کمک‌خواهی، مطالعه، حل مسئله) و رفتارهای ناسازگار (گوشه‌گیری، خودسرزنشی، پرخاشگری، مصرف دخانیات یا داروها).</li>
+</ol>
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**شناسایی خانواده‌های فاقد سیستم حمایتی** — زن بارداری که حمایت خانوادگی ندارد، دچار تعارض زناشویی شدید است یا به عنوان مادر مجرد به مرکز مراجعه می‌کند، در معرض بالاترین ریسک زایمان زودرس، مسمومیت بارداری، سوء‌تغذیه، افسردگی شدید و آسیب به نوزاد قرار دارد. ارجاع فوری به مددکاری و حمایت اجتماعی جزو وظایف قطعی تیم درمان است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="maternal-role-attainment">۴. تئوری پذیرش نقش مادری (Maternal Role Attainment)</h2>
+<p>پذیرش نقش مادری یک فرآیند پیچیده روان‌شناختی، شناختی و رفتاری است که طی آن زن هویتی نوین به عنوان «مادر» کسب کرده و با فرزندش ارتباط عاطفی و مراقبتی برقرار می‌سازد (نظریه رامونا مرسر - Ramona Mercer).</p>
+<h3 id="_6">مراحل چهارگانه کسب نقش مادری:</h3>
+<ol>
+<li><strong>مرحله پیش‌بینی یا دوران بارداری (Anticipatory Stage):</strong></li>
+<li>زن در دوران بارداری با تصور نقش جدید، خرید وسایل، شرکت در کلاس‌ها و گفت‌وگو با مادران دیگر خود را آماده می‌کند.</li>
+<li><strong>مرحله رسمی (Formal Stage):</strong></li>
+<li>بلافاصله پس از تولد نوزاد آغاز می‌شود؛ مادر کارهای مراقبتی را بر اساس توصیه‌ها و الگوهای بیرونی (پزشک، ماما، مادر خود) و به صورت مکانیکی انجام می‌دهد.</li>
+<li><strong>مرحله غیررسمی (Informal Stage):</strong></li>
+<li>مادر شیوه‌های شخصی و متناسب با شرایط نوزاد خود را توسعه داده و به قضاوت‌های خود اعتماد پیدا می‌کند.</li>
+<li><strong>مرحله هویت‌یابی مادری (Personal / Maternal Identity Stage):</strong></li>
+<li>نقش مادری کاملاً درونی‌سازی شده و زن احساس آرامش، شایستگی، لذت و هماهنگی کامل با فرزند خود دارد.</li>
+</ol>
+<h3 id="-bonding-and-attachment">فرآیند دلبستگی و پیوند والد-نوزاد (Bonding and Attachment):</h3>
+<ul>
+<li><strong>پیوند اولیه (Bonding):</strong> احساس پیوند عاطفی یک‌سویه از سوی والدین به سمت نوزاد در ساعات اولیه پس از تولد.</li>
+<li><strong>تماس پوست با پوست (Skin-to-Skin Contact):</strong> قرار دادن نوزاد برهنه روی قفسه سینه عریان مادر در ساعت اول پس از زایمان (ساعت طلایی - Golden Hour) باعث ترشح هورمون <strong>اکسی‌توسین (Oxytocin)</strong>، آرامش نوزاد، تثبیت دمای بدن، قند خون و تسریع شروع موفق شیردهی می‌شود.</li>
+</ul>
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** تفاوت بنیادین میان مرحله رسمی (Formal) و مرحله شخصی/هویت‌یابی (Personal) در تئوری پذیرش نقش مادری چیست و پرستار در کدام مرحله بیشترین مداخله آموزشی مستقیم را دارد؟
+**پاسخ کلیدی:** در مرحله رسمی، رفتار مادر وابسته به دستورالعمل‌های کادر درمان و الگوهای بیرونی است و بیشترین نیاز به آموزش و هدایت مستقیم پرستاری در همین مرحله (بلافاصله پس از زایمان) وجود دارد؛ در حالی که در مرحله هویت‌یابی، نقش مادری کاملاً درونی‌شده و مادر بر اساس شناخت و شایستگی درونی خود به صورت مستقل عمل می‌کند.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_7">۵. الگوها و ساختارهای خانواده در نظام سلامت</h2>
+<p>خانواده نخستین و اساسی‌ترین بستر مراقبت از مادر و نوزاد است. پرستار پیش از آموزش باید ساختار خانواده بیمار را بشناسد:</p>
+<h3 id="_8">الف) ساختارهای ساختاری خانواده:</h3>
+<ol>
+<li><strong>خانواده هسته‌ای (Nuclear Family):</strong> متشکل از پدر، مادر و فرزندان (دارای استقلال تصمیم‌گیری، اما با خطر انزوای حمایتی در مواجهه با بحران‌ها).</li>
+<li><strong>خانواده گسترده (Extended Family):</strong> حضور پدربزرگ‌ها، مادربزرگ‌ها، عموها یا خاله‌ها در همان منزل یا مجاورت آن؛ مزیت آن حمایت نیروی کمکی در مراقبت از نوزاد و چالش آن تداخل دیدگاه‌های سنتی با دستورات علمی مدرن است.</li>
+<li><strong>خانواده تک‌والدی (Single-Parent Family):</strong> مادر یا پدر به تنهایی بار مسئولیت اقتصادی، مراقبتی و عاطفی کودک را به دوش می‌کشد؛ دارای بالاترین بار استرس روانی.</li>
+<li><strong>خانواده بازبسته‌شده یا ترکیبی (Blended / Reconstituted Family):</strong> حاصل ازدواج مجدد همراه با فرزندان همسران قبلی.</li>
+</ol>
+<h3 id="_9">ب) الگوهای تعاملی و مرزهای خانواده:</h3>
+<ul>
+<li><strong>سیستم باز (Open System):</strong> خانواده‌ای که با محیط اطراف و سیستم‌های تخصصی بهداشت تبادل سازنده دارد، تغییرات را می‌پذیرد و پذیرای آموزش‌های جدید است.</li>
+<li><strong>سیستم بسته (Closed System):</strong> خانواده‌ای که در برابر ورود افراد غریبه و نهادهای علمی مقاومت نشان داده، اسرار درون‌خانوادگی را پنهان می‌کند و معمولاً دستورات پزشکی را با تأخیر یا اکراه اجرا می‌نماید.</li>
+</ul>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**اصول برخورد با باورهای سنتی خانواده‌های گسترده** — در آموزش به مادر، هرگز نباید مادربزرگ‌ها یا افراد سنتی خانواده را تحقیر کرد یا با آن‌ها وارد تقابل شد. راهکار صحیح این است که آن‌ها را در جلسات آموزشی مشارکت داده، باورهای بی‌خطر سنتی را محترم شمرده و صرفاً با باورهای خطرآفرین (نظیر خوراندن قندآب یا ترنجبین به جای آغوز، یا نبستن کمربند ایمنی خودرو) با زبانی مهربان و استدلال علمی مقابله کرد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_10">۶. کیس‌های بالینی و مصادیق کاربردی تدریس‌شده در کلاس</h2>
+<p>استاد در خلال تدریس این جلسه به بیان چندین موقعیت بالینی عینی پرداختند:<br />
+- <strong>کیس ۱ — نوزاد رهاشده در بیمارستان:</strong> نوزادی که با جفت و بند ناف نبریده منتقل شده بود. استاد اشاره کردند که بر اساس اصول نجات، عدم برش فوری در شرایط آلوده و حفظ مجاورت جنین با جفت و پوشش مناسب، مانع از افت دمای کشنده (Hypothermia) و خونریزی شده بود، اگرچه باید بلافاصله اقدامات استریل استاندارد انجام پذیرد.<br />
+- <strong>کیس ۲ — حضور پدر در بالین نوزاد بستری:</strong> پدری که به دلیل ترس از لوله‌ها و کاتترهای نوزاد در انکوباتور فاصله می‌گرفت؛ مداخله پرستار با قرار دادن دست پدر بر روی بدن نوزاد، یخ اضطراب را شکست و فرآیند دلبستگی پدری را تسریع نمود.</p>
+<hr />
+<h2 id="_11">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>دو دسته‌بندی اصلی بحران‌ها:</strong> تکاملی (رشد طبیعی چرخه زندگی) در برابر وضعیتی (غیرمترقبه و ناگهانی).</li>
+<li><strong>ساعت طلایی پس از زایمان (Golden Hour):</strong> برقراری تماس پوست‌به‌پوست مادر و نوزاد جهت ترشح اکسی‌توسین، ثبات فیزیولوژیک و ارتقای دلبستگی عاطفی.</li>
+<li><strong>نقش‌های پنج‌گانه پرستاری:</strong> مراقبت‌کننده، حامی، آموزش‌دهنده، مشاور و هماهنگ‌کننده.</li>
+<li><strong>سه رکن تئوری تعادل در بحران:</strong> درک واقع‌بینانه رویداد، شبکه‌های حمایتی در دسترس، و مکانیسم‌های انطباقی کارآمد.</li>
+<li><strong>مراحل تئوری مرسر:</strong> پیش‌بینی (بارداری)، رسمی (پس از زایمان و وابستگی به دستور)، غیررسمی (کسب قضاوت فردی)، و هویت‌یابی مادری (درونی‌سازی کامل نقش).</li>
+</ol>
+<hr />
+<p><a id="ch_02"></a></p>
+<h1 id="_12">جلسه ۱ (پارت ۲) — آناتومی و فیزیولوژی دستگاه تناسلی زن و لگن زایمانی</h1>
+<h2 id="1-2m4a"><strong>فایل‌های منبع:</strong> <code>نوزاد و مادر 1-2.m4a</code> | <strong>مدت زمان تدریس:</strong> ۴۵:۴۰</h2>
+<h2 id="vulva-external-genitalia">۱. آناتومی دستگاه تناسلی خارجی زن (Vulva / External Genitalia)</h2>
+<p>دستگاه تناسلی خارجی زن که در مجموع <strong>فرج (Vulva)</strong> نامیده می‌شود، در برگیرنده بخش‌های متعددی با کارکردهای حفاظتی، حسی و تسهیل‌کننده مقاربت و زایمان است:</p>
+<pre class="mermaid">flowchart TD
+    Vulva["دستگاه تناسلی خارجی زن (Vulva)"]
+    Vulva --> MP["تپه ونوس (Mons Pubis)"]
+    Vulva --> LM["لب‌های بزرگ (Labia Majora)"]
+    Vulva --> LMin["لب‌های کوچک (Labia Minora)"]
+    Vulva --> Clit["کلیتوریس (Clitoris)"]
+    Vulva --> Vest["دهلیز فرج (Vestibule)"]
+    Vest --> Urethra["مجرای خروجی ادرار (Urethral Orifice)"]
+    Vest --> Introitus["مدخل واژن (Vaginal Introitus)"]
+    Vest --> Hymen["پرده بکارت (Hymen)"]
+    Vest --> Glands["غدد بارتولن و اسکن (Bartholin & Skene)"]
+    Vulva --> Perineum["پرینه (Perineum)"]</pre>
+
+<h3 id="mons-pubis">۱. تپه ونوس (Mons Pubis):</h3>
+<ul>
+<li>برجستگی چربی روی استخوان پوبیس پوشیده از پوست و موهای زائد پس از بلوغ؛ نقش ضربه‌گیر در هنگام مقاربت را ایفا می‌کند.</li>
+</ul>
+<h3 id="labia-majora">۲. لب‌های بزرگ (Labia Majora):</h3>
+<ul>
+<li>دو چین پوستی طولی حاوی بافت چربی، غدد چربی و عرق؛ همولوگ کیسه بیضه (Scrotum) در مردان بوده و از ورودی دستگاه تناسلی محافظت می‌کند.</li>
+</ul>
+<h3 id="labia-minora">۳. لب‌های کوچک (Labia Minora):</h3>
+<ul>
+<li>دو چین پوستی نازک و فاقد مو در درون لب‌های بزرگ؛ در بخش قدامی به دو شاخه تقسیم شده و کلاهک (Prepuce) و لگام (Frenulum) کلیتوریس را می‌سازند. بسیار پرعروق و حساس به لمس هستند.</li>
+</ul>
+<h3 id="clitoris">۴. کلیتوریس (Clitoris):</h3>
+<ul>
+<li>بافت نعوظی کوچک و فوق‌العاده حساس در رأس قدامی دهلیز فرج؛ <strong>همولوگ دقیق پنیس (Penis) و حشفه (Glans) در مردان</strong> است.</li>
+<li>کانون اصلی تحریک و ارگاسم جنسی در زنان به شمار می‌رود.</li>
+</ul>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**تشخیص تفریقی افتادگی کلیتوریس و مجرای ادرار در زنان چندزا** — در زنانی که زایمان‌های متعدد واژینال داشته‌اند، به دلیل شلی عضلات کف لگن، کلیتوریس ممکن است دچار نزول یا افتادگی شده و در نگاه اول به راحتی با سوراخ مجرای ادرار (Meatus) اشتباه گرفته شود. در هنگام تعبیه کاتتر ادراری (Foley Catheter)، ماما یا پرستار باید با باز کردن دقیق چین‌ها و پیدا کردن مدخل حقیقی مجرای ادرار (در فاصله حدود ۲ تا ۲.۵ سانتی‌متری زیر کلیتوریس) از ورود اشتباه سوند به کلیتوریس یا واژن که درد شدید و ترومای مخاطی به همراه دارد، جداً اجتناب نماید.
+
+</div>
+</div>
+
+<h3 id="vestibule">۵. دهلیز یا وستیبول (Vestibule):</h3>
+<ul>
+<li>فضای بیضی‌شکل احاطه‌شده توسط لب‌های کوچک که شامل سوراخ مجرای ادرار، مدخل واژن، منافذ غدد بارتولن (Bartholin) و غدد اسکن (Skene) است.</li>
+<li><strong>غدد بارتولن:</strong> دو غده ترشحی در دو طرف مدخل واژن (موقعیت ساعت ۴ و ۸) که موکوس قلیایی لغزنده‌کننده را در هنگام تحریک جنسی ترشح می‌کنند. انسداد مجرای آن‌ها به ایجاد <strong>کیست یا آبسه بارتولن (Bartholin Cyst/Abscess)</strong> می‌انجامد.</li>
+</ul>
+<h3 id="hymen">۶. پرده بکارت (Hymen):</h3>
+<ul>
+<li>چین مخاطی الاستیک در مدخل واژن با اشکال آناتومیک مختلف (حلقوی، غربالی، هلالی، سپتوم‌دار).</li>
+</ul>
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**اصول قانونی و پزشکی در مواجهه با موارد مشکوک به تجاوز جنسی (Sexual Assault)** — هرگز نباید پیش از ثبت دقیق شواهد قانونی توسط پزشکی قانونی، اقدام به شستشوی واژن، دوش واژینال یا تعویض لباس‌های مصدوم نمود؛ زیرا تمامی آثار اسپرم، بزاق، مو و ترشحات به عنوان مدرک جرم از بین می‌روند. همچنین سوندگذاری ادراری در دختران باکره نیازمند رضایت قانونی و استفاده از ژل بی‌حسی و سوند باریک با حفظ کامل ساختار هایمن است.
+
+</div>
+</div>
+
+<h3 id="perineum-episiotomy">۷. پرینه (Perineum) و جراحی اپی‌زیوتومی (Episiotomy):</h3>
+<ul>
+<li>فاصله بین مدخل تحتانی واژن و مقعد که مرکز تاندونی کف لگن (Perineal Body) در آن قرار دارد.</li>
+<li><strong>اپی‌زیوتومی:</strong> برش جراحی در ناحیه پرینه در فاز دوم زایمان برای تسهیل خروج سر جنین، جلوگیری از فشار بر مغز جنین و پیشگیری از پارگی‌های شدید رکتال.</li>
+<li><strong>برش میانی (Mediolateral):</strong> رایج‌ترین برش؛ زاویه ۴۵ درجه نسبت به خط وسط؛ خطر کمتر پارگی اسفنکتر مقعد، اما درد پس از زایمان و خونریزی بیشتر.</li>
+<li><strong>برش خط وسط (Median):</strong> در امتداد خط عمود به سمت مقعد؛ ترمیم آسان‌تر و درد کمتر، اما خطر گسترش پارگی به اسفنکتر مقعد و رکتوم (درجه ۳ و ۴).</li>
+</ul>
+<hr />
+<h2 id="internal-genitalia">۲. آناتومی دستگاه تناسلی داخلی زن (Internal Genitalia)</h2>
+<pre class="mermaid">flowchart LR
+    Ovaries["تخمدان‌ها (Ovaries)<br/>(تولید تخمک و هورمون)"] --> Tubes["لوله‌های فالوپ (Fallopian Tubes)<br/>(محل لقاح در آمپول)"]
+    Tubes --> Uterus["رحم (Uterus)<br/>(لانه‌گزینی و نگهداری جنین)"]
+    Uterus --> Cervix["گردن رحم (Cervix)<br/>(سوراخ داخلی و خارجی)"]
+    Cervix --> Vagina["واژن (Vagina)<br/>(مجرای خروجی و کانال زایمان)"]</pre>
+
+<h3 id="vagina">۱. واژن (Vagina):</h3>
+<ul>
+<li>مجرای فیبروعضلانی با طول حدود ۸ تا ۱۰ سانتی‌متر و چین‌های مخاطی موسوم به <strong>روگا (Rugae)</strong> که امکان اتساع فوق‌العاده حین زایمان را فراهم می‌سازند.</li>
+<li><strong>محیط اسیدی واژن:</strong> اسیدیته نرمال واژن در بازه <strong>pH = ۳.۸ تا ۴.۵</strong> حفظ می‌شود. این اسیدیته حاصل فعالیت باسیل‌های هم‌زیست <strong>دودرلین (Doderlein's Bacilli / Lactobacillus)</strong> است که گلیکوژن سلول‌های واژن را به اسید لاکتیک تبدیل می‌کنند و سدی دفاعی در برابر باکتری‌های پاتوژن می‌سازند.</li>
+</ul>
+<h3 id="uterus">۲. رحم (Uterus):</h3>
+<ul>
+<li>ارگان عضلانی گلابی‌شکل در حفره لگن بین مثانه و رکتوم؛ ابعاد طبیعی در افراد غیرباردار حدود ۷.۵ × ۵ × ۲.۵ سانتی‌متر و وزن حدود ۶۰ گرم است که در پایان بارداری وزنی نزدیک به ۱۱۰۰ گرم پیدا می‌کند.</li>
+<li><strong>بخش‌های آناتومیک رحم:</strong></li>
+<li><strong>فوندوس (Fundus):</strong> بخش گنبدی‌شکل فوقانی بالای محل ورود لوله‌ها؛ محل اصلی پایش انقباضات پس از زایمان.</li>
+<li><strong>تنه (Corpus):</strong> بخش میانی و جایگاه لانه‌گزینی جنین.</li>
+<li><strong>ایسموس (Isthmus):</strong> بخش باریک بین تنه و سرویکس که در بارداری بخش تحتانی رحم (Lower Uterine Segment) را برای برش سزارین می‌سازد.</li>
+<li><strong>گردن رحم یا سرویکس (Cervix):</strong> بخش تحتانی لوله‌ای که به واژن باز می‌شود؛ دارای دو سوراخ داخلی (Internal Os) و خارجی (External Os).</li>
+<li><strong>لایه‌های دیواره رحم:</strong></li>
+<li><strong>اندومتر (Endometrium):</strong> لایه مخاطی داخلی که در بارداری به <strong>دسی‌دوآ (Decidua)</strong> تبدیل می‌شود.</li>
+<li><strong>میومتر (Myometrium):</strong> لایه ضخیم عضلانی متشکل از الیاف طولی، حلقوی و مورب (شکل هشت لاتین یا Figure-of-8) که با انقباض خود پس از زایمان، عروق خونی را فشرده کرده و از خونریزی کشنده رحمی جلوگیری می‌کنند (Ligatures of the Uterus).</li>
+<li><strong>پری‌متر یا سروز (Perimetrium):</strong> لایه سروزی خارجی.</li>
+</ul>
+<h3 id="fallopian-tubes">۳. لوله‌های فالوپ یا لوله‌های رحمی (Fallopian Tubes):</h3>
+<ul>
+<li>به طول ۱۰ تا ۱۲ سانتی‌متر؛ شامل ۴ بخش:</li>
+<li><strong>فیمبریا (Fimbriae):</strong> زوائد انگشت‌مانند در دهانه شکمی لوله برای جذب تخمک رهاشده از تخمدان.</li>
+<li><strong>آمپول (Ampulla):</strong> طویل‌ترین و گشادترین بخش لوله؛ <strong>محل فیزیولوژیک وقوع لقاح (Fertilization)</strong> و شایع‌ترین محل بروز بارداری خارج رحمی (Tubal Ectopic Pregnancy).</li>
+<li><strong>ایسموس (Isthmus):</strong> بخش باریک مجاور رحم.</li>
+<li><strong>بخش بینابینی (Interstitial):</strong> بخشی که از داخل دیواره میومتر رحم عبور می‌کند.</li>
+</ul>
+<h3 id="ovaries">۴. تخمدان‌ها (Ovaries):</h3>
+<ul>
+<li>غدد جنسی بادامی‌شکل در دو طرف رحم که وظیفه دوگانه دارند: <strong>اووژنز (تولید و رهایش تخمک)</strong> و <strong>ترشح هورمون‌های استروژن و پروژسترون</strong>.</li>
+</ul>
+<hr />
+<h2 id="female-bony-pelvis">۳. آناتومی استخوانی لگن زن (Female Bony Pelvis)</h2>
+<p>ساختار لگن استخوانی تعیین‌کننده اصلی عبور موفق جنین از کانال زایمان است.</p>
+<h3 id="_13">استخوان‌های سازنده لگن:</h3>
+<ol>
+<li>دو استخوان بی‌نام (Innominate Hip Bones) که هر کدام حاصل جوش خوردن سه استخوان <strong>ایلیوم (Ilium)</strong>، <strong>ایسکیوم (Ischium)</strong> و <strong>پوبیس (Pubis)</strong> هستند.</li>
+<li>استخوان خاجی یا <strong>ساکروم (Sacrum)</strong> در خلف.</li>
+<li>استخوان دنبالچه یا <strong>کوکسیکس (Coccyx)</strong> در پایین‌ترین بخش ستون فقرات.</li>
+<li>مفاصل لگنی: سمفیز پوبیس در قدام و دو مفصل ساکروایلیاک در طرفین؛ در بارداری تحت تأثیر هورمون <strong>رلاکسین (Relaxin)</strong> نرم و متحرک می‌شوند تا قطر کانال زایمان اندکی افزایش یابد.</li>
+</ol>
+<h3 id="_14">تقسیم‌بندی لگن:</h3>
+<ul>
+<li><strong>لگن کاذب (False Pelvis):</strong> بخش فوقانی بالای لبه لگنی (Pelvic Brim)؛ دیواره‌های آن از احشای شکمی حمایت می‌کنند اما نقشی در مکانیسم زایمان ندارد.</li>
+<li><strong>لگن حقیقی (True Pelvis):</strong> بخش زیرین لبه لگنی که کانال عبور جنین است و شامل سه بخش ورودی (Inlet)، حفره میانی (Midpelvis) و خروجی (Outlet) می‌باشد.</li>
+</ul>
+<hr />
+<h2 id="caldwell-moloy-classification">۴. طبقه‌بندی انواع لگن (Caldwell-Moloy Classification)</h2>
+<p>استاد ساختار انواع چهارگانه لگن بر اساس شکل مدخل ورودی را به تفصیل تشریح فرمودند:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">نوع لگن</th>
+<th style="text-align: left;">شکل مدخل ورودی (Inlet)</th>
+<th style="text-align: left;">ویژگی‌های بالینی و زوایای لگنی</th>
+<th style="text-align: left;">پیش‌آگهی زایمان طبیعی واژینال</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ژینکوئید (Gynecoid)</strong></td>
+<td style="text-align: left;">گرد و متقارن</td>
+<td style="text-align: left;">لگن ایده‌آل کلاسیک زنانه (حدود ۵۰٪ زنان)؛ قطر قدامی-خلفی و عرضی متناسب، زوایای باز</td>
+<td style="text-align: left;"><strong>عالی</strong> — رایج‌ترین و بهترین لگن برای زایمان طبیعی سریع و بی‌عارضه</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>آندروئید (Android)</strong></td>
+<td style="text-align: left;">قلبی‌شکل یا مثلثی</td>
+<td style="text-align: left;">لگن تیپیک مردانه (حدود ۲۰٪ زنان)؛ فضای خلفی تنگ، خارهای ایسکیال برجسته، زاویه ساب‌پوبیک تند</td>
+<td style="text-align: left;"><strong>بسیار ضعیف</strong> — معمولاً منجر به توقف نزول سر جنین، پوزیشن خلفی (OP) و نیاز قطعی به سزارین</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>آنتروپوئید (Anthropoid)</strong></td>
+<td style="text-align: left;">بیضی عمودی</td>
+<td style="text-align: left;">قطر قدامی-خلفی بسیار بلند و قطر عرضی باریک (حدود ۲۵٪ زنان)</td>
+<td style="text-align: left;"><strong>خوب</strong> — زایمان واژینال امکان‌پذیر است، اما اغلب با پوزیشن پس‌سری-خلفی (Occiput Posterior)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>پلاتی‌پلوئید (Platypelloid)</strong></td>
+<td style="text-align: left;">بیضی افقی و مسطح</td>
+<td style="text-align: left;">قطر قدامی-خلفی بسیار کوتاه و قطر عرضی بسیار پهن (کمتر از ۵٪ زنان)</td>
+<td style="text-align: left;"><strong>نامناسب</strong> — ناتوانی سر جنین از ورود به لگن و بالاترین ریسک توقف زایمان و سزارین</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** کدام نوع لگن از نظر ساختار کالدول-مولی نامناسب‌ترین پیش‌آگهی را برای زایمان طبیعی داشته و جنین در کدام نوع لگن معمولاً به شکل پس‌سری-خلفی (OP) متولد می‌شود؟
+**پاسخ کلیدی:** لگن **آندروئید (Android)** به دلیل شکل قلبی و تنگی زاویه ساب‌پوبیک بدترین پیش‌آگهی را دارد و معمولاً به سزارین ختم می‌شود؛ لگن **آنتروپوئید (Anthropoid)** به دلیل طولانی بودن قطر قدامی-خلفی موجب زایمان در پوزیشن پس‌سری-خلفی (OP) می‌گردد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="puberty">۵. بلوغ و پیدایش صفات جنسی ثانویه (Puberty)</h2>
+<p>دوره بلوغ با افزایش ترشح هورمون‌های گنادوتروپین از محور هیپوتالاموس-هیپوفیز آغاز می‌شود.</p>
+<h3 id="_15">توالی زمانی پدیده‌های بلوغ دختران:</h3>
+<ol>
+<li><strong>تلارک (Thelarche):</strong> جوانه زدن و رشد پستان‌ها (اولین علامت آشکار بلوغ، معمولاً در سن ۹ تا ۱۰ سالگی).</li>
+<li><strong>پوبارک یا آدرنارک (Pubarche / Adrenarche):</strong> رویش موهای ناحیه عانه و زیر بغل.</li>
+<li><strong>جهش رشد قدی (Peak Height Velocity):</strong> رشد سریع طولی اسکلت تحت تأثیر هورمون رشد و استروژن.</li>
+<li><strong>منارک (Menarche):</strong> بروز نخستین خونریزی قاعدگی (معمولاً ۲ تا ۲.۵ سال پس از تلارک، در سن ۱۲ تا ۱۳ سالگی).</li>
+</ol>
+<hr />
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** تفاوت بالینی بین اپی‌زیوتومی مدیولترال و مدین چیست و چرا در مراکز زایمانی ایران بیشتر برش مدیولترال توصیه می‌شود؟
+**پاسخ و توضیح استاد:** در اپی‌زیوتومی خط وسط (Median)، با وجود ترمیم آسان‌تر و درد کمتر، خطر گسترش پارگی به اسفنکتر مقعد و رکتوم (پارگی‌های درجه ۳ و ۴) بسیار بالاست و می‌تواند به بی‌اختیاری مدفوع بینجامد؛ در حالی که برش مدیولترال با زاویه ۴۵ درجه زده شده و اسفنکتر رکتوم را کاملاً محافظت می‌کند.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_16">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>همولوژی اندام‌های تناسلی:</strong> کلیتوریس معادل پنیس/گلنس، و لب‌های بزرگ معادل اسکروتوم هستند.</li>
+<li><strong>pH فیزیولوژیک واژن:</strong> ۳.۸ تا ۴.۵، ناشی از تبدیل گلیکوژن به اسید لاکتیک توسط باسیل‌های دودرلین.</li>
+<li><strong>محل وقوع لقاح:</strong> بخش آمپول لوله فالوپ (شایع‌ترین جایگاه بارداری نابجا).</li>
+<li><strong>لایه عضلانی منحصر‌به‌فرد رحم:</strong> الیاف درهم‌تنیده شکل ۸ در میومتر به عنوان گره‌زننده و مسدودکننده طبیعی عروق خونی پس از زایمان.</li>
+<li><strong>انواع لگن کالدول-مولی:</strong> ژینکوئید (ایده‌آل گرد)، آندروئید (قلبی مردانه با پیش‌آگهی بد)، آنتروپوئید (بیضی طولی با زایمان OP)، و پلاتی‌پلوئید (بیضی مسطح).</li>
+<li><strong>توالی بلوغ زنانه:</strong> تلارک (رشد پستان) $\rightarrow$ پوبارک (موی عانه) $\rightarrow$ جهش رشد $\rightarrow$ منارک (اولین قاعدگی).</li>
+</ol>
+<hr />
+<p><a id="ch_03"></a></p>
+<h1 id="_17">جلسه ۲ (پارت ۱) — فیزیولوژی سیکل قاعدگی، هورمون‌ها و بهداشت پریود</h1>
+<h2 id="2-1m4a"><strong>فایل‌های منبع:</strong> <code>مادر و نوزاد 2-1.m4a</code> | <strong>مدت زمان تدریس:</strong> ۱:۱۰:۴۳</h2>
+<h2 id="hpo-axis">۱. محور هیپوتالاموس–هیپوفیز–تخمدان (HPO Axis)</h2>
+<p>تنظیم چرخه باروری در زنان حاصل یک هماهنگی دقیق نورواندوکرین میان سه ارگان کلیدی در قالب <strong>محور هیپوتالاموس–هیپوفیز–تخمدان (Hypothalamic-Pituitary-Ovarian Axis)</strong> است:</p>
+<pre class="mermaid">flowchart TD
+    Hypo["هیپوتالاموس (Hypothalamus)"] -- "ترشح ضربان‌دار GnRH" --> Pit["هیپوفیز قدامی (Anterior Pituitary)"]
+    Pit -- "هورمون محرک فولیکول (FSH)" --> Ovary["تخمدان (Ovary)"]
+    Pit -- "هورمون لوتئینی‌کننده (LH)" --> Ovary
+    Ovary -- "استروژن (Estrogen)" --> Uterus["رحم و اندومتر (Endometrium)"]
+    Ovary -- "پروژسترون (Progesterone)" --> Uterus
+    Ovary -. "فیدبک منفی و مثبت هورمونی" .-> Hypo
+    Ovary -. "فیدبک هورمونی" .-> Pit</pre>
+
+<h3 id="gnrh">۱. هورمون آزادکننده گنادوتروپین‌ها (GnRH):</h3>
+<ul>
+<li>از هیپوتالاموس به صورت نبض‌دار (Pulsatile) ترشح شده و سلول‌های ترشحی هیپوفیز قدامی را تحریک می‌کند.</li>
+</ul>
+<h3 id="_18">۲. گنادوتروپین‌های هیپوفیز قدامی:</h3>
+<ul>
+<li><strong>هورمون محرک فولیکول (FSH - Follicle-Stimulating Hormone):</strong> وظیفه رشد و بلوغ چند فولیکول تخمدانی در ابتدای هر سیکل و تحریک سلول‌های گرانولوزا برای ساخت و ترشح استروژن.</li>
+<li><strong>هورمون لوتئینی‌کننده (LH - Luteinizing Hormone):</strong> افزایش ناگهانی و انفجاری این هورمون (<strong>LH Surge</strong>) در میانه سیکل، عامل اصلی پارگی فولیکول غالب و وقوع تخمک‌گذاری (Ovulation) و سپس تشکیل و بقای جسم زرد (Corpus Luteum) است.</li>
+</ul>
+<h3 id="_19">۳. هورمون‌های استروئیدی تخمدان:</h3>
+<ul>
+<li><strong>استروژن (Estrogen):</strong> هورمون غالب نیمه اول سیکل؛ بازسازی لایه عملکردی اندومتر پس از ریزش، افزایش ضخامت مخاط، رقیق و شفاف کردن موکوس سرویکس (جهت تسهیل نفوذ اسپرم).</li>
+<li><strong>پروژسترون (Progesterone):</strong> هورمون غالب نیمه دوم سیکل؛ ترشح‌شده از جسم زرد؛ تبدیل اندومتر پرولیفراتیو به اندومتر ترشحی، افزایش ذخیره گلیکوژن و عروق خونی، ضخیم کردن موکوس سرویکس و شل کردن عضلات صاف میومتر جهت پیشگیری از انقباضات زودرس.</li>
+</ul>
+<hr />
+<h2 id="ovarian-and-uterine-cycles">۲. چرخه‌های همگام تخمدانی و رحمی (Ovarian and Uterine Cycles)</h2>
+<p>سیکل جنسی زنانه به طور متوسط <strong>۲۸ روز</strong> در نظر گرفته می‌شود (محدوده طبیعی ۲۱ تا ۳۵ روز)، که در دو سطح تخمدان و رحم به طور موازی پیش می‌رود:</p>
+<pre class="mermaid">sequenceDiagram
+    autonumber
+    participant D as روزهای سیکل
+    participant O as چرخه تخمدانی (Ovary)
+    participant U as چرخه رحمی (Endometrium)
+    participant H as وضعیت هورمونی غالب
+    D->>O: روز ۱ تا ۵: رشد فولیکول‌های اولیه
+    D->>U: روز ۱ تا ۵: ریزش اندومتر (مرحله قاعدگی)
+    H-->>D: استروژن و پروژسترون در پایین‌ترین سطح
+    D->>O: روز ۶ تا ۱۳: بلوغ فولیکول گراف (فاز فولیکولار)
+    D->>U: روز ۶ تا ۱۳: تکثیر و بازسازی اندومتر (فاز پرولیفراتیو)
+    H-->>D: افزایش مداوم استروژن
+    D->>O: روز ۱۴: وقوع تخمک‌گذاری (Ovulation)
+    H-->>D: قله ناگهانی LH Surge و Estrogen Peak
+    D->>O: روز ۱۵ تا ۲۸: تشکیل جسم زرد (فاز لوتئال)
+    D->>U: روز ۱۵ تا ۲۸: ضخیم و ترشحی شدن اندومتر (فاز ترشحی)
+    H-->>D: افزایش پروژسترون (توسط جسم زرد)
+    D->>U: روز ۲۷ تا ۲۸: ایسکمی و ریزش عروق (فاز ایسکمیک)
+    H-->>D: افت ناگهانی پروژسترون به دلیل تحلیل جسم زرد</pre>
+
+<h3 id="ovarian-cycle">الف) چرخه تخمدانی (Ovarian Cycle):</h3>
+<ol>
+<li><strong>فاز فولیکولار (Follicular Phase - روز ۱ تا ۱۴):</strong> رشد گروهی از فولیکول‌ها تحت تأثیر FSH؛ یکی از آن‌ها به فولیکول غالب گراف (Graafian Follicle) تبدیل شده و مقادیر زیادی استروژن ترشح می‌کند.</li>
+<li><strong>تخمک‌گذاری (Ovulation - روز ۱۴ در سیکل ۲۸ روزه):</strong> تقریباً <strong>۱۰ تا ۱۲ ساعت پس از اوج LH</strong> و <strong>۲۴ تا ۳۶ ساعت پس از اوج استروژن</strong>، فولیکول پاره شده و اووسیت ثانویه وارد لوله فالوپ می‌شود.</li>
+<li><strong>فاز لوتئال (Luteal Phase - روز ۱۵ تا ۲۸):</strong> باقی‌مانده فولیکول پاره‌شده به <strong>جسم زرد (Corpus Luteum)</strong> تبدیل می‌شود. طول این فاز در تمام زنان <strong>ثابت و دقیقاً ۱۴ روز</strong> است (تغییرات طول سیکل زنان همواره ناشی از تغییر در طول فاز فولیکولار است).</li>
+</ol>
+<h3 id="uterine-cycle">ب) چرخه رحمی / اندومتری (Uterine Cycle):</h3>
+<ol>
+<li><strong>فاز قاعدگی (Menstrual Phase - روز ۱ تا ۵):</strong> به دنبال عدم وقوع لقاح و پسرفت جسم زرد، سطح استروژن و پروژسترون سقوط کرده و دو سوم فوقانی لایه اندومتر (Stratum Functionale) ریزش می‌کند.</li>
+<li><strong>فاز تکثیری یا پرولیفراتیو (Proliferative Phase - روز ۶ تا ۱۴):</strong> تحت تأثیر استروژن ترشح‌شده از فولیکول‌ها، اندومتر ضخیم شده و عروق و غدد اندومتر رشد طولی پیدا می‌کنند.</li>
+<li><strong>فاز ترشحی (Secretory Phase - روز ۱۵ تا ۲۶):</strong> پروژسترون غدد اندومتر را پیچ‌درپیچ، پر از گلیکوژن و ترشحات تغذیه‌ای می‌سازد تا بستر برای لانه‌گزینی بلاستوسیست مهیا گردد.</li>
+<li><strong>فاز ایسکمیک (Ischemic Phase - روز ۲۷ و ۲۸):</strong> با افت هورمون‌ها، شریان‌های مارپیچی (Spiral Arteries) دچار انقباض و اسپاسم شدید شده، خون‌رسانی قطع و بافت اندومتر دچار نکروز و آماده ریزش می‌شود.</li>
+</ol>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**ثابت بودن طول فاز لوتئال (Luteal Phase Duration)** — طول فاز لوتئال همواره دقیقاً **۱۴ روز** است. اگر خانومی دوره قاعدگی ۳۵ روزه داشته باشد، زمان تخمک‌گذاری او روز ۱۴ نیست، بلکه روز **۲۱** ($۳۵ - ۱۴ = ۲۱$) است. اگر خانومی دوره ۲۴ روزه داشته باشد، زمان تخمک‌گذاری روز **۱۰** ($۲۴ - ۱۴ = ۱۰$) خواهد بود. این اصل پایه تمام محاسبات زمان باروری و روش‌های طبیعی پیشگیری از بارداری است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_20">۳. شاخص‌های بالینی خونریزی نرمال قاعدگی و علائم خطر</h2>
+<p>پرستار باید معیارهای استاندارد یک دوره قاعدگی فیزیولوژیک را بداند تا موارد پاتولوژیک را به سرعت شناسایی کند:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">شاخص بالینی</th>
+<th style="text-align: left;">محدوده طبیعی (Normal Range)</th>
+<th style="text-align: left;">موارد غیرطبیعی و هشداردهنده (Abnormal / Red Flag)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>فاصله دو سیکل (Cycle Interval)</strong></td>
+<td style="text-align: left;">۲۱ تا ۳۵ روز (میانگین ۲۸ روز)</td>
+<td style="text-align: left;">کمتر از ۲۱ روز (پلی‌منوره) یا بیشتر از ۳۵ روز (الیگومنوره)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>مدت زمان خونریزی (Duration)</strong></td>
+<td style="text-align: left;">۳ تا ۷ روز (میانگین ۴ تا ۵ روز)</td>
+<td style="text-align: left;">کمتر از ۲ روز یا تداوم خونریزی بیش از ۸ روز</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>حجم خون از دست رفته (Volume)</strong></td>
+<td style="text-align: left;">۳۰ تا ۵۰ میلی‌لیتر (حداکثر ۸۰ سی‌سی)</td>
+<td style="text-align: left;">خونریزی بیش از ۸۰ میلی‌لیتر که منجر به کم‌خونی فقر آهن گردد</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>تعداد پد بهداشتی مصرفی</strong></td>
+<td style="text-align: left;">تعویض ۲ تا ۴ پد معمولی در روز</td>
+<td style="text-align: left;">خیس شدن کامل یک پد بزرگ ظرف کمتر از ۱ تا ۲ ساعت</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>وجود لخته خون (Blood Clots)</strong></td>
+<td style="text-align: left;">خون تیره و بدون لخته (یا لخته‌های بسیار ریز)</td>
+<td style="text-align: left;">وجود لخته‌های بزرگ به اندازه سکه ۵۰۰ تومانی یا بزرگتر</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**خونریزی حاد شدید رحمی** — اگر بیماری مراجعه کند و گزارش دهد که هر ۳۰ تا ۶۰ دقیقه مجبور به تعویض نوار بهداشتی کاملاً اشباع از خون است، یا لخته‌های بزرگ گوشتی دفع می‌کند و احساس سبکی سر یا افت فشار دارد، این یک **اورژانس حاد زنان** است و بیمار در معرض شوک هیپوولمیک ناشی از منوراژی قرار دارد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="menstrual-disorders">۴. طبقه‌بندی اختلالات شایع قاعدگی (Menstrual Disorders)</h2>
+<ol>
+<li><strong>آمنوره (Amenorrhea):</strong></li>
+<li><strong>آمنوره اولیه:</strong> عدم شروع قاعدگی تا سن ۱۵ سالگی با وجود صفات ثانویه جنسی، یا تا سن ۱۳ سالگی بدون وجود صفات ثانویه.</li>
+<li><strong>آمنوره ثانویه:</strong> قطع قاعدگی به مدت بیش از ۳ ماه در فردی با سیکل‌های منظم قبلی (اولین و شایع‌ترین علت آن <strong>بارداری</strong> است).</li>
+<li><strong>منوراژی یا هیپرمنوره (Menorrhagia / Heavy Menstrual Bleeding):</strong> خونریزی با حجم بیش از ۸۰ سی‌سی یا مدت بیش از ۷ روز با فواصل منظم.</li>
+<li><strong>متروراژی (Metrorrhagia):</strong> خونریزی نامنظم و لکه‌بینی در فواصل بین دو قاعدگی.</li>
+<li><strong>منومتروراژی (Menometrorrhagia):</strong> خونریزی بسیار نامنظم، طولانی و با حجم زیاد.</li>
+<li><strong>دیس‌منوره (Dysmenorrhea):</strong></li>
+<li><strong>اولیه:</strong> دردهای کولیکی زیر شکم همراه با قاعدگی بدون بیماری زمینه‌ای لگن، ناشی از ترشح بیش از حد <strong>پروستاگلاندین‌ها ($PGF_{2\alpha}$)</strong> در اندومتر؛ خط اول درمان آن داروهای ضدالتهاب غیراستروئیدی (NSAIDs مانند مفنامیک اسید و ایبوپروفن) قبل از شروع انقباضات است.</li>
+<li><strong>ثانویه:</strong> درد ناشی از پاتولوژی زمینه‌ای لگن (مانند اندومتریوز، فیبروم یا بیماری التهابی لگن PID).</li>
+</ol>
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** آیا دوش گرفتن و استحمام در دوران پریود مضر است و باعث کیست تخمدان می‌شود؟
+**پاسخ و توضیح استاد:** خیر، این یک باور غلط و سنتی است. استحمام سرپایی با آب ولرم نه تنها ممنوع نیست بلکه به بهداشت فردی، کاهش بوی نامطبوع و تسکین دردهای عضلانی دیس‌منوره کمک می‌کند. اما غوطه‌ور شدن در وان آب، استخر و جکوزی به دلیل باز بودن نسبی دهانه سرویکس و خطر عفونت‌های صعودی در این ایام ممنوع است.
+
+</div>
+</div>
+
+<hr />
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** در یک زن با سیکل‌های منظم ۳۲ روزه، زمان دقیق تخمک‌گذاری کدام روز سیکل است و کدام رویداد هورمونی عامل مستقیم رهایش تخمک است؟
+**پاسخ کلیدی:** زمان تخمک‌گذاری روز **۱۸** سیکل است ($۳۲ - ۱۴ = ۱۸$) زیرا فاز لوتئال همواره ۱۴ روز ثابت است؛ افزایش ناگهانی و انفجاری هورمون لوتئینی‌کننده (**LH Surge**) در میانه سیکل، عامل مستقیم پارگی فولیکول و تخمک‌گذاری است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_21">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>قله LH (LH Surge):</strong> علت اصلی و مستقیم تخمک‌گذاری (۱۰ تا ۱۲ ساعت بعد).</li>
+<li><strong>پروژسترون:</strong> هورمون تثبیت‌کننده و ترشحی‌کننده اندومتر و شل‌کننده عضلات رحم، منشأگرفته از جسم زرد.</li>
+<li><strong>محاسبه روز تخمک‌گذاری:</strong> طول سیکل منهای ۱۴ روز (همیشه ۱۴ روز قبل از شروع قاعدگی بعدی).</li>
+<li><strong>شاخص‌های نرمال خونریزی:</strong> ۲۱ تا ۳۵ روز فاصله، ۳ تا ۷ روز مدت، ۳۰ تا ۵۰ سی‌سی حجم، و تعویض ۲ تا ۴ پد در روز.</li>
+<li><strong>پروستاگلاندین‌ها ($PGF_{2\alpha}$):</strong> عامل اصلی انقباضات دردناک در دیس‌منوره اولیه که توسط NSAIDs مهار می‌شوند.</li>
+</ol>
+<hr />
+<p><a id="ch_04"></a></p>
+<h1 id="_22">جلسه ۲ (پارت ۲) — فیزیولوژی چرخه پاسخ جنسی انسان و سلامت جنسی</h1>
+<h2 id="2-2m4a"><strong>فایل‌های منبع:</strong> <code>مادر نوزاد 2-2.m4a</code> | <strong>مدت زمان تدریس:</strong> ۱۲:۳۶</h2>
+<h2 id="human-sexual-response-cycle">۱. چرخه پاسخ جنسی انسان (Human Sexual Response Cycle)</h2>
+<p>پاسخ جنسی انسان یک فرآیند پیچیده روان‌شناختی–عصبی–عروقی است که در هر دو جنس زن و مرد با تغییرات مشخص فیزیولوژیک همراه است. مدل کلاسیک ارائه‌شده توسط <strong>مسترز و جانسون (Masters and Johnson)</strong> این فرآیند را به چهار مرحله متمایز تقسیم می‌کند:</p>
+<pre class="mermaid">flowchart LR
+    A["۱. تحریک<br/>(Excitement)"] --> B["۲. کفه یا پلاتو<br/>(Plateau)"]
+    B --> C["۳. ارگاسم<br/>(Orgasm)"]
+    C --> D["۴. فرونشینی<br/>(Resolution)"]
+    D -. "در مردان: دوره تحریک‌ناپذیری (Refractory)" .-> A
+    C -. "در زنان: امکان ارگاسم‌های متوالی (Multiple Orgasms)" .-> C</pre>
+
+<p>دو پدیده فیزیولوژیک پایه که زیربنای تمامی تغییرات جسمی در طول این چهار مرحله هستند عبارتند از:<br />
+1. <strong>احتقان عروقی (Vasocongestion):</strong> تجمع و اتساع خون در شبکه‌های وریدی و مویرگی اندام‌های تناسلی و پوست.<br />
+2. <strong>انقباض و سفتی عضلانی (Myotonia):</strong> افزایش تونوس و انقباضات ارادی و غیرارادی عضلات اسکلتی و صاف در سراسر بدن.</p>
+<hr />
+<h2 id="_23">۲. مشخصات و مراحل چهارگانه پاسخ جنسی در زنان و مردان</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">مرحله</th>
+<th style="text-align: left;">تغییرات فیزیولوژیک در زنان</th>
+<th style="text-align: left;">تغییرات فیزیولوژیک در مردان</th>
+<th style="text-align: left;">پاسخ‌های عمومی در هر دو جنس</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>۱. مرحله تحریک (Excitement)</strong></td>
+<td style="text-align: left;">لغزنده‌سازی مخاط واژن ظرف ۱۰ تا ۳۰ ثانیه (Lubrication)، اتساع و طویل شدن ۲/۳ فوقانی واژن، نعوظ کلیتوریس، تورم لب‌های بزرگ و کوچک، برجستگی نوک پستان</td>
+<td style="text-align: left;">نعوظ پنیس (Erection) در اثر پرخون شدن بافت‌های غاری، بالا کشیده شدن بیضه‌ها به سمت پرینه، سفت شدن پوست اسکروتوم</td>
+<td style="text-align: left;">افزایش تدریجی ضربان قلب و فشار خون، برجسته شدن نوک پستان‌ها، برافروختگی جنسی (Sex Flush) در پوست سینه و گردن</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>۲. مرحله کفه یا پلاتو (Plateau)</strong></td>
+<td style="text-align: left;">تشکیل <strong>سکوی ارگاسمی (Orgasmic Platform)</strong> از طریق احتقان شدید ۱/۳ تحتانی واژن، عقب رفتن کلاهک کلیتوریس به زیر استخوان پوبیس، اتساع فوندوس رحم (Tent Effect)</td>
+<td style="text-align: left;">ترشح چند قطره مایع شفاف لغزنده از غدد کوپر / بولبواورترال (Cowper's Glands) که ممکن است حاوی اسپرم باشد، پرخونی حداکثری حشفه</td>
+<td style="text-align: left;">تاکی‌کاردی (۱۰۰ تا ۱۶۰ ضربه در دقیقه)، هایپرونتیلاسیون (تنفس سریع)، افزایش فشار خون سیستولیک و دیاستولیک، تشدید میوتونی عضلانی</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>۳. مرحله ارگاسم (Orgasm)</strong></td>
+<td style="text-align: left;">انقباضات ریتمیک ۳ تا ۱۵ بار در سکوی ارگاسمی واژن و میومتر رحم با فواصل دقیق <strong>۰.۸ ثانیه‌ای</strong>، اوج لذت و رهایش تنش عصبی</td>
+<td style="text-align: left;">انقباضات ریتمیک مجرای اپیدیدیم، وزیکول سمینال و پروستات (مرحله گسیختگی Emission) و خروج جهنده مایع منی از مجرا (Ejaculation)</td>
+<td style="text-align: left;">اوج ضربان قلب (تا ۱۸۰)، تنفس تا ۴۰ بار در دقیقه، انقباض غیرارادی اسفنکتر مقعد و عضلات صورت و اندام‌ها</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>۴. مرحله فرونشینی (Resolution)</strong></td>
+<td style="text-align: left;">بازگشت تدریجی پرخونی عروقی ظرف ۱۰ تا ۱۵ دقیقه، ریلکس شدن عضلات، برگشت رحم و واژن به موقعیت طبیعی</td>
+<td style="text-align: left;">تخلیه خون از بافت‌های غاری پنیس و بازگشت به حالت شل (Detumescence)، شل شدن بیضه‌ها</td>
+<td style="text-align: left;">آرامش عمیق، خواب‌آلودگی، تعریق ملایم، بازگشت علائم حیاتی به خط پایه</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_24">۳. تفاوت‌های فیزیولوژیک و بالینی میان دو جنس</h2>
+<h3 id="refractory-period">الف) دوره تحریک‌ناپذیری (Refractory Period) در مردان:</h3>
+<ul>
+<li>بلافاصله پس از ارگاسم و انزال، مردان وارد یک دوره تحریک‌ناپذیری فیزیولوژیک می‌شوند که در طول آن، هیچ‌گونه تحریک جنسی منجر به نعوظ و ارگاسم مجدد نمی‌گردد. طول این دوره با افزایش سن افزایش می‌یابد (از چند دقیقه در نوجوانان تا چند ساعت یا روز در سالمندان).</li>
+</ul>
+<h3 id="multiple-orgasms">ب) پدیده ارگاسم‌های متوالی (Multiple Orgasms) در زنان:</h3>
+<ul>
+<li>زنان فاقد دوره تحریک‌ناپذیری مطلق هستند؛ در صورت تداوم تحریک مؤثر، یک زن می‌تواند بلافاصله از فاز پلاتو یا ارگاسم اول وارد ارگاسم‌های بعدی شود بدون آنکه سطح تحریک به خط پایه بازگردد.</li>
+</ul>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**مایع پیش از انزال (Pre-ejaculatory Fluid) و ریسک بارداری** — در فاز پلاتو، قطراتی شفاف از غدد کوپر در نوک مجرای ادرار مرد ترشح می‌شود. استاد تأکید نمودند که این مایع هرچند از غدد ترشحی است، اما در صورت وجود اسپرم‌های باقی‌مانده در مجرا از انزال‌های قبلی، می‌تواند حاوی اسپرم زنده و فعال باشد. بنابراین، روش طبیعی قطع مقاربت قبل از انزال (Coitus Interruptus) دارای ضریب شکست بالایی در پیشگیری از بارداری ناخواسته است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_25">۴. ابعاد عاطفی و روان‌شناختی سلامت جنسی</h2>
+<p>استاد در بیانات خود به شدت تأکید فرمودند که رابطه جنسی در انسان صرفاً یک پدیده مکانیکی بیولوژیک نیست:<br />
+- احساس امنیت، دوست داشتن، پیوند عاطفی و رضایت روانی طرفین، پیش‌شرط قطعی یک تجربه جنسی سالم و ارتقادهنده پیوند زناشویی است.<br />
+- فشارهای روانی، اضطراب عملکرد (Performance Anxiety)، شرم کاذب و عدم درک تفاوت‌های زمانی رسیدن به ارگاسم میان زن و مرد (زنان نیازمند زمان تحریک طولانی‌تر هستند) از عوامل شایع نارضایتی زناشویی و اختلالات جنسی است که نیازمند آموزش و مشاوره است.</p>
+<hr />
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** دو پدیده فیزیولوژیک پایه در چرخه پاسخ جنسی انسان کدامند و «دوره تحریک‌ناپذیری» (Refractory Period) در کدام جنس وجود دارد؟
+**پاسخ کلیدی:** احتقان عروقی (**Vasocongestion**) و افزایش تونوس عضلانی (**Myotonia**)؛ دوره تحریک‌ناپذیری صرفاً در **جنس مذکر** وجود دارد و زنان فاقد آن هستند و می‌توانند ارگاسم‌های چندگانه را تجربه کنند.
+
+</div>
+</div>
+
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**خطر بارداری ناخواسته با روش خروج قبل از انزال** — مایع پیش از انزال که در فاز کفه (Plateau) از غدد کوپر ترشح می‌شود می‌تواند حاوی اسپرم‌های زنده باشد؛ بنابراین روش طبیعی قطع مقاربت قبل از انزال دارای ضریب شکست بالایی در پیشگیری از بارداری است.
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** چرا از نظر فیزیولوژیک زمان رسیدن به ارگاسم در زنان طولانی‌تر از مردان است؟
+**پاسخ و توضیح استاد:** زیرا احتقان عروقی و پرخونی لگن در زنان نیازمند زمان تحریک حسی و عاطفی طولانی‌تری است؛ عدم آگاهی زوجین از این تفاوت فیزیولوژیک از علل شایع نارضایتی زناشویی است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_26">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>دو مکانیسم فیزیولوژیک بنیادین چرخه پاسخ جنسی:</strong> احتقان عروقی (Vasocongestion) و افزایش تونوس عضلانی (Myotonia).</li>
+<li><strong>سکوی ارگاسمی (Orgasmic Platform):</strong> احتقان شدید و تنگی یک‌سوم تحتانی واژن در فاز پلاتو که انقباضات ریتمیک ۰.۸ ثانیه‌ای در آن رخ می‌دهد.</li>
+<li><strong>دوره تحریک‌ناپذیری (Refractory Period):</strong> مختص جنس مذکر بوده و در زنان وجود ندارد.</li>
+<li><strong>غدد کوپر (Cowper's Glands):</strong> مسئول ترشح مایع لغزنده پیش از انزال در مردان با پتانسیل انتقال اسپرم و ایجاد بارداری.</li>
+</ol>
+<hr />
+<p><a id="ch_05"></a></p>
+<h1 id="_27">جلسه ۲ (پارت ۳) — لقاح، رشد جنینی، پرده‌ها، مایع آمنیوتیک و جفت</h1>
+<h2 id="2-3m4a"><strong>فایل‌های منبع:</strong> <code>مادر و نوزاد 2-3.m4a</code> | <strong>مدت زمان تدریس:</strong> ۱:۰۶:۵۹</h2>
+<h2 id="fertilization-and-early-development">۱. فرآیند لقاح و تکامل سلولی اولیه (Fertilization and Early Development)</h2>
+<p>فرآیند لقاح حاصل ادغام اسپرماتوزوئید هاپلوئید (۲۳ کروموزوم) و اووسیت هاپلوئید ثانویه (۲۳ کروموزوم) برای تشکیل سلول دیپلوئید <strong>زیگوت (Zygote)</strong> است.</p>
+<pre class="mermaid">flowchart TD
+    Ovulation["تخمک‌گذاری از تخمدان"] --> Ampulla["ورود به آمپول لوله فالوپ"]
+    Sperm["ورود اسپرم‌های متحرک"] --> Ampulla
+    Ampulla --> Fert["لقاح و واکنش آکروزومی<br/>(تشکیل زیگوت)"]
+    Fert --> Cleavage["تقسیمات میتوزی (Cleavage)"]
+    Cleavage --> Morula["مورولا (Morula)<br/>(توده ۱۶ سلولی، روز ۳ تا ۴)"]
+    Morula --> Blastocyst["بلاستوسیست (Blastocyst)<br/>(روز ۵ تا ۶)"]
+    Blastocyst --> Implantation["لانه‌گزینی در اندومتر رحم<br/>(روز ۶ تا ۷)"]</pre>
+
+<h3 id="_28">مراحل زمانی از لقاح تا لانه‌گزینی:</h3>
+<ol>
+<li><strong>محل وقوع لقاح:</strong> در یک‌سوم خارجی لوله رحمی یعنی ناحیه <strong>آمپول (Ampulla)</strong> رخ می‌دهد. تخمک تا ۲۴ ساعت پس از تخمک‌گذاری و اسپرم تا ۴۸ الی ۷۲ ساعت در دستگاه تناسلی زن قابلیت باروری دارند.</li>
+<li><strong>بلوک پلی‌اسپرمی (Block to Polyspermy):</strong> به محض ورود اولین اسپرم به داخل اووسیت، واکنش زونا و دانه‌های کورتیکال غشای تخمک را نفوذناپذیر می‌سازند تا از ورود اسپرم‌های دیگر و بروز آنیوپلوئیدی مرگبار جلوگیری شود.</li>
+<li><strong>مورولا (Morula):</strong> توده فشرده توت‌مانند متشکل از ۱۲ تا ۱۶ سلول (بلاستومر) که در روز سوم تا چهارم وارد حفره رحم می‌شود.</li>
+<li><strong>بلاستوسیست (Blastocyst):</strong> با ورود مایع رحمی به درون مورولا، یک حفره مرکزی توخالی به نام <strong>بلاستوسل</strong> شکل می‌گیرد. در این مرحله (روز ۵ تا ۶)، ساختار به دو بخش بنیادین تمایز می‌یابد:</li>
+<li><strong>توده سلولی داخلی (Inner Cell Mass / Embryoblast):</strong> در یک قطب تجمع یافته و به جنین و سه لایه زایای اکتودرم، مزودرم و اندودرم تمایز می‌یابد.</li>
+<li><strong>توده سلولی خارجی (Outer Cell Mass / Trophoblast):</strong> سلول‌های پیرامونی که منشأ پرده‌های جنینی و جفت خواهند شد.</li>
+</ol>
+<hr />
+<h2 id="implantation-nidation">۲. لانه‌گزینی یا جایگزینی (Implantation / Nidation)</h2>
+<ul>
+<li>در روز <strong>ششم تا هفتم</strong> پس از لقاح، بلاستوسیست از پوسته شفاف خود به نام زونا پلوئیدا خارج شده (Hatching) و در اندومتر تکامل‌یافته رحم که اکنون <strong>دسی‌دوآ (Decidua)</strong> نامیده می‌شود، جایگزین می‌گردد.</li>
+<li><strong>مکان طبیعی لانه‌گزینی:</strong> در دیواره قدامی یا خلفی بخش فوقانی رحم (فوندوس).</li>
+<li>تمایز تروفوبلاست در حین لانه‌گزینی:</li>
+<li><strong>سیتوتروفوبلاست (Cytotrophoblast):</strong> لایه سلولی داخلی تک‌هسته‌ای.</li>
+<li><strong>سین‌سیشیوتروفوبلاست (Syncytiotrophoblast):</strong> لایه خارجی چندهسته‌ای و تهاجمی با خاصیت فرسایش عروق خونی مادری؛ این لایه منبع اصلی ساخت هورمون <strong>گنادوتروپین جفتی انسان (hCG)</strong> است که با ورود به خون مادر، جسم زرد را فعال نگه داشته و مبنای تست‌های تشخیصی بارداری (بی‌بی‌چک و آزمایش خون) به شمار می‌رود.</li>
+</ul>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**خونریزی لانه‌گزینی (Implantation Bleeding)** — در زمان لانه‌گزینی (حدود روز ۲۱ تا ۲۵ سیکل قاعدگی)، نفوذ عروقی تروفوبلاست ممکن است با لکه‌بینی خفیف، بدون درد و صورتی یا قهوه‌ای روشن همراه باشد. بسیاری از مادران این لکه‌بینی را به اشتباه یک پریود خفیف در نظر می‌گیرند و همین امر سبب خطای رایج در محاسبه سن واقعی بارداری بر اساس LMP می‌شود.
+
+</div>
+</div>
+
+<hr />
+<h2 id="fetal-membranes">۳. پرده‌های جنینی (Fetal Membranes)</h2>
+<p>جنین در طول دوران بارداری در میان دو لایه پرده محافظتی احاطه شده است:<br />
+1. <strong>آمنیون (Amnion):</strong> پرده داخلی، شفاف، فاقد عروق و بسیار نازک که در تماس مستقیم با مایع آمنیوتیک و سطح شکمی جنین است و بند ناف را می‌پوشاند.<br />
+2. <strong>کوریون (Chorion):</strong> پرده خارجی، ضخیم و پرعروق منشعب از تروفوبلاست که شامل پرزهای کوریونی است و بخش جنینی جفت را تشکیل می‌دهد.</p>
+<hr />
+<h2 id="amniotic-fluid">۴. مایع آمنیوتیک (Amniotic Fluid) و اختلالات بالینی آن</h2>
+<p>مایع آمنیوتیک محیطی پویا، استریل، شفاف و زردرنگ است که در ابتدا حاصل ترشح غشای آمنیون و پلاسمای مادر بوده و از نیمه دوم بارداری به طور عمده از <strong>ادرار جنین (Fetal Urine)</strong> و ترشحات ریوی جنین تأمین می‌شود. بلع مایع توسط جنین نیز مکانیسم اصلی بازجذب آن است.</p>
+<h3 id="_29">وظایف حیاتی مایع آمنیوتیک:</h3>
+<ol>
+<li>ضربه‌گیر مکانیکی در برابر تروماها و فشارهای فیزیکی جدار شکم مادر.</li>
+<li>حفظ دمای فیزیولوژیک ثابت برای جنین.</li>
+<li>ممانعت از چسبندگی پرده آمنیون به اندام‌های جنینی (پیشگیری از باندهای آمنیوتیک و قطع انگشتان).</li>
+<li>فراهم آوردن فضای کافی برای حرکات آزاد جنین و رشد سیستم اسکلتی-عضلانی متقارن.</li>
+<li>تسهیل تکامل کیسه‌های هوایی ریه از طریق دم و بازدم جنینی مایع.</li>
+<li>ایجاد یک سد دفاعی آنتی‌باکتریال و پیشگیری از عفونت‌های بالارونده.</li>
+</ol>
+<h3 id="_30">حجم نرمال و اختلالات حجم مایع:</h3>
+<ul>
+<li><strong>حجم طبیعی در ترم (Term):</strong> حدود <strong>۵۰۰ تا ۱۰۰۰ میلی‌لیتر</strong> (در هفته ۳۴ تا ۳۶ به اوج خود یعنی نزدیک به ۱۰۰۰ سی‌سی می‌رسد).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">اختلال بالینی</th>
+<th style="text-align: left;">تعریف و حجم مایع</th>
+<th style="text-align: left;">اتیولوژی و علل شایع</th>
+<th style="text-align: left;">پیامدهای بالینی و خطرات جنینی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>الیگوهیدروآمنیوس (Oligohydramnios)</strong></td>
+<td style="text-align: left;">حجم مایع کمتر از <strong>۵۰۰ میلی‌لیتر</strong> در ترم (یا شاخص AFI کمتر از ۵ سانتی‌متر)</td>
+<td style="text-align: left;">- ناهنجاری‌های کلیوی جنین (آژنزی کلیه - Potter Syndrome)<br/>- انسداد مجاری ادراری جنین<br/>- پارگی زودرس کیسه آب (PROM)<br/>- نارسایی جفت (پره‌اکلامپسی، بارداری طول‌کشیده)</td>
+<td style="text-align: left;">هیپوپلازی شدید ریه (کشنده پس از تولد)، تغییر شکل‌های صورتی و ارتوپدی اندام‌ها، فشردگی بند ناف و زجر حاد جنینی حین انقباضات زایمانی</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>پلی‌هیدروآمنیوس (Polyhydramnios / Hydramnios)</strong></td>
+<td style="text-align: left;">حجم مایع بیش از <strong>۲۰۰۰ میلی‌لیتر</strong> (یا شاخص AFI بیش از ۲۴ سانتی‌متر)</td>
+<td style="text-align: left;">- ناتوانی جنین در بلع مایع: آترزی مری (Esophageal Atresia)، آترزی دوازدهه<br/>- نقایص لوله عصبی (NTD مانند آنانسفالی)<br/>- دیابت بارداری مادر (پلی‌اوری جنین ناشی از هیپرگلیسمی)<br/>- ناسازگاری Rh و هیدروپس فتالیس</td>
+<td style="text-align: left;">زایمان زودرس ناشی از اتساع بیش از حد رحم، دکولمان ناگهانی جفت پس از پارگی پرده‌ها، پرولاپس (افتادگی) بند ناف، و خونریزی شدید رحمی ناشی از آتونی پس از زایمان</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**خطر پاره شدن ناگهانی کیسه آب در پلی‌هیدروآمنیوس** — هنگامی که حجم مایع آمنیوتیک بسیار زیاد است، پارگی ناگهانی پرده‌ها باعث خروج پرفشار حجم عظیمی از مایع می‌شود. این جریان تند می‌تواند بند ناف را به داخل واژن براند (**پرولاپس بند ناف - Cord Prolapse**) یا به دلیل تخلیه ناگهانی فشار داخل رحم، باعث کنده شدن زودهنگام جفت (**دکولمان جفت - Abruptio Placentae**) گردد که هر دو از وخیم‌ترین اورژانس‌های مامایی با خطر مرگ قطعی جنین هستند.
+
+</div>
+</div>
+
+<hr />
+<h2 id="placenta">۵. آناتومی و عملکرد جفت (Placenta)</h2>
+<p>جفت ارگان موقت شگفت‌انگیزی است که ارتباط بیولوژیک مادر و جنین را برقرار می‌سازد. در ترم، وزنی حدود <strong>۵۰۰ گرم</strong> (یک‌ششم وزن جنین) و قطری حدود ۱۵ تا ۲۰ سانتی‌متر با ضخامت ۲ تا ۳ سانتی‌متر دارد.</p>
+<h3 id="_31">دو سطح متمایز جفت:</h3>
+<ol>
+<li><strong>سطح مادری (Maternal Surface / Decidua Basalis):</strong> تیره، ناصاف و گوشتی؛ به ۱۵ تا ۲۰ لوب برجسته به نام <strong>کوتیلدون (Cotyledon)</strong> تقسیم شده است.</li>
+<li><strong>سطح جنینی (Fetal Surface):</strong> کاملاً صاف، براق و پوشیده از پرده شفاف آمنیون؛ عروق بند ناف به وضوح بر روی این سطح به صورت شعاعی دیده می‌شوند.</li>
+</ol>
+<h3 id="_32">عملکردهای فیزیولوژیک جفت:</h3>
+<ul>
+<li><strong>تبادل تنفسی:</strong> انتقال اکسیژن از مادر به جنین و دفع $CO_2$ جنین به خون مادر از طریق انتشار ساده.</li>
+<li><strong>تبادل تغذیه‌ای و دفعی:</strong> انتقال گلوکز (انتشار تسهیل‌شده)، اسیدهای آمینه (انتقال فعال)، الکترولیت‌ها و ویتامین‌ها و دفع اوره و اسید اوریک جنین.</li>
+<li><strong>عملکرد ایمونولوژیک:</strong> انتقال آنتی‌بادی‌های اختصاصی مادری از نوع <strong>IgG</strong> جهت ایجاد ایمنی غیرفعال برای نوزاد تا چند ماه پس از تولد.</li>
+<li><strong>عملکرد درون‌ریز (Endocrine):</strong></li>
+<li><strong>hCG:</strong> حفظ جسم زرد در هفته‌های اولیه.</li>
+<li><strong>لاکتوژن جفتی انسان (hPL):</strong> هورمون آنتاگونیست انسولین، افزایش مقاومت به انسولین در مادر برای تضمین رسیدن گلوکز کافی به جنین.</li>
+<li><strong>پروژسترون:</strong> آرام‌بخشی میومتر و حفظ بارداری.</li>
+<li><strong>استروژن:</strong> تحریک رشد رحم و مجاری پستان.</li>
+</ul>
+<hr />
+<h2 id="umbilical-cord">۶. ساختار بند ناف (Umbilical Cord)</h2>
+<p>بند ناف طنابی با طول متوسط <strong>۵۰ تا ۵۵ سانتی‌متر</strong> و قطر ۱ تا ۲ سانتی‌متر است که ناف جنین را به جفت متصل می‌کند.<br />
+- <strong>محتویات عروقی:</strong> بند ناف نرمال به طور دقیق حاوی <strong>۳ رگ خونی (AVA: 2 Arteries, 1 Vein)</strong> است:<br />
+  - <strong>دو شریان نافی (Umbilical Arteries):</strong> حامل خون کدر و بدون اکسیژن حاوی مواد زاید متابولیک از بدن جنین به سمت جفت.<br />
+  - <strong>یک ورید نافی (Umbilical Vein):</strong> با قطر بزرگتر، حامل خون کاملاً روشن، پراکسیژن و سرشار از مواد مغذی از جفت به سمت کبد و قلب جنین.<br />
+- <strong>ژله وارتون (Wharton's Jelly):</strong> ماده ژلاتینی همبندی شفاف و غنی از موکوپلی‌ساکارید که عروق نافی را احاطه کرده و از فشرده شدن (Compression) و پیچ‌خوردگی عروق حین حرکات جنین جلوگیری می‌نماید.</p>
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** در ساختار بند ناف، کدام رگ حامل خون پراکسیژن است و یافته «تک‌شریانی بودن بند ناف» (Single Umbilical Artery) نشانه خطر چه مواردی است؟
+**پاسخ کلیدی:** بر خلاف گردش خون عمومی بدن، در بند ناف **تنها یک ورید نافی** خون اکسیژنه را از جفت به جنین منتقل می‌کند و دو شریان خون فاقد اکسیژن را برمی‌گردانند؛ وجود تنها یک شریان نافی (به جای دو شریان) در معاینه نوزاد یا سونوگرافی، زنگ خطری مهم برای وجود ناهنجاری‌های ساختاری زمینه‌ای، به‌ویژه **نقایص مادرزادی سیستم قلبی-عروقی و سیستم کلیوی-ادراری جنین** است.
+
+</div>
+</div>
+
+<hr />
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** اگر در سونوگرافی یا معاینه بند ناف نوزاد فقط یک شریان نافی (Single Umbilical Artery) دیده شود، چه اقدام تشخیصی الزامی است؟
+**پاسخ و توضیح استاد:** باید بلافاصله اکوکاردیوگرافی قلب جنین و سونوگرافی دقیق کلیه‌ها انجام شود؛ زیرا تک‌شریانی بودن بند ناف با نقایص شدید مادرزادی سیستم قلبی-عروقی و سیستم ادراری همراهی بالایی دارد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_33">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>محل لقاح:</strong> آمپول لوله فالوپ؛ سپس حرکت و لانه‌گزینی در فوندوس رحم در روز ۶ تا ۷.</li>
+<li><strong>تمایز بلاستوسیست:</strong> توده داخلی (امبریوبلاست = جنین) و توده خارجی (تروفوبلاست = جفت و پرده‌ها).</li>
+<li><strong>تولید هورمون hCG:</strong> ترشح‌شده از سین‌سیشیوتروفوبلاست تهاجمی برای تداوم ترشح پروژسترون از جسم زرد.</li>
+<li><strong>الیگوهیدروآمنیوس (&lt; 500cc):</strong> ارتباط تنگاتنگ با ناهنجاری‌های کلیوی جنین و هیپوپلازی کشنده ریه.</li>
+<li><strong>پلی‌هیدروآمنیوس (&gt; 2000cc):</strong> ارتباط با آترزی مری، نقایص لوله عصبی (NTD) و دیابت مادر.</li>
+<li><strong>ساختار عروقی بند ناف (AVA):</strong> ۲ شریان (خون تیره به جفت) + ۱ ورید (خون روشن به جنین) در میان ژله وارتون.</li>
+</ol>
+<hr />
+<p><a id="ch_06"></a></p>
+<h1 id="_34">جلسه ۳ (پارت ۱) — گردش خون جنینی، تعیین سن بارداری و نمو جنین</h1>
+<h2 id="3-1m4a"><strong>فایل‌های منبع:</strong> <code>مادر نوزاد 3-1.m4a</code> | <strong>مدت زمان تدریس:</strong> ۱:۱۳:۳۹</h2>
+<h2 id="fetal-circulation">۱. فیزیولوژی گردش خون جنینی (Fetal Circulation)</h2>
+<p>گردش خون جنین به دلیل عدم فعالیت تنفسی ریه‌ها و دریافت اکسیژن و مواد مغذی از جفت، کاملاً متفاوت از گردش خون مستقل پس از تولد است. در سیستم جنینی، سه شنت یا میانبر عروقی هوشمند وجود دارد که خون غنی از اکسیژن را ترجیحاً به سمت ارگان‌های حیاتی جنین (مغز و قلب) هدایت می‌کنند:</p>
+<pre class="mermaid">flowchart TD
+    Placenta["جفت (Placenta)<br/>(منبع تبادل گاز و غذا)"] --> UV["یک ورید نافی<br/>(خون ۸۰٪ اکسیژنه)"]
+    UV --> DV["۱. مجرای وریدی (Ductus Venosus)<br/>(میانبر کبد)"]
+    DV --> IVC["ورید اجوف تحتانی (IVC)"]
+    IVC --> RA["دهلیز راست (Right Atrium)"]
+    RA --> FO["۲. سوراخ بیضی (Foramen Ovale)<br/>(شنت به دهلیز چپ)"]
+    FO --> LA["دهلیز چپ"] --> LV["بطن چپ"] --> AscAorta["آئورت صعودی<br/>(خون‌رسانی به مغز و قلب)"]
+    RA --> RV["بطن راست"] --> PA["شریان ریوی (Pulmonary Artery)"]
+    PA --> DA["۳. مجرای شریانی (Ductus Arteriosus)<br/>(شنت به آئورت نزولی)"]
+    DA --> DescAorta["آئورت نزولی"]
+    DescAorta --> InternalIliac["شریان‌های ایلیاک داخلی"]
+    InternalIliac --> UA["دو شریان نافی<br/>(بازگشت خون به جفت)"]</pre>
+
+<h3 id="_35">شنت‌های سه‌گانه جنینی و کارکرد آن‌ها:</h3>
+<ol>
+<li><strong>مجرای وریدی (Ductus Venosus):</strong></li>
+<li>خون با اشباع اکسیژن بالا (حدود ۸۰٪) از طریق <strong>ورید نافی</strong> وارد بدن جنین می‌شود. بیش از ۵۰٪ این خون مستقیماً با عبور از میان بافت کبد از طریق مجرای وریدی وارد <strong>ورید اجوف تحتانی (IVC)</strong> می‌گردد تا در مویرگ‌های کبد اتلاف اکسیژن پیدا نکند.</li>
+<li><strong>سوراخ بیضی (Foramen Ovale):</strong></li>
+<li>یک دریچه یک‌طرفه در دیواره بین دو دهلیز قلب؛ به دلیل فشار بالاتر دهلیز راست در جنین، جریان خون ورودی از IVC مستقیماً از دهلیز راست به <strong>دهلیز چپ</strong> هدایت می‌شود. این خون غنی از اکسیژن سپس وارد بطن چپ و <strong>آئورت صعودی</strong> شده و مستقیماً عروق کرونر قلب و شریان‌های کاروتید مغز جنین را تغذیه می‌نماید.</li>
+<li><strong>مجرای شریانی (Ductus Arteriosus):</strong></li>
+<li>مجرای رابط میان <strong>تنه شریان ریوی و قوس آئورت نزولی</strong>. از آنجا که ریه‌های جنین پر از مایع هستند و مقاومت عروقی ریه (PVR) بسیار بالاست، تنها حدود ۱۰٪ خون بطن راست وارد ریه‌ها می‌شود و ۹۰٪ مابقی از طریق مجرای شریانی مستقیماً به آئورت نزولی ریخته تا اندام‌های تحتانی را تغذیه کرده و از طریق دو شریان نافی به جفت بازگردد.</li>
+</ol>
+<hr />
+<h2 id="circulatory-changes-at-birth">۲. دگرگونی‌های عروقی در لحظه تولد (Circulatory Changes at Birth)</h2>
+<p>با خروج نوزاد و قطع ارتباط با جفت، سلسله رویدادهای همودینامیک شگفت‌انگیزی رخ می‌دهد:</p>
+<pre class="mermaid">flowchart LR
+    Breath["اولین تنفس نوزاد<br/>و اتساع ریه‌ها با هوا"] --> FallPVR["افت مقاومت عروق ریوی<br/>(Decreased PVR)"]
+    Clamp["کلمپ بند ناف<br/>و حذف گردش خون جفت"] --> HighSVR["افزایش مقاومت عروق محیطی<br/>(Increased SVR)"]
+    FallPVR & HighSVR --> HighLAP["افزایش فشار دهلیز چپ<br/>نسبت به دهلیز راست"]
+    HighLAP --> CloseFO["بسته شدن عملکردی<br/>سوراخ بیضی (Foramen Ovale)"]
+    HighPO2["افزایش اکسیژن خون ($PaO_2$)"] --> CloseDA["اسپاسم و انقباض عضلانی<br/>مجرای شریانی (Ductus Arteriosus)"]</pre>
+
+<h3 id="_36">تبدیل بقایای جنینی به ساختارهای آناتومیک بالغین:</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">شنت / رگ جنینی</th>
+<th style="text-align: left;">وضعیت در جنین</th>
+<th style="text-align: left;">سرنوشت آناتومیک پس از تولد</th>
+<th style="text-align: left;">علت یا مکانیسم بسته شدن</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ورید نافی (Umbilical Vein)</strong></td>
+<td style="text-align: left;">انتقال خون اکسیژنه از جفت به جنین</td>
+<td style="text-align: left;"><strong>رباط گرد کبدی (Ligamentum Teres Hepatis)</strong></td>
+<td style="text-align: left;">کلمپ بند ناف و ترومبوز فیزیولوژیک</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>مجرای وریدی (Ductus Venosus)</strong></td>
+<td style="text-align: left;">میانبر کبد به IVC</td>
+<td style="text-align: left;"><strong>رباط وریدی (Ligamentum Venosum)</strong></td>
+<td style="text-align: left;">قطع جریان خون ورید نافی</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>سوراخ بیضی (Foramen Ovale)</strong></td>
+<td style="text-align: left;">شنت دهلیز راست به دهلیز چپ</td>
+<td style="text-align: left;"><strong>گودی بیضی (Fossa Ovalis)</strong></td>
+<td style="text-align: left;">افت فشار دهلیز راست و افزایش فشار دهلیز چپ به دلیل افزایش بازگشت وریدی از ریه‌ها</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>مجرای شریانی (Ductus Arteriosus)</strong></td>
+<td style="text-align: left;">شنت شریان پولمونر به آئورت</td>
+<td style="text-align: left;"><strong>رباط شریانی (Ligamentum Arteriosum)</strong></td>
+<td style="text-align: left;">افزایش اکسیژن شریانی ($PaO_2$) و افت سطح پروستاگلاندین‌های جفتی ($PGE_2$)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>دو شریان نافی (Umbilical Arteries)</strong></td>
+<td style="text-align: left;">بازگشت خون تیره به جفت</td>
+<td style="text-align: left;"><strong>رباط‌های نافی داخلی (Medial Umbilical Ligaments)</strong></td>
+<td style="text-align: left;">کلمپ بند ناف و انقباض شدید عضلانی جدار شریان</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**نقش حیاتی اکسیژن و پروستاگلاندین‌ها در بسته شدن مجرای شریانی (PDA)** — مجرای شریانی در دوران جنینی به دلیل محیط نسبتاً کم‌اکسیژن و تولید مداوم پروستاگلاندین $E_2$ از جفت باز می‌ماند. با اولین تنفس‌های نوزاد و بالا رفتن سطح اکسیژن، این مجرا دچار انقباض عضلانی شدید شده و ظرف ۲۴ تا ۴۸ ساعت به طور عملکردی بسته می‌شود. در نوزادان نارس که ریه نارس دارند یا دچار افت اکسیژن هستند، این مجرا باز می‌ماند (**Patent Ductus Arteriosus - PDA**)؛ داروی مهارکننده پروستاگلاندین نظیر **ایندومتاسین یا ایبوپروفن تزریقی** داروی انتخابی برای بستن دارویی PDA در نوزادان نارس است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="-naegeles-rule">۳. فرمول محاسبه تاریخ تقریبی زایمان (قاعده نگل - Naegele's Rule)</h2>
+<p>یکی از اساسی‌ترین مهارت‌های مامایی، تخمین سن دقیق بارداری و تاریخ پیش‌بینی‌شده زایمان (<strong>Estimated Date of Delivery - EDD</strong>) است.</p>
+<h3 id="_37">فرمول ریاضی قاعده نگل:</h3>
+<p>مبنای محاسبه، <strong>نخستین روز آخرین دوره قاعدگی طبیعی (First Day of Last Menstrual Period - LMP)</strong> است:<br />
+$$\text{EDD} = \text{LMP} + ۷\text{ روز} - ۳\text{ ماه} + ۱\text{ سال}$$<br />
+(یا در تقویم شمسی: LMP + ۷ روز و + ۹ ماه)</p>
+<h3 id="_38">مثال‌های بالینی محاسباتی:</h3>
+<ul>
+<li><strong>مثال ۱ (میلادی):</strong> اگر LMP مریضی تاریخ <strong>۱۰ می ۲۰۲۴ (May 10, 2024)</strong> باشد:</li>
+<li>روز: $۱۰ + ۷ = ۱۷$</li>
+<li>ماه: می (ماه ۵) منهای ۳ = فوریه (ماه ۲)</li>
+<li>سال: $۲۰۲۴ + ۱ = ۲۰۲۵$</li>
+<li><strong>تاریخ تقریبی زایمان (EDD):</strong> ۱۷ فوریه ۲۰۲۵ (February 17, 2025).</li>
+<li><strong>مثال ۲ (شمسی):</strong> اگر اولین روز آخرین پریود مریضی <strong>۱۴ فروردین ۱۴۰۳</strong> باشد:</li>
+<li>روز: $۱۴ + ۷ = ۲۱$</li>
+<li>ماه: فروردین (ماه ۱) + ۹ ماه = دی (ماه ۱۰)</li>
+<li><strong>تاریخ تقریبی زایمان (EDD):</strong> ۲۱ دی ۱۴۰۳.</li>
+</ul>
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** زنی با سیکل‌های منظم ۲۸ روزه مراجعه کرده و اعلام می‌کند اولین روز آخرین قاعدگی او ۵ مرداد بوده است. تاریخ تخمینی زایمان (EDD) بر اساس قاعده نگل چه روزی خواهد بود و شرط صحت این فرمول چیست؟
+**پاسخ کلیدی:** تاریخ تخمینی زایمان **۱۲ اردیبهشت سال بعد** است ($۵ + ۷ = ۱۲$ مرداد، منهای ۳ ماه = ۱۲ اردیبهشت). شرط صحت قاعده نگل این است که بیمار دارای سیکل‌های منظم ۲۸ روزه بوده و اخیراً از قرص‌های ضدبارداری خوراکی (OCP) استفاده نکرده باشد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="fetal-milestones">۴. مراحل کلیدی رشد و نمو جنینی (Fetal Milestones)</h2>
+<p>استاد شاخص‌های تکاملی جنین بر حسب هفته‌های بارداری را با تأکید بر نکات بالینی به شرح زیر تدریس فرمودند:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">سن بارداری (هفته)</th>
+<th style="text-align: left;">وزن و قد تقریبی</th>
+<th style="text-align: left;">رویدادهای تکاملی برجسته و شاخص‌های بالینی</th>
+<th style="text-align: left;">ابزار یا روش ارزیابی بالینی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>هفته ۸</strong></td>
+<td style="text-align: left;">طول ۲ تا ۳ سانتی‌متر، وزن ۱ گرم</td>
+<td style="text-align: left;">پایان دوره رویانی؛ تشکیل تمام اندام‌های اصلی و ارگانوژنز، وجود امواج مغزی، سر نیمی از کل حجم جنین است</td>
+<td style="text-align: left;">سونوگرافی ترانس‌واژینال</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>هفته ۱۰ تا ۱۲</strong></td>
+<td style="text-align: left;">طول ۶ تا ۹ سانتی‌متر، وزن ۱۵ گرم</td>
+<td style="text-align: left;">تمایز کامل دستگاه تناسلی خارجی، تولید ادرار توسط کلیه‌ها، آغاز بلع مایع آمنیوتیک</td>
+<td style="text-align: left;"><strong>سمع ضربان قلب جنین (FHR) با داپلر</strong> (۱۱۰ تا ۱۶۰ بار در دقیقه)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>هفته ۱۶</strong></td>
+<td style="text-align: left;">طول ۱۲ سانتی‌متر، وزن ۱۰۰ گرم</td>
+<td style="text-align: left;">استخوان‌سازی اسکلت در رادیوگرافی، پدیدار شدن موهای بسیار ظریف لانگو (Lanugo)، حرکات تنفسی اولیه</td>
+<td style="text-align: left;">حس حرکات جنین توسط مادران چندزا (Quickening)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>هفته ۲۰</strong></td>
+<td style="text-align: left;">طول ۲۵ سانتی‌متر، وزن ۳۰۰ گرم</td>
+<td style="text-align: left;"><strong>ارتفاع فوندوس رحم در سطح ناف (Umbilicus)</strong>، ورنیکس کازئوزا تمام پوست را می‌پوشاند، رویش ابرو و مژه</td>
+<td style="text-align: left;"><strong>سمع صدای قلب جنین با فیتوسکوپ پینارد</strong>؛ حس قطعی حرکات توسط مادر نخست‌زا</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>هفته ۲۴</strong></td>
+<td style="text-align: left;">وزن ۶۰۰ گرم</td>
+<td style="text-align: left;"><strong>مرز قابلیت حیات جنین (Viability)</strong>؛ آغاز تولید <strong>سورفکتانت (Surfactant)</strong> توسط پنوموسیت‌های تیپ ۲، باز شدن پلک‌ها</td>
+<td style="text-align: left;">پایش مراقبت‌های ویژه در صورت زایمان زودرس</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>هفته ۲۸</strong></td>
+<td style="text-align: left;">وزن ۱۱۰۰ گرم</td>
+<td style="text-align: left;">ریه‌ها قادر به تنفس هوای محیط هستند، تجمع بافت چربی زیرجلدی، تنظیم بهتر دمای بدن</td>
+<td style="text-align: left;">بررسی تکامل حرکتی و NST</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>هفته ۳۲ تا ۳۶</strong></td>
+<td style="text-align: left;">وزن ۲۰۰۰ تا ۲۵۰۰ گرم</td>
+<td style="text-align: left;">ناخن‌ها به نوک انگشتان می‌رسند، پوست صاف و پرچربی، نزول بیضه‌ها به اسکروتوم</td>
+<td style="text-align: left;">بررسی موقعیت و نمایش جنین (Presentation)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>هفته ۳۷ به بعد</strong></td>
+<td style="text-align: left;">وزن ۳۰۰۰ تا ۳۴۰۰ گرم</td>
+<td style="text-align: left;"><strong>جنین ترم (Term)</strong>؛ بلوغ کامل ریه با نسبت لسیتین به اسفنگومیلین ($L/S \ge 2$)</td>
+<td style="text-align: left;">آمادگی کامل برای زایمان طبیعی</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**مرز قابلیت حیات (Viability) و ترشح سورفکتانت در هفته ۲۴** — جنینی که قبل از هفته ۲۴ به دنیا بیاید به دلیل عدم ترشح کافی سورفکتانت و عدم تکامل ساختار آلوئولار ریه و نارسایی عروق مغزی، شانس حیات بسیار اندکی دارد. هرگونه انقباضات زودرس در حوالی هفته ۲۴ تا ۳۴ نیازمند بستری اورژانسی، استفاده از داروهای متوقف‌کننده انقباض (توکولیتیک) و تزریق دو دوز **بتامتازون عضلانی به مادر** جهت تسریع بلوغ ریه نوزاد است.
+
+</div>
+</div>
+
+<hr />
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** چرا جنینی که در هفته ۲۲ متولد می‌شود شانس بقا ندارد اما در هفته ۲۸ زنده می‌ماند؟
+**پاسخ و توضیح استاد:** به دلیل اینکه تولید سورفکتانت در آلوئول‌های ریه تا پیش از هفته ۲۴ آغاز نمی‌شود و بدون سورفکتانت ریه نوزاد کلاپس می‌کند؛ در هفته ۲۸ سورفکتانت کافی و شبکه مویرگی لازم برای تبادل گاز تشکیل شده است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_39">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>شنت‌های سه‌گانه جنینی:</strong> مجرای وریدی (میانبر کبد)، سوراخ بیضی (شنت دهلیز راست به چپ)، و مجرای شریانی (شنت شریان ریوی به آئورت).</li>
+<li><strong>شریان‌های نافی:</strong> ۲ شریان نافی خون تیره و بدون اکسیژن را از ایلیاک داخلی جنین به جفت می‌برند.</li>
+<li><strong>فرمول نگل:</strong> روز LMP به علاوه ۷، ماه منهای ۳، سال به علاوه ۱.</li>
+<li><strong>سمع ضربان قلب جنین (FHR):</strong> هفته ۱۰ تا ۱۲ با داپلر سونوگرافی، و هفته ۱۶ تا ۲۰ با گوشی پینارد/فیتوسکوپ معمولی.</li>
+<li><strong>ارتفاع فوندوس رحم در هفته ۲۰:</strong> دقیقاً در موازات ناف مادر.</li>
+<li><strong>سورفکتانت و قابلیت حیات:</strong> شروع از هفته ۲۴ توسط پنوموسیت‌های نوع ۲؛ بلوغ قطعی ریه در هفته ۳۶ با نسبت $L/S \ge ۲$.</li>
+</ol>
+<hr />
+<p><a id="ch_07"></a></p>
+<h1 id="_40">جلسه ۳ (پارت ۲) — شرح حال مامایی، علائم تشخیصی بارداری و روش تحقیق</h1>
+<h2 id="3-2m4a"><strong>فایل‌های منبع:</strong> <code>مادر و نوزاد 3-2.m4a</code> | <strong>مدت زمان تدریس:</strong> ۴۰:۳۵</h2>
+<h2 id="gtpal">۱. ثبت سوابق مامایی و فرمول GTPAL</h2>
+<p>اخذ یک شرح حال دقیق مامایی پایه و اساس مراقبت‌های پریناتال است. در ادبیات پزشکی، برای ثبت فشرده و دقیق سوابق باروری از دو سیستم کدگذاری استفاده می‌شود:</p>
+<h3 id="g-p">الف) سیستم کلاسیک گراوید / پارا (G / P):</h3>
+<ul>
+<li><strong>گراوید (Gravida):</strong> تعداد دفعاتی که زن باردار شده است، بدون توجه به فرجام بارداری و با احتساب بارداری کنونی (خانمی که برای اولین بار باردار است = Primigravida؛ خانمی که چندمین بار باردار است = Multigravida؛ خانمی که هرگز باردار نبوده = Nulligravida).</li>
+<li><strong>پارا (Para):</strong> تعداد بارداری‌هایی که به مرز قابلیت حیات جنین (<strong>هفته ۲۰ بارداری یا وزن ۵۰۰ گرم</strong>) رسیده‌اند، صرف‌نظر از زنده یا مرده به دنیا آمدن نوزاد (دوقلوزایی به عنوان یک رویداد پارا محاسبه می‌شود).</li>
+</ul>
+<h3 id="gtpal_1">ب) سیستم جامع ۵ رقمی GTPAL:</h3>
+<p>برای پرهیز از ابهامات سیستم کلاسیک، فرمول استاندارد <strong>GTPAL</strong> به کار می‌رود:</p>
+<pre class="mermaid">flowchart LR
+    G["G<br/>(Gravidity)<br/>تعداد کل بارداری‌ها"] --- T["T<br/>(Term)<br/>زایمان‌های ترم<br/>($\ge 37$ هفته)"]
+    T --- P["P<br/>(Preterm)<br/>زایمان‌های نارس<br/>(۲۰ تا ۳۶ هفته)"]
+    P --- A["A<br/>(Abortion)<br/>سقط‌های زیر ۲۰ هفته<br/>(خودبه‌خودی/درمانی)"]
+    A --- L["L<br/>(Living)<br/>تعداد فرزندان زنده"]</pre>
+
+<h3 id="_41">سناریوهای بالینی و تمرین‌های آموزشی استاد:</h3>
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+> 📝 **سوال احتمالی امتحان (تحلیل سناریوی بالینی GTPAL):**
+**سناریو:** مادری باردار به درمانگاه مامایی مراجعه کرده است. در شرح حال مشخص می‌شود: یک فرزند دختر متولد هفته ۳۹ در منزل دارد، یک دوقلوی پسر در هفته ۳۴ متولد شده‌اند که هر دو زنده‌اند، یک سابقه سقط جنین در هفته ۱۰ بارداری داشته است و اکنون نیز با سن بارداری ۱۶ هفته باردار است. کد GTPAL این مادر را محاسبه کنید.
+**پاسخ تشریحی:**
+۱. **G (تعداد کل بارداری‌ها):** دختر ترم (۱) + دوقلوها (۱) + سقط (۱) + بارداری کنونی (۱) = **۴**
+۲. **T (زایمان‌های ترم $\ge 37$):** تنها دختر متولد هفته ۳۹ = **۱**
+۳. **P (زایمان‌های نارس بین ۲۰ تا ۳۶):** زایمان دوقلوها در هفته ۳۴ (یک رویداد زایمان) = **۱**
+۴. **A (سقط‌های زیر ۲۰ هفته):** سقط در هفته ۱۰ = **۱**
+۵. **L (تعداد فرزندان زنده در حال حاضر):** دختر ترم (۱) + دوقلوها (۲) = **۳**
+**کد نهایی ثبت در پرونده:** **G4 T1 P1 A1 L3**
+
+</div>
+</div>
+
+<hr />
+<h2 id="_42">۲. دسته‌بندی سه‌گانه علائم و نشانه‌های بارداری</h2>
+<p>تشخیص بارداری بر اساس درجه قطعیت علائم به سه گروه اصلی طبقه‌بندی می‌شود:</p>
+<pre class="mermaid">flowchart TD
+    Signs["علائم و نشانه‌های بارداری"]
+    Signs --> Presumptive["۱. علائم فرضی یا حدسی<br/>(Presumptive Signs)<br/>احساس‌شده توسط مادر"]
+    Signs --> Probable["۲. علائم احتمالی<br/>(Probable Signs)<br/>مشاهده‌شده توسط معاینه‌کننده"]
+    Signs --> Positive["۳. علائم قطعی یا مثبت<br/>(Positive Signs)<br/>مستندات وجود جنین زنده"]</pre>
+
+<h3 id="presumptive-signs">۱. علائم فرضی یا حدسی (Presumptive Signs):</h3>
+<p>علائمی عمدتاً سابجکتیو هستند که توسط خود زن باردار تجربه و بیان می‌شوند. اگرچه قویاً مطرح‌کننده بارداری هستند، اما هیچ‌یک اختصاصی نبوده و می‌توانند ناشی از بیماری‌ها یا استرس‌های دیگر باشند:<br />
+- <strong>قطع قاعدگی (Amenorrhea):</strong> شایع‌ترین علامت اولیه؛ می‌تواند ناشی از استرس، افت وزن شدید یا کیست تخمدان باشد.<br />
+- <strong>تهوع و استفراغ صبحگاهی (Morning Sickness):</strong> از هفته ۴ تا ۶ آغاز شده و در هفته ۱۲ فروکش می‌کند؛ می‌تواند ناشی از مسمومیت غذایی باشد.<br />
+- <strong>تغییرات پستان‌ها:</strong> احساس سنگینی، پرخونی، درد و تیرگی هاله پستان.<br />
+- <strong>تکرر ادرار (Urinary Frequency):</strong> ناشی از فشار رحم در حال رشد روی مثانه در سه ماهه اول.<br />
+- <strong>خستگی مفرط (Fatigue):</strong> ناشی از افزایش هورمون پروژسترون.<br />
+- <strong>کوییکنینگ یا احساس حرکت جنین (Quickening):</strong> حس لرزش یا حرکت بال پروانه در زیر شکم در هفته ۱۶ تا ۲۰؛ ممکن است با گازهای روده‌ای اشتباه گرفته شود.</p>
+<h3 id="probable-signs">۲. علائم احتمالی (Probable Signs):</h3>
+<p>تغییرات فیزیکی آبجکتیوی هستند که توسط پزشک یا ماما در معاینه لگن مشاهده می‌شوند یا بر اساس تست‌های سرولوژی تأیید می‌گردند:<br />
+- <strong>علامت چادویک (Chadwick's Sign):</strong> تغییر رنگ مخاط واژن، دهلیز فرج و سرویکس به <strong>رنگ آبی مایل به ارغوانی/بنفش</strong> ناشی از پرخونی شدید وریدی (از هفته ۶ تا ۸).<br />
+- <strong>علامت گودل (Goodell's Sign):</strong> نرم شدن بارز بافت گردن رحم (سرویکس) در لمس؛ در حالت غیرباردار قوام سرویکس مانند نوک بینی است، اما در بارداری مانند لب‌ها یا نرمه گوش نرم می‌شود (از هفته ۶).<br />
+- <strong>علامت هگار (Hegar's Sign):</strong> نرم شدن و انعطاف‌پذیری فوق‌العاده بخش ایسموس رحم به طوری که در معاینه دو دستی (Bimanual Exam)، تنه رحم و سرویکس جدا از هم احساس می‌شوند (از هفته ۶ تا ۸).<br />
+- <strong>بزرگی پیشرونده شکم و اتساع رحم.</strong><br />
+- <strong>بالوتمنت (Ballottement):</strong> بازگشت فنری جنین شناور در مایع آمنیوتیک به دنبال ضربه ملایم انگشت معاینه‌کننده از طریق واژن به سرویکس (هفته ۱۶ تا ۲۸).<br />
+- <strong>تست مثبت آزمایشگاهی hCG در ادرار یا سرم خون:</strong> هرچند بسیار دقیق است، اما به دلیل امکان مثبت کاذب ناشی از مول هیداتیفورم (بچه خوره) یا کوریوکارسینوما، جزو علائم احتمالی قرار می‌گیرد.</p>
+<h3 id="positive-signs">۳. علائم قطعی یا مثبت (Positive Signs):</h3>
+<p>شواهدی عینی و غیرقابل انکار که حضور مستقیم و مستقل جنین زنده را اثبات می‌کنند و هیچ علت ثانویه دیگری ندارند:<br />
+1. <strong>سمع صدای ضربان قلب جنین (FHR):</strong> توسط داپلر سونوگرافی (هفته ۱۰ تا ۱۲) یا گوشی پینارد (هفته ۱۸ تا ۲۰) توسط اگزمینر.<br />
+2. <strong>لمس و احساس حرکات فعال جنین:</strong> توسط پزشک یا مامای معاینه‌کننده (پس از هفته ۲۰).<br />
+3. <strong>مشاهده بصری جنین یا ساک بارداری:</strong> در سونوگرافی جنینی (مشاهده ساک حاملگی ترانس‌واژینال در هفته ۴.۵ تا ۵ و مشاهده قطب جنینی و ضربان قلب در هفته ۶).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">دسته نشانه‌ها</th>
+<th style="text-align: left;">میزان قطعیت</th>
+<th style="text-align: left;">نمونه‌های بالینی بارز</th>
+<th style="text-align: left;">علت عدم قطعیت مطلق</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>فرضی (Presumptive)</strong></td>
+<td style="text-align: left;">پایین (ذهنی مادر)</td>
+<td style="text-align: left;">آمنوره، تهوع صبحگاهی، خستگی، کوییکنینگ</td>
+<td style="text-align: left;">اختلالات هورمونی، گوارشی و توهم بارداری کاذب</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>احتمالی (Probable)</strong></td>
+<td style="text-align: left;">متوسط تا بالا (عینی)</td>
+<td style="text-align: left;">علائم چادویک، گودل، هگار، تست مثبت hCG، بالوتمنت</td>
+<td style="text-align: left;">تومورهای ترشح‌کننده هورمون، بیماری تروفوبلاستیک</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>قطعی (Positive)</strong></td>
+<td style="text-align: left;">قطعی و ۱۰۰٪ (اختصاصی جنین)</td>
+<td style="text-align: left;">سمع صدای قلب جنین، لمس حرکت جنین توسط درمانگر، سونوگرافی</td>
+<td style="text-align: left;">فاقد هرگونه عامل مخدوش‌کننده؛ اثبات قطعی حیات جنین</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**تفاوت کوییکنینگ با لمس بالینی جنین** — حس کردن حرکت جنین توسط خود مادر (Quickening) یک **علامت فرضی (Presumptive)** است؛ اما لمس و مشاهده حرکات جنین توسط پزشک یا مامای آموزش‌دیده یک **علامت قطعی (Positive)** به شمار می‌آید. همچنین تست مثبت بارداری ادراری در دسته‌بندی علائم قطعی قرار نمی‌گیرد بلکه یک **علامت احتمالی (Probable)** است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_43">۳. مبانی روش تحقیق و نگارش مقالات علمی در سلامت مادر و نوزاد</h2>
+<p>استاد در بخش دوم این جلسه، به آموزش مهارت‌های جستجوی مقالات علمی، تحقیق مبتنی بر شواهد (Evidence-Based Nursing) و پایگاه‌های استنادی علوم پزشکی پرداختند:<br />
+1. <strong>پایگاه اطلاعاتی پاب‌مد (PubMed) و واژگان کنترل‌شده MeSH:</strong><br />
+   - استفاده از سرعنوان‌های موضوعی پزشکی (Medical Subject Headings) جهت یافتن دقیق‌ترین مقالات مرتبط با سلامت باروری و نوزادان.<br />
+2. <strong>تمایز مقالات اصیل پژوهشی (Original Research) از مقالات مروری (Review Articles):</strong><br />
+   - <strong>مقالات اصیل:</strong> مقالاتی که داده‌های دست اول میدانی، کارآزمایی‌های بالینی تصادفی (RCT) یا مطالعات کوهورت و مورد-شاهدی را با ساختار IMRAD (مقدمه، روش‌ها، نتایج، بحث) گزارش می‌کنند.<br />
+   - <strong>مقالات مروری و متاآنالیز:</strong> جمع‌بندی ساختاریافته از ده‌ها مطالعه قبلی برای دستیابی به بالاترین سطح شواهد بالینی جهت نگارش راهنماهای بالینی (Clinical Guidelines).<br />
+3. <strong>انتخاب محورهای پژوهشی اولویت‌دار سلامت مادر و نوزاد:</strong><br />
+   - سلامت روان مادر در بارداری و پس از زایمان، پیامدهای تغذیه نامناسب، کاهش مرگ و میر نوزادان، و راهکارهای ترویج زایمان طبیعی فیزیولوژیک.</p>
+<hr />
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**محدودیت تست‌های هورمونی بارداری** — مثبت شدن تست آزمایشگاهی یا ادراری hCG یک علامت احتمالی (Probable) است و هرگز اثبات‌کننده قطعی جنین زنده داخل رحم نیست؛ زیرا در حاملگی خارج رحمی (EP) یا مول هیداتیفورم نیز مثبت می‌شود. تنها سمع قلب و سونوگرافی علامت قطعی حیات جنین هستند.
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** تفاوت علامت هگار (Hegar) و گودل (Goodell) در معاینه فیزیکی چیست؟
+**پاسخ و توضیح استاد:** علامت گودل مربوط به نرم شدن بافت دهانه رحم (سرویکس) است، در حالی که علامت هگار مربوط به نرم شدن و انعطاف‌پذیری فوق‌العاده بخش ایسموس رحم است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_44">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>فرمول GTPAL:</strong> نماد G (کل بارداری‌ها)، T (زایمان‌های ترم)، P (زایمان‌های نارس ۲۰-۳۶ هفته)، A (سقط‌های زیر ۲۰ هفته)، و L (کودکان زنده).</li>
+<li><strong>سه علامت قطعی بارداری:</strong> سمع قلب جنین توسط درمانگر، لمس حرکات توسط درمانگر، و مشاهده تصویر جنین در اولتراسوند.</li>
+<li><strong>تست بارداری (hCG):</strong> در ردیف علائم <strong>احتمالی (Probable)</strong> قرار دارد، نه علائم قطعی.</li>
+<li><strong>علامت چادویک:</strong> تغییر رنگ بنفش-آبی سرویکس و واژن در اثر پرخونی وریدی.</li>
+<li><strong>علامت گودل:</strong> نرم شدن قوام دهانه رحم (سرویکس).</li>
+<li><strong>علامت هگار:</strong> نرم شدن بارز ناحیه ایسموس رحم در لمس دودستی.</li>
+</ol>
+<hr />
+<p><a id="ch_08"></a></p>
+<h1 id="_45">جلسه ۴ (پارت ۱) — سازگاری‌های فیزیولوژیک بارداری: قلب، عروق، خون و کلیه</h1>
+<h2 id="4-1m4a"><strong>فایل‌های منبع:</strong> <code>مادر و نوزاد 4-1.m4a</code> | <strong>مدت زمان تدریس:</strong> ۱:۰۵:۴۴</h2>
+<h2 id="cardiovascular-adaptations">۱. سازگاری‌های دستگاه قلبی–عروقی در بارداری (Cardiovascular Adaptations)</h2>
+<p>بارداری یکی از شدیدترین بارهای همودینامیک فیزیولوژیک را بر بدن زن تحمیل می‌کند. هدف از این تغییرات، تأمین خون‌رسانی کافی به رحم در حال رشد، تغذیه جنین و محافظت از مادر در برابر افت خونریزی حین زایمان است:</p>
+<pre class="mermaid">flowchart TD
+    Prog["افزایش پروژسترون و ریلاکسین"] --> Vasodil["اتساع عروقی سیستمیک و افت SVR"]
+    Vasodil --> DropBP["کاهش فشار خون در سه ماهه دوم"]
+    DropBP --> Renin["فعال‌سازی سیستم رنین-آنژیوتانسین"]
+    Renin --> Hypervolemia["احتباس سدیم و آب<br/>(افزایش ۴۵٪ حجم پلاسما)"]
+    Hypervolemia --> IncreaseCO["افزایش ۳۰ تا ۵۰٪ برون‌ده قلب (Cardiac Output)"]
+    Hypervolemia --> Hemodilution["همودیلوسیون و کم‌خونی فیزیولوژیک بارداری"]</pre>
+
+<h3 id="cardiac-output">۱. افزایش برون‌ده قلب (Cardiac Output):</h3>
+<ul>
+<li>برون‌ده قلب به میزان <strong>۳۰ تا ۵۰ درصد</strong> افزایش می‌یابد. این افزایش حاصل دو فاکتور است: افزایش حجم ضربه‌ای (Stroke Volume) و افزایش ضربان قلب پایه مادری (افزایش ۱۰ تا ۱۵ ضربه در دقیقه).</li>
+<li>حداکثر افزایش برون‌ده قلب در <strong>هفته ۲۸ تا ۳۲ بارداری</strong> و سپس در حین دردهای زایمان و بلافاصله پس از خروج جفت (به دلیل بازگشت ۵۰۰ سی‌سی خون از رحم به گردش خون عمومی) رخ می‌دهد که خطرناک‌ترین مقطع برای مادران مبتلا به بیماری‌های زمینه‌ای قلبی است.</li>
+</ul>
+<h3 id="hemodilution">۲. تغییرات حجم خون و همودیلوسیون (Hemodilution):</h3>
+<ul>
+<li><strong>حجم پلاسمای خون:</strong> حدود <strong>۴۵ تا ۵۰ درصد</strong> افزایش می‌یابد (نزدیک به ۱۲۰۰ تا ۱۵۰۰ میلی‌لیتر).</li>
+<li><strong>حجم گلبول‌های قرمز (RBC Mass):</strong> تحت تأثیر اریتروپویتین تنها <strong>۲۰ تا ۳۰ درصد</strong> افزایش می‌یابد.</li>
+<li><strong>کم‌خونی فیزیولوژیک یا کاذب بارداری (Physiological Anemia of Pregnancy):</strong> به دلیل اینکه افزایش حجم پلاسما به مراتب بیشتر از افزایش تولید گلبول‌های قرمز است، غلظت خون کاهش یافته و رقیق می‌شود (همودیلوسیون).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">شاخص هماتولوژی</th>
+<th style="text-align: left;">سطح طبیعی در زن غیرباردار</th>
+<th style="text-align: left;">حداقل مجاز فیزیولوژیک در بارداری</th>
+<th style="text-align: left;">تعریف کم‌خونی پاتولوژیک بارداری</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>هموگلوبین (Hemoglobin - Hb)</strong></td>
+<td style="text-align: left;">۱۲ تا ۱۶ گرم در دسی‌لیتر</td>
+<td style="text-align: left;"><strong>۱۱ g/dL</strong> (سه ماهه اول و سوم)<br/><strong>۱۰.۵ g/dL</strong> (سه ماهه دوم)</td>
+<td style="text-align: left;">کمتر از ۱۱ در سه ماهه ۱ و ۳<br/>کمتر از ۱۰.۵ در سه ماهه ۲</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>هماتوکریت (Hematocrit - Hct)</strong></td>
+<td style="text-align: left;">۳۷ تا ۴۷ درصد</td>
+<td style="text-align: left;"><strong>۳۳ درصد</strong> (سه ماهه اول و سوم)<br/><strong>۳۲ درصد</strong> (سه ماهه دوم)</td>
+<td style="text-align: left;">کمتر از ۳۳٪ (سه ماهه ۱ و ۳)<br/>کمتر از ۳۲٪ (سه ماهه ۲)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**افتراق کم‌خونی فیزیولوژیک از فقر آهن حقیقی** — اگر در آزمایش سه ماهه دوم، هموگلوبین مادر باردار ۱۰.۸ g/dL باشد، این یک وضعیت فیزیولوژیک و طبیعی ناشی از رقیق‌شدگی خون (همودیلوسیون) است و نباید به عنوان بیماری تلقی شود. اما اگر هموگلوبین به زیر ۱۰.۵ در سه ماهه دوم یا زیر ۱۱ در سه ماهه اول/سوم برسد، کم‌خونی پاتولوژیک (عمدتاً فقر آهن) است و نیازمند تجویز دوزهای درمانی آهن به جای دوز پروفیلاکسی می‌باشد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="supine-hypotensive-syndrome">۲. سندرم افت فشار خون طاق‌باز (Supine Hypotensive Syndrome)</h2>
+<p>این اختلال بالینی که به <strong>سندرم ورید اجوف تحتانی (Vena Cava Syndrome)</strong> نیز معروف است، ناشی از اثرات مکانیکی رحم باردار بر روی عروق بزرگ شکمی است:</p>
+<pre class="mermaid">flowchart LR
+    Supine["خوابیدن مادر به پشت<br/>(وضعیت Supine)"] --> Compress["فشار مکانیکی رحم سنگین بر ورید اجوف تحتانی (IVC)"]
+    Compress --> DropVenous["افت شدید بازگشت وریدی به دهلیز راست"]
+    DropVenous --> DropCO["سقوط برون‌ده قلبی و افت حاد فشار خون"]
+    DropCO --> Symptoms["سرگیجه، رنگ‌پریدگی، عرق سرد، تهوع مادر"]
+    DropCO --> PlacentaHypoxia["افت خون‌رسانی رحم و زجر جنینی (Fetal Distress)"]
+    Symptoms & PlacentaHypoxia --> Intervention["مداخله فوری: چرخاندن به پهلوی چپ<br/>(Left Lateral Tilt)"]</pre>
+
+<h3 id="_46">تظاهرات بالینی:</h3>
+<ul>
+<li>مادر در حالت خوابیده به پشت ناگهان دچار سرگیجه، سیاهی رفتن چشم‌ها، احساس خفگی، تهوع، رنگ‌پریدگی و تعریق سرد می‌شود.</li>
+<li>در جنین نیز به دلیل افت پرفیوژن جفتی، ضربان قلب کاهش یافته و برادی‌کاردی جنینی رخ می‌دهد.</li>
+</ul>
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**ممنوعیت وضعیت طاق‌باز پس از هفته بیستم بارداری** — هرگز نباید اجازه داد زن باردار پس از نیمه دوم بارداری به پشت بخوابد، حتی روی تخت معاینه یا سونوگرافی. در صورت بروز افت فشار و سرگیجه، **نخستین اقدام درمانی چرخاندن فوری مادر به وضعیت پهلوی چپ (Left Lateral)** یا قرار دادن یک بالش گوه‌ای کوچک در زیر باسن راست است تا زاویه‌ای ۱۵ تا ۳۰ درجه ایجاد شده و رحم از روی ورید اجوف تحتانی کنار برود.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_47">۳. تغییرات فشار خون و وضعیت انعقادی در بارداری</h2>
+<h3 id="arterial-blood-pressure">الف) فشار خون شریانی (Arterial Blood Pressure):</h3>
+<ul>
+<li>در سه ماهه اول بدون تغییر چشمگیر است.</li>
+<li>در <strong>سه ماهه دوم</strong>، فشار خون سیستولیک حدود ۵ تا ۱۰ mmHg و فشار خون دیاستولیک حدود ۱۰ تا ۱۵ mmHg <strong>کاهش می‌یابد</strong> (به علت شل شدن عضلات صاف عروق ناشی از پروژسترون و تشکیل گردش خون رحمی-جفتی با مقاومت بسیار پایین).</li>
+<li>در سه ماهه سوم، فشار خون به تدریج افزایش یافته و به سطح پایه پیش از بارداری بازمی‌گردد.</li>
+<li>هرگونه افزایش فشار خون به $\ge ۱۴۰/۹۰\text{ mmHg}$ بعد از هفته ۲۰ پاتولوژیک بوده و نشانه احتمالی <strong>پره‌اکلامپسی (Preeclampsia)</strong> است.</li>
+</ul>
+<h3 id="hypercoagulable-state">ب) وضعیت فوق انعقادی (Hypercoagulable State):</h3>
+<ul>
+<li>بارداری یک حالت مستعد لخته شدن خون است: فاکتورهای انعقادی فیبرینوژن (فاکتور ۱)، فاکتورهای ۷، ۸، ۹ و ۱۰ افزایش بارزی می‌یابند (فیبرینوژن تا ۵۰٪ افزایش یافته و به ۴۰۰ تا ۶۰۰ mg/dL می‌رسد)، در حالی که فعالیت فیبرینولیتیک کاهش می‌یابد.</li>
+<li><strong>مزیت بیولوژیک:</strong> جلوگیری از خونریزی کشنده در هنگام جدا شدن جفت حین زایمان.</li>
+<li><strong>خطر بالینی:</strong> افزایش ۶ برابری خطر ترومبوز وریدهای عمقی (<strong>DVT</strong>) و آمبولی ریه (<strong>PE</strong>) در دوران بارداری و پس از زایمان.</li>
+</ul>
+<hr />
+<h2 id="renal-adaptations">۴. سازگاری‌های دستگاه ادراری و کلیوی (Renal Adaptations)</h2>
+<p>کلیه‌ها در دوران بارداری موظف به تصفیه بار متابولیک مضاعف مادر و جنین هستند:</p>
+<h3 id="_48">۱. افزایش جریان خون و فیلتراسیون کلیوی:</h3>
+<ul>
+<li>میزان جریان پلاسمای کلیوی (RPF) تا ۸۰٪ و <strong>میزان فیلتراسیون گلومرولی (GFR)</strong> تا <strong>۵۰ درصد</strong> افزایش می‌یابد.</li>
+<li>به دلیل افزایش چشمگیر دفع فیلتراسیون، سطح نرمال <strong>کراتینین سرم (Serum Creatinine)</strong> در بارداری به <strong>۰.۴ تا ۰.۷ mg/dL</strong> کاهش می‌یابد (سطح کراتینین $\ge ۰.۹\text{ mg/dL}$ در بارداری نشانه نارسایی کلیه است). سطح BUN نیز به کمتر از ۱۰ mg/dL کاهش می‌یابد.</li>
+</ul>
+<h3 id="_49">۲. گلوکوزوری و پروتئینوری فیزیولوژیک:</h3>
+<ul>
+<li>به دلیل عبور حجم عظیم گلوکز از گلومرول‌ها، آستانه بازجذب توبولی کلیه اشباع شده و ممکن است <strong>گلوکوزوری خفیف (+۱)</strong> بدون وجود دیابت به صورت گهگاه دیده شود.</li>
+<li>دفع پروتئین ادراری نیز اندکی افزایش می‌یابد؛ دفع پروتئین تا <strong>۳۰۰ میلی‌گرم در ادرار ۲۴ ساعته</strong> نرمال در نظر گرفته می‌شود و مقادیر بالاتر از آن معیاری از پره‌اکلامپسی است.</li>
+</ul>
+<h3 id="hydronephrosis-of-pregnancy">۳. اتساع مجاری ادراری و ریسک عفونت (Hydronephrosis of Pregnancy):</h3>
+<ul>
+<li>تحت تأثیر پروژسترون (شل‌کننده عضلات صاف حالب) و فشار مکانیکی رحم باردار بر روی لبه لگن، حالب‌ها و لگنچه‌های کلیه متسع می‌شوند (<strong>هیدرونفروز و هیدروورتر فیزیولوژیک</strong>).</li>
+<li>این اتساع در <strong>سمت راست</strong> به مراتب بارزتر از سمت چپ است (به دلیل چرخش طبیعی رحم باردار به راست یا دکستروتاسیون و اثر محافظتی کولون سیگموئید بر روی حالب چپ).</li>
+<li>پیامد بالینی: رکود ادرار (Stasis) که زمینه را برای تبدیل باکتریوری بدون علامت به <strong>عفونت حاد ادراری (UTI)</strong> و <strong>پیلونفریت صعودی</strong> فراهم می‌کند.</li>
+</ul>
+<hr />
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** در کدام مقطع از بارداری بیشترین افزایش برون‌ده قلبی مادری رخ می‌دهد و چرا این زمان برای بیماران قلبی پرخطر است؟
+**پاسخ کلیدی:** در هفته **۲۸ تا ۳۲ بارداری** و سپس بلافاصله پس از خروج جفت؛ در این مقطع حجم پلاسما و برون‌ده قلب به حداکثر رسیده و خطر نارسایی احتقانی قلب (Heart Failure) در مادران مبتلا به بیماری‌های قلبی به بالاترین حد می‌رسد.
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** چرا زن باردار ممکن است در آزمایش ادرار قند مثبت (+1) داشته باشد در حالی که مبتلا به دیابت نیست؟
+**پاسخ و توضیح استاد:** به دلیل افزایش ۵۰ درصدی فیلتراسیون گلومرولی (GFR)، حجم گلوکز عبوری از توبول‌ها از آستانه بازجذب کلیه فراتر رفته و گلوکوزوری خفیف فیزیولوژیک رخ می‌دهد که در صورت طبیعی بودن قند خون فاقد ارزش بیماری‌زایی است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_50">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>کم‌خونی فیزیولوژیک بارداری:</strong> نتیجه همودیلوسیون (افزایش ۵۰٪ پلاسما در برابر افزایش ۲۰٪ تا ۳۰٪ گلبول‌های قرمز)؛ حداقل مجاز Hb برابر ۱۱ در سه ماهه اول/سوم و ۱۰.۵ در سه ماهه دوم است.</li>
+<li><strong>برون‌ده قلب:</strong> افزایش ۳۰ تا ۵۰ درصدی که در هفته ۲۸ تا ۳۲ و بلافاصله پس از زایمان به اوج می‌رسد.</li>
+<li><strong>سندرم ورید اجوف تحتانی:</strong> ناشی از فشار رحم بر IVC در پوزیشن طاق‌باز؛ مداخله انتخابی چرخاندن به پهلوی چپ است.</li>
+<li><strong>حالت هایپرکواگولابل:</strong> افزایش فیبرینوژن و فاکتورهای انعقادی جهت پیشگیری از خونریزی زایمانی همراه با ریسک بالای DVT.</li>
+<li><strong>کراتینین نرمال بارداری:</strong> ۰.۴ تا ۰.۷ mg/dL (مقادیر بالای ۰.۹ غیرطبیعی است).</li>
+<li><strong>هیدرونفروز فیزیولوژیک سمت راست:</strong> ناشی از اثر پروژسترون و دکستروتاسیون رحم بر روی حالب راست و تشدید خطر پیلونفریت.</li>
+</ol>
+<hr />
+<p><a id="ch_09"></a></p>
+<h1 id="_51">جلسه ۴ (پارت ۲) — سازگاری‌های تنفسی، گوارشی، پوستی و غدد بارداری</h1>
+<h2 id="4-2m4a"><strong>فایل‌های منبع:</strong> <code>مادر و نوزاد 4-2.m4a</code> | <strong>مدت زمان تدریس:</strong> ۳۰:۴۷</h2>
+<h2 id="respiratory-adaptations">۱. سازگاری‌های دستگاه تنفسی در بارداری (Respiratory Adaptations)</h2>
+<p>تغییرات سیستم تنفسی به گونه‌ای طراحی شده‌اند که اکسیژن‌رسانی به جنین و جفت را به حداکثر رسانده و دفع دی‌اکسید کربن را تسهیل نمایند:</p>
+<pre class="mermaid">flowchart TD
+    Prog["پروژسترون"] -- "تحریک مستقیم مرکز تنفس" --> Hypervent["هیپرونتیلاسیون فیزیولوژیک<br/>(افزایش ۴۰٪ حجم جاری - Tidal Volume)"]
+    Hypervent --> WashCO2["دفع بیشتر $CO_2$ و افت $PaCO_2$ به ۲۷-۳۲ mmHg"]
+    WashCO2 --> RespAlk["آلکالوز تنفسی جبران‌شده خفیف<br/>(تسهیل انتقال $CO_2$ جنین به مادر)"]
+    Uterus["رشد رحم به سمت بالا"] --> PushDiaphragm["بالا رفتن ۴ سانتی‌متری دیافراگم"]
+    PushDiaphragm --> FlareRibs["اتساع عرضی قفسه سینه<br/>(افزایش زاویه ساب‌کوستال از ۶۸ به ۱۰۳ درجه)"]
+    Estrogen["استروژن بالا"] --> Congestion["احتقان و پرخونی مویرگی مخاط بینی و حلق<br/>(گرفتگی بینی و اپیستاکسی)"]</pre>
+
+<h3 id="_52">۱. مکانیک تنفس و تغییرات حجم‌های ریوی:</h3>
+<ul>
+<li><strong>بالا رفتن دیافراگم:</strong> دیافراگم حدود ۴ سانتی‌متر به سمت قفسه سینه رانده می‌شود؛ اما برای جبران این کاهش فضا، دنده‌ها به سمت طرفین متسع شده و زاویه زیردنده‌ای (Subcostal Angle) از حدود ۶۸ درجه به <strong>۱۰۳ درجه</strong> افزایش می‌یابد. تنفس زن باردار از الگوی شکمی به <strong>الگوی سینه‌ای (Thoracic Breathing)</strong> تغییر می‌کند.</li>
+<li><strong>حجم جاری (Tidal Volume):</strong> حجم هوای ورودی در هر دم عادی به میزان <strong>۳۰ تا ۴۰ درصد افزایش می‌یابد</strong>، در حالی که تعداد تنفس در دقیقه (Respiratory Rate) تقریباً بدون تغییر یا با افزایش بسیار اندک باقی می‌ماند.</li>
+</ul>
+<h3 id="_53">۲. هیپرونتیلاسیون فیزیولوژیک بارداری:</h3>
+<ul>
+<li>هورمون پروژسترون حساسیت مرکز تنفس در بصل‌النخاع را نسبت به دی‌اکسید کربن افزایش می‌دهد. در نتیجه، مادر دچار تنفس عمیق‌تر و تهویه ریوی بیشتر می‌شود.</li>
+<li>این امر باعث شسته شدن $CO_2$ و افت سطح $PaCO_2$ سرخرگی از ۴۰ به حدود <strong>۲۷ تا ۳۲ mmHg</strong> می‌گردد که یک <strong>آلکالوز تنفسی جبران‌شده خفیف</strong> ($pH = ۷.۴۰-۷.۴۵$) با دفع کلیوی بی‌کربنات ایجاد می‌کند. شیب غلظت بالای دی‌اکسید کربن، انتقال گازهای زاید از جنین به مادر را تضمین می‌سازد.</li>
+</ul>
+<h3 id="_54">۳. تغییرات عروقی مخاط تنفسی:</h3>
+<ul>
+<li>استروژن بالا سبب پرخونی، احتقان و ادم بافت‌های مخاطی نازوفارنکس می‌شود که علائم شایعی مانند <strong>گرفتگی بینی (Nasal Congestion)</strong>، تغییر صدا و خون‌دماغ خفیف (<strong>اپیستاکسی - Epistaxis</strong>) را بدون وجود عفونت یا سرماخوردگی ایجاد می‌کند.</li>
+</ul>
+<hr />
+<h2 id="gastrointestinal-adaptations">۲. سازگاری‌های دستگاه گوارش در بارداری (Gastrointestinal Adaptations)</h2>
+<p>تغییرات گوارشی تحت تأثیر ترکیبی از عوامل مکانیکی (فشار رحم) و هورمونی (به‌ویژه اثر شل‌کنندگی عضلات صاف توسط پروژسترون) رخ می‌دهند:</p>
+<pre class="mermaid">flowchart LR
+    Prog["اثر شل‌کنندگی پروژسترون"] --> LES["شل شدن اسفنکتر تحتانی مری (LES)"]
+    Prog --> Motility["کاهش حرکات دودی و کندی تخلیه روده"]
+    Prog --> Gall["کندی تخلیه و رکود صفرا در کیسه صفرا"]
+    LES --> Pyrosis["ریفلاکس اسید و سوزش سر دل (Pyrosis)"]
+    Motility --> WaterAbs["افزایش بازجذب آب در کولون"]
+    WaterAbs --> Constipation["یبوست شدید (Constipation) و هموروئید"]
+    Gall --> Cholestasis["کلستاز بارداری و خطر سنگ صفرا"]</pre>
+
+<h3 id="_55">۱. دهان و دندان‌ها:</h3>
+<ul>
+<li><strong>پتیالیسم (Ptyalism):</strong> ترشح بیش از حد بزاق که اغلب با تهوع همراه است.</li>
+<li><strong>اپولیس بارداری (Epulis of Pregnancy):</strong> تورم و هایپرتروفی موضعی لثه‌ها ناشی از استروژن؛ لثه‌ها حساس شده و در هنگام مسواک زدن به راحتی دچار خونریزی می‌شوند.</li>
+</ul>
+<h3 id="-pyrosis-heartburn">۲. مری و معده (سوزش سر دل - Pyrosis / Heartburn):</h3>
+<ul>
+<li>پروژسترون تونوس اسفنکتر تحتانی مری (Lower Esophageal Sphincter - LES) را تضعیف می‌کند. همزمان، افزایش فشار داخل شکمی ناشی از رحم بزرگ، سبب پس‌زدن اسید معده به مری می‌گردد.</li>
+<li><strong>آموزش‌های مداخله‌ای پرستار برای رفلاکس:</strong></li>
+<li>مصرف وعده‌های غذایی کم‌حجم و مکرر (۵ تا ۶ وعده در روز).</li>
+<li>اجتناب از دراز کشیدن بلافاصله پس از غذا خوردن (حداقل فاصله ۲ ساعته).</li>
+<li>پرهیز از غذاهای پرچرب، تند، سرخ‌کردنی، قهوه، شکلات و مرکبات.</li>
+<li>بالا بردن سر تخت به میزان ۱۵ سانتی‌متر در هنگام خواب.</li>
+</ul>
+<h3 id="constipation">۳. روده بزرگ و یبوست (Constipation):</h3>
+<ul>
+<li>پروژسترون حرکات دودی (Peristalsis) روده را به شدت کند می‌سازد. کاهش تحرک باعث ماندگاری بیشتر مدفوع در روده و بازجذب بیش از حد آب و خشکی مدفوع می‌شود.</li>
+<li>مصرف قرص‌های مکمل آهن نیز یبوست را تشدید می‌کند.</li>
+<li>فشار عروقی رحم باردار بر روی وریدهای ایلیاک همراه با زور زدن در هنگام اجابت مزاج، سبب پیدایش یا تشدید <strong>بواسیر یا هموروئید (Hemorrhoids)</strong> دردناک در ناحیه مقعد می‌گردد.</li>
+<li><strong>مداخلات پرستاری:</strong> افزایش مصرف فیبرهای رژیمی (میوه، سبزیجات، سبوس)، نوشیدن حداقل ۸ تا ۱۰ لیوان آب در روز و فعالیت بدنی منظم (پیاده‌روی).</li>
+</ul>
+<h3 id="_56">۴. کبد و کیسه صفرا (کلستاز بارداری):</h3>
+<ul>
+<li>پروژسترون انقباض کیسه صفرا را مهار کرده و زمان تخلیه آن را طولانی می‌سازد. این رکود صفراوی (Biliary Stasis) سبب اشباع کلسترول و تشکیل <strong>سنگ‌های صفراوی (Gallstones)</strong> می‌شود.</li>
+<li>در موارد شدید، <strong>کلستاز داخل کبدی بارداری (Intrahepatic Cholestasis of Pregnancy - ICP)</strong> با خارش شدید و ژنرالیزه (به‌ویژه در کف دست‌ها و پاها بدون ضایعه پوستی) رخ می‌دهد که به دلیل اسیدهای صفراوی بالا، خطر مرگ داخل رحمی جنین را افزایش می‌دهد.</li>
+</ul>
+<hr />
+<h2 id="integumentary-system">۳. تغییرات پوستی و ضمائم در بارداری (Integumentary System)</h2>
+<p>تحت تأثیر هورمون محرک ملانوسیت‌ها (MSH)، استروژن و پروژسترون، هیپرپیگمانتاسیون گسترده در پوست مادر ایجاد می‌شود:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ضایعه یا تغییر پوستی</th>
+<th style="text-align: left;">توصیف آناتومیک و بالینی</th>
+<th style="text-align: left;">پاتوفیزیولوژی و سرنوشت پس از زایمان</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>خط سیاه (Linea Nigra)</strong></td>
+<td style="text-align: left;">خط تیره قهوه‌ای مایل به سیاه در خط وسط شکم که از سمفیز پوبیس تا ناف یا گزیفوئید امتداد می‌یابد</td>
+<td style="text-align: left;">ناشی از تحریک ملانوسیت‌ها؛ معمولاً چند ماه پس از زایمان با افت هورمون‌ها محو می‌شود</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ماسک بارداری یا کلوآسما (Chloasma / Melasma)</strong></td>
+<td style="text-align: left;">لکه‌های قهوه‌ای نامتقارن بر روی پیشانی، گونه‌ها و پل بینی (الگوی پروانه‌ای)</td>
+<td style="text-align: left;">ناشی از اثر توأم استروژن و نور خورشید؛ آموزش استفاده منظم از کرم‌های ضدآفتاب فیزیکی؛ پس از زایمان کم‌رنگ می‌شود</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ترک‌های بارداری (Striae Gravidarum)</strong></td>
+<td style="text-align: left;">خطوط موازی قرمز، صورتی یا بنفش بر روی پوست شکم، ران‌ها، باسن و پستان‌ها</td>
+<td style="text-align: left;">کشش مکانیکی پوست همراه با اثر هورمون‌های کورتیکواستروئیدی و پارگی رشته‌های کلاژن درم؛ پس از زایمان به خطوط نقره‌ای سفید (Striae Albicantes) تبدیل شده و هرگز به طور کامل محو نمی‌شوند</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>آنژیوم عنکبوتی و اریتم کف دست (Vascular Spiders &amp; Palmar Erythema)</strong></td>
+<td style="text-align: left;">لکه‌های عروقی ستاره‌ای قرمز روی بالاتنه و قرمزی منتشر پوست کف دست‌ها</td>
+<td style="text-align: left;">ناشی از اتساع مویرگی تحت تأثیر استروژن بالا؛ فاقد ارزش پاتولوژیک بوده و پس از زایمان برطرف می‌گردد</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="endocrine-system">۴. سازگاری‌های غدد درون‌ریز (Endocrine System)</h2>
+<ol>
+<li><strong>غده تیروئید (Thyroid Gland):</strong></li>
+<li>غده تیروئید به طور یکنواخت به میزان ۱۰ تا ۱۵ درصد بزرگ می‌شود (<strong>گواتر فیزیولوژیک بارداری</strong>).</li>
+<li>تولید هورمون‌های تیروئید ($T_3$ و $T_4$) به دلیل افزایش ترشح هورمون TBG (گلوبولین متصل‌شونده به تیروکسین) از کبد تحت تأثیر استروژن، افزایش می‌یابد؛ اما سطح <strong>هورمون‌های آزاد ($Free\ T_3, Free\ T_4$)</strong> در محدوده نرمال حفظ می‌شود و مادر در حالت یوتیروئید (Euthyroid) باقی می‌ماند.</li>
+<li><strong>غده هیپوفیز (Pituitary):</strong></li>
+<li>ترشح <strong>پرولاکتین (Prolactin)</strong> تا ۱۰ برابر افزایش می‌یابد تا پستان‌ها را برای شیردهی آماده سازد؛ با این حال، به دلیل اثر مهاری سطح بالای پروژسترون و استروژن جفتی بر بافت پستان، ترشح واقعی شیر تا زمان خروج جفت در زایمان مسدود می‌ماند.</li>
+<li>ترشح <strong>اکسی‌توسین (Oxytocin)</strong> از هیپوفیز خلفی برای انقباضات رحم و رفلکس خروج شیر (Let-down Reflex).</li>
+</ol>
+<hr />
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**آلکالوز تنفسی جبران‌شده در بارداری** — تحریک مرکز تنفس توسط پروژسترون سبب هایپرونتیلاسیون و کاهش $PaCO_2$ به ۲۷ تا ۳۲ mmHg می‌شود تا شیب انتشار دی‌اکسید کربن از خون جنین به خون مادر را به حداکثر برساند.
+
+</div>
+</div>
+
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** دو مکانیسم فیزیولوژیک اصلی در ایجاد یبوست و هموروئید دوران بارداری چیست؟
+**پاسخ کلیدی:** ۱. اثر شل‌کنندگی پروژسترون بر عضلات صاف دستگاه گوارش و کندی حرکات دودی و افزایش بازجذب آب ۲. فشار مکانیکی رحم بزرگ بر وریدهای لگنی و ایجاد رکود وریدی در شبکه عروقی رکتوم.
+
+</div>
+</div>
+
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**خارش شدید بدون ضایعه پوستی و کلستاز بارداری** — خارش ژنرالیزه به‌ویژه در کف دست‌ها و پاها در سه ماهه سوم، زنگ خطری جدی برای کلستاز داخل کبدی بارداری (ICP) است که به دلیل افزایش اسیدهای صفراوی خطر مرگ ناگهانی جنین را به دنبال دارد و نیازمند بررسی فوری بیوشیمی کبد و تست‌های پایش جنین است.
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** آیا لکه‌های کلوآسما (ماسک بارداری) روی صورت پس از زایمان خودبه‌خود برطرف می‌شوند؟
+**پاسخ و توضیح استاد:** بله، با افت استروژن پس از زایمان لکه‌ها به تدریج کم‌رنگ می‌شوند؛ اما پرهیز از تابش مستقیم آفتاب و استفاده از ضدآفتاب‌های فیزیکی از ماندگاری یا تیرگی بیشتر آن‌ها جلوگیری می‌کند.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_57">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>آلکالوز تنفسی جبران‌شده در بارداری:</strong> کاهش $PaCO_2$ به ۲۷ تا ۳۲ mmHg جهت تسهیل شیب انتشار دی‌اکسید کربن از جنین به مادر.</li>
+<li><strong>زاویه زیردنده‌ای (Subcostal Angle):</strong> اتساع از ۶۸ درجه به ۱۰۳ درجه به دلیل بالا رفتن دیافراگم.</li>
+<li><strong>پروژسترون و عوارض گوارشی:</strong> شل شدن اسفنکتر مری (سوزش سر دل)، کاهش حرکات روده (یبوست)، و رکود صفراوی (سنگ کیسه صفرا و خارش کلستاز).</li>
+<li><strong>تغییرات پیگمانتاسیون پوست:</strong> خط سیاه (Linea Nigra)، ماسک بارداری (Melasma)، و استریا گراویداروم (ترک‌های ناشی از پارگی کلاژن درم).</li>
+<li><strong>گواتر فیزیولوژیک بارداری:</strong> بزرگی خفیف و متقارن غده تیروئید به همراه طبیعی بودن سطوح تیروکسین آزاد ($Free\ T_4$).</li>
+</ol>
+<hr />
+<p><a id="ch_10"></a></p>
+<h1 id="_58">جلسه ۵ (پارت ۱) — تغذیه دوران بارداری، مکمل‌ها و پدیده پیکا</h1>
+<h2 id="m4a"><strong>فایل‌های منبع:</strong> <code>مادر و نوزاد ۱۰ آبان ۱.m4a</code> | <strong>مدت زمان تدریس:</strong> ۱:۰۳:۱۰</h2>
+<h2 id="maternal-weight-gain">۱. الگوی استاندارد افزایش وزن در دوران بارداری (Maternal Weight Gain)</h2>
+<p>افزایش وزن مادر در دوران بارداری شاخصی کلیدی از رشد جنین و کفایت تغذیه‌ای است. الگوی وزن‌گیری مجاز به صورت فردی و بر اساس <strong>شاخص توده بدنی (BMI)</strong> پیش از بارداری تعیین می‌شود:</p>
+<p>$$\text{BMI} = \frac{\text{وزن (کیلوگرم)}}{[\text{قد (متر)}]^۲}$$</p>
+<pre class="mermaid">flowchart TD
+    BMI["ارزیابی BMI پیش از بارداری"]
+    BMI --> UW["کم‌وزن (Underweight)<br/>BMI < 18.5"]
+    BMI --> NW["وزن نرمال (Normal Weight)<br/>BMI 18.5 - 24.9"]
+    BMI --> OW["اضافه وزن (Overweight)<br/>BMI 25 - 29.9"]
+    BMI --> OB["چاق (Obese)<br/>BMI $\ge 30$"]
+    UW --> G_UW["افزایش وزن مجاز:<br/>۱۲.۵ تا ۱۸ کیلوگرم"]
+    NW --> G_NW["افزایش وزن مجاز:<br/>۱۱.۵ تا ۱۶ کیلوگرم"]
+    OW --> G_OW["افزایش وزن مجاز:<br/>۷ تا ۱۱.۵ کیلوگرم"]
+    OB --> G_OB["افزایش وزن مجاز:<br/>۵ تا ۹ کیلوگرم"]</pre>
+
+<h3 id="_59">توزیع زمانی وزن‌گیری در یک زن با وزن نرمال (۱۱.۵ تا ۱۶ کیلوگرم):</h3>
+<ul>
+<li><strong>سه ماهه اول:</strong> افزایش کلی بین <strong>۱ تا ۲ کیلوگرم</strong> (به دلیل تهوع و عدم نیاز جنین به کالری اضافه).</li>
+<li><strong>سه ماهه دوم و سوم:</strong> افزایش مداوم و یکنواخت حدود <strong>۰.۴ تا ۰.۵ کیلوگرم (نزدیک به ۴۰۰ تا ۵۰۰ گرم) در هر هفته</strong>.</li>
+</ul>
+<h3 id="_60">توزیع آناتومیک وزن اضافه شده در پایان بارداری:</h3>
+<p>وزن اضافه شده در پایان بارداری (حدود ۱۲ کیلوگرم) به طور دقیق متشکل از اجزای زیر است:<br />
+- جنین: حدود ۳۰۰۰ تا ۳۴۰۰ گرم<br />
+- جفت: حدود ۵۰۰ تا ۶۵۰ گرم<br />
+- مایع آمنیوتیک: حدود ۸۰۰ گرم<br />
+- افزایش حجم رحم: حدود ۱۰۰۰ گرم<br />
+- افزایش بافت پستان‌ها: حدود ۴۰۰ تا ۵۰۰ گرم<br />
+- افزایش حجم خون مادر: حدود ۱۵۰۰ گرم<br />
+- افزایش مایعات بین‌بافتی (ادم فیزیولوژیک): حدود ۲۰۰۰ گرم<br />
+- ذخایر چربی و پروتئین مادری: حدود ۳۰۰۰ تا ۳۵۰۰ گرم</p>
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**وزن‌گیری ناگهانی و پره‌اکلامپسی** — افزایش وزن ناگهانی بیش از **۱ کیلوگرم در یک هفته** در سه ماهه دوم یا سوم، هرگز ناشی از افزایش توده چربی یا رشد جنین نیست؛ بلکه نشانه بارز **احتباس مایعات و ادم مخفی پاتولوژیک** ناشی از وازواسپاسم کلیوی و آسیب اندوتلیال در **پره‌اکلامپسی (Preeclampsia)** است و نیازمند چک فوری فشار خون و آزمایش پروتئین ادرار می‌باشد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_61">۲. نیازهای انرژی و درشت‌مغذی‌ها در بارداری</h2>
+<ol>
+<li><strong>انرژی و کالری روزانه:</strong></li>
+<li><strong>سه ماهه اول:</strong> هیچ کالری اضافه‌ای نسبت به رژیم پایه پیش از بارداری مورد نیاز نیست.</li>
+<li><strong>سه ماهه دوم:</strong> افزودن <strong>۳۴۰ کیلوکالری در روز</strong> به رژیم غذایی پایه.</li>
+<li><strong>سه ماهه سوم:</strong> افزودن <strong>۴۵۲ کیلوکالری در روز</strong> به رژیم غذایی پایه (معادل یک میان‌وعده سالم شامل یک کاسه ماست، یک مشت مغزیجات و یک میوه).</li>
+<li><strong>پروتئین (Protein):</strong></li>
+<li>افزودن روزانه <strong>۲۵ گرم پروتئین اضافه</strong> (مجموعاً حدود ۷۰ تا ۷۵ گرم پروتئین در روز) جهت سنتز بافت‌های جنینی، تکامل جفت، آنزیم‌ها و افزایش هموگلوبین و پروتئین‌های پلاسما.</li>
+</ol>
+<hr />
+<h2 id="essential-supplements">۳. مکمل‌های ضروری دوران بارداری (Essential Supplements)</h2>
+<pre class="mermaid">flowchart LR
+    Folic["اسید فولیک (Folic Acid)<br/>۴۰۰ میکروگرم روزانه<br/>(پیش از لقاح تا هفته ۱۲)"] --> NTD["پیشگیری قطعی از<br/>نقایص لوله عصبی (NTD)"]
+    Iron["آهن عنصری (Iron)<br/>۳۰ میلی‌گرم روزانه<br/>(از پایان ماه چهارم/هفته ۱۶)"] --> Anemia["پیشگیری از کم‌خونی<br/>و تأمین ذخایر نوزاد"]
+    Calcium["کلسیم (Calcium)<br/>۱۰۰۰ میلی‌گرم روزانه"] --> Bone["اسکلت جنین و<br/>پیشگیری از پوکی استخوان مادر"]</pre>
+
+<h3 id="folic-acid-b_9">۱. اسید فولیک (Folic Acid / ویتامین $B_9$):</h3>
+<ul>
+<li><strong>نقش بیولوژیک:</strong> ضروری برای تقسیم سلولی، تکثیر DNA و بسته شدن لوله عصبی جنین در روزهای ۲۱ تا ۲۸ پس از لقاح (زمانی که مادر حتی ممکن است از بارداری خود بی‌خبر باشد).</li>
+<li><strong>دوز استاندارد پیشگیری:</strong> <strong>۴۰۰ میکروگرم (۰.۴ میلی‌گرم) در روز</strong> برای تمام زنان در سن باروری، از حداقل <strong>یک ماه پیش از لقاح</strong> تا پایان سه ماهه اول.</li>
+<li><strong>دوز اختصاصی در افراد پرخطر:</strong> در زنانی که سابقه تولد فرزند مبتلا به نقایص لوله عصبی (اسپینا بیفیدا یا آنانسفالی) دارند، مصرف داروهای ضدتشنج (والپروات سدیم) یا دیابت کنترل‌نشده، دوز اسید فولیک باید به <strong>۴ میلی‌گرم (۱۰ برابر)</strong> افزایش یابد.</li>
+</ul>
+<h3 id="elemental-iron">۲. مکمل آهن (Elemental Iron):</h3>
+<ul>
+<li><strong>دوز استاندارد پیشگیری:</strong> <strong>۳۰ میلی‌گرم آهن عنصری در روز</strong> (معادل ۱۵۰ میلی‌گرم فروس سولفات) که از پایان ماه چهارم (هفته ۱۶) تا حداقل ۳ ماه پس از زایمان تجویز می‌شود.</li>
+<li>در صورت اثبات کم‌خونی فقر آهن، دوز درمانی به ۶۰ تا ۱۲۰ میلی‌گرم آهن عنصری افزایش می‌یابد.</li>
+<li><strong>اصول صحیح مصرف آهن (آموزش‌های حیاتی پرستاری):</strong></li>
+<li>آهن باید ترجیحاً با معده خالی یا همراه با منابع <strong>ویتامین C (آب پرتقال تازه یا لیموترش)</strong> مصرف شود تا جذب روده‌ای آن چند برابر گردد.</li>
+<li><strong>پرهیز از مصرف همزمان:</strong> چای، قهوه، لبنیات (شیر، ماست، پنیر)، آنتی‌اسیدها، تخم‌مرغ و سبوس غلات به دلیل داشتن تانن، کلسیم و فیتات، جذب آهن را مهار می‌کنند؛ باید حداقل ۲ ساعت فاصله زمانی رعایت گردد.</li>
+<li>به بیمار آموزش داده شود که تیرگی یا سیاهی رنگ مدفوع یک پیامد کاملاً طبیعی و بی‌خطر مصرف آهن است و نشانه خونریزی گوارشی نیست.</li>
+</ul>
+<hr />
+<h2 id="pica">۴. پدیده پیکا یا هرزه‌خواری (Pica) در بارداری</h2>
+<p>پیکا تمایل شدید، غیرقابل‌کنترل و مداوم به بلعیدن موادی است که اساساً خوراکی نبوده و فاقد هرگونه ارزش تغذیه‌ای هستند.</p>
+<h3 id="_62">انواع شایع پیکا:</h3>
+<ul>
+<li><strong>ژئوفاژی (Geophagia):</strong> تمایل به خوردن خاک، گل، خاک رس، شن، و به ویژه در فرهنگ بومی ما <strong>مهر نماز و دیوارهای گچی</strong>.</li>
+<li><strong>پاگوفاژی (Pagophagia):</strong> خوردن مداوم و مقادیر زیاد یخ یا برفک یخچال.</li>
+<li><strong>آمیلوفاژی (Amylophagia):</strong> خوردن نشاسته خام، پودر رختشویی و جوش شیرین.</li>
+</ul>
+<pre class="mermaid">flowchart TD
+    Deficiency["کم‌خونی شدید فقر آهن<br/>(Severe Iron Deficiency)"] <--> Pica["میل شدید به پیکا<br/>(خاک‌خواری، مهرخواری، یخ‌خواری)"]
+    Pica --> Tox["عوارض: مسمومیت با سرب،<br/>انسداد روده، کمبود وزن جنین"]
+    Deficiency --> Treatment["درمان قطعی: اصلاح فقر آهن<br/>با مکمل‌های آهن و مشاوره"]</pre>
+
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**ارتباط فیزیولوژیک پیکا با کم‌خونی فقر آهن** — هرزه‌خواری و تمایل به بوی خاک نم‌خورده و خوردن مهر نماز در زنان باردار یک اختلال روانی صرف یا خرافه نیست، بلکه پاسخ بیولوژیک و زنگ خطری کلاسیک از **کمبود شدید ذخایر آهن و فریتین خون** است. با شناسایی پیکا، پزشک یا ماما باید بلافاصله آزمایش CBC و فریتین سرم درخواست کرده و درمان کم‌خونی فقر آهن را آغاز نمایند؛ با اصلاح سطح آهن خون، تمایل به پیکا به سرعت و به طور کامل محو می‌شود.
+
+</div>
+</div>
+
+<hr />
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** دوز اسید فولیک در بارداری‌های عادی چقدر است و در زنانی با سابقه فرزند قبلی مبتلا به نقایص لوله عصبی (NTD) چه میزان افزایش می‌یابد؟
+**پاسخ کلیدی:** در بارداری عادی **۴۰۰ میکروگرم (۰.۴ میلی‌گرم)** روزانه از یک ماه قبل از لقاح؛ و در سابقه قبلی فرزند مبتلا به NTD به میزان ۱۰ برابر یعنی **۴ میلی‌گرم (۴۰۰۰ میکروگرم)** در روز تجویز می‌گردد.
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** اگر مادری تمایل شدید به خوردن مهر نماز یا بوی خاک نم‌خورده داشته باشد، چه آزمایشی باید فوراً انجام شود؟
+**پاسخ و توضیح استاد:** آزمایش شمارش کامل خون (CBC) و اندازه‌گیری سطح فریتین سرم؛ زیرا این رفتار (پیکا) علامت بالینی کمبود شدید آهن است و با تجویز مکمل آهن برطرف می‌شود.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_63">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>وزن‌گیری استاندارد:</strong> برای زن با BMI نرمال برابر ۱۱.۵ تا ۱۶ کیلوگرم (۱ تا ۲ کیلو در سه ماهه اول، و نیم کیلوگرم در هفته در سه ماهه دوم و سوم).</li>
+<li><strong>کالری اضافی:</strong> سه ماهه اول صفر، سه ماهه دوم ۳۴۰ کیلوکالری، و سه ماهه سوم ۴۵۲ کیلوکالری در روز.</li>
+<li><strong>اسید فولیک:</strong> ۴۰۰ میکروگرم برای همه از قبل از لقاح؛ و ۴ میلی‌گرم (۴۰۰۰ میکروگرم) برای مادران با سابقه فرزند مبتلا به نقص لوله عصبی (NTD).</li>
+<li><strong>زمان شروع آهن:</strong> از پایان ماه چهارم (هفته ۱۶) تا ۳ ماه پس از زایمان؛ همراه با ویتامین C مصرف شود و با کلسیم و چای همزمان نباشد.</li>
+<li><strong>پیکا (خاک‌خواری و مهرخواری):</strong> علامت پاتوفیزیولوژیک کم‌خونی فقر آهن شدید که با تجویز آهن درمان می‌شود.</li>
+</ol>
+<hr />
+<p><a id="ch_11"></a></p>
+<h1 id="_64">جلسه ۵ (پارت ۲) — بهداشت روانی در بارداری و طیف اختلالات خلقی پس از زایمان</h1>
+<h2 id="5-2m4a"><strong>فایل‌های منبع:</strong> <code>مادر و نوزاد 5-2.m4a</code> | <strong>مدت زمان تدریس:</strong> ۱:۲۳:۱۱</h2>
+<h2 id="psychological-adaptations">۱. انطباق روان‌شناختی مادر در سه ماهه‌های بارداری (Psychological Adaptations)</h2>
+<p>فرآیند بارداری تنها یک رویداد بیولوژیک نیست، بلکه گذاری روان‌شناختی است که طی آن ساختار روانی زن دگرگون شده و آماده پذیرش هویت مادری می‌شود (وظایف تکاملی بر اساس مدل روبین - Reva Rubin):</p>
+<pre class="mermaid">flowchart TD
+    Tri1["سه ماهه اول بارداری"] --> Ambiv["دوگانگی احساسی (Ambivalence)<br/>تمرکز کامل بر خود و تغییرات بدنی"]
+    Tri2["سه ماهه دوم بارداری"] --> Sep["پذیرش جنین به عنوان موجودی مستقل<br/>با شروع حس حرکات (Quickening)"]
+    Tri3["سه ماهه سوم بارداری"] --> Nest["آشیانه‌سازی (Nesting)<br/>اضطراب زایمان و آمادگی برای جدایی"]</pre>
+
+<h3 id="-ambivalence">۱. سه ماهه اول (احساس دوگانگی - Ambivalence):</h3>
+<ul>
+<li>حتی در بارداری‌هایی که با برنامه‌ریزی دقیق و اشتیاق قبلی رخ داده‌اند، احساس تعارض، تردید و دوگانگی هیجانی («آیا زمان مناسبی بود؟»، «آیا من توانایی اداره فرزند را دارم؟») کاملاً شایع و طبیعی است. تمرکز روانی مادر عمدتاً بر «خود»، احساس تهوع، خستگی و سازگاری با تغییرات فیزیکی است.</li>
+</ul>
+<h3 id="_65">۲. سه ماهه دوم (پذیرش جنین به عنوان هویتی مستقل):</h3>
+<ul>
+<li>با قطع تهوع و افزایش انرژی، و به‌ویژه با پدیده <strong>کوییکنینگ (احساس لمس تکان‌های جنین)</strong>، مادر متوجه می‌شود که فرزندی زنده در درون او حضور دارد. فرآیند پیوند عاطفی و دلبستگی (Attachment) آغاز شده و مادر به سلامت و آینده فرزند می‌اندیشد.</li>
+</ul>
+<h3 id="_66">۳. سه ماهه سوم (آسیب‌پذیری، خستگی و آشیانه‌سازی):</h3>
+<ul>
+<li>سنگینی شکم، بی‌خوابی و تنگی نفس باعث خستگی مادر و اشتیاق شدید به پایان بارداری می‌شود. در هفته‌های آخر، پدیده <strong>غریزه آشیانه‌سازی (Nesting Behavior)</strong> بروز می‌کند که با تمایل ناگهانی و پرانرژی برای نظافت خانه، چیدمان اتاق نوزاد و شستن لباس‌ها همراه است.</li>
+</ul>
+<hr />
+<h2 id="postpartum-mood-disorders-spectrum">۲. طیف اختلالات خلقی پس از زایمان (Postpartum Mood Disorders Spectrum)</h2>
+<p>دوره پس از زایمان (Puerperium) به دلیل سقوط شدید و ناگهانی هورمون‌های استروژن و پروژسترون جفتی، خستگی جسمی مفرط، کم‌خوابی و استرس مراقبت شبانه‌روزی، آسیب‌پذیرترین مقطع حیات زن از نظر اختلالات روانی است:</p>
+<pre class="mermaid">flowchart LR
+    Mild["۱. غم و اندوه پس از زایمان<br/>(Postpartum Blues)<br/>شیوع: ۵۰ تا ۸۰٪ (گذرا و خفیف)"]
+    Moderate["۲. افسردگی پس از زایمان<br/>(Postpartum Depression)<br/>شیوع: ۱۰ تا ۱۵٪ (پایدار و نیازمند درمان)"]
+    Severe["۳. جنون و سایکوز پس از زایمان<br/>(Postpartum Psychosis)<br/>شیوع: ۰.۱ تا ۰.۲٪ (اورژانس حاد و کشنده)"]
+    Mild -->|در صورت تداوم علائم بیش از ۲ هفته| Moderate
+    Moderate -->|در صورت بروز توهم و هذیان| Severe</pre>
+
+<hr />
+<h2 id="_67">۳. جدول مقایسه‌ای تخصصی اختلالات خلقی پس از زایمان</h2>
+<p>استاد این سه اختلال را به عنوان یکی از مهم‌ترین مباحث بالینی و امتحانی به شرح زیر مقایسه فرمودند:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">شاخص بالینی</th>
+<th style="text-align: left;">۱. غم و اندوه پس از زایمان (Postpartum Blues)</th>
+<th style="text-align: left;">۲. افسردگی پس از زایمان (Postpartum Depression - PPD)</th>
+<th style="text-align: left;">۳. سایکوز پس از زایمان (Postpartum Psychosis)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>میزان شیوع</strong></td>
+<td style="text-align: left;">بسیار شایع (<strong>۵۰ تا ۸۰ درصد</strong> تمام مادران زایمان‌کرده)</td>
+<td style="text-align: left;">شایع (<strong>۱۰ تا ۱۵ درصد</strong> مادران)</td>
+<td style="text-align: left;">نادر (<strong>۱ تا ۲ مورد در هر ۱۰۰۰ زایمان</strong>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>زمان آغاز علائم</strong></td>
+<td style="text-align: left;">روزهای ۳ تا ۵ پس از زایمان (همگام با ترشح شیر)</td>
+<td style="text-align: left;">تدریجی؛ هفته ۴ تا ۶ پس از زایمان (تا ۱ سال)</td>
+<td style="text-align: left;">ناگهانی و زودرس؛ هفته اول تا سوم پس از زایمان</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>طول مدت علائم</strong></td>
+<td style="text-align: left;">موقت و خود‌محدودشونده (<strong>حداکثر ۱۰ تا ۱۴ روز</strong>)</td>
+<td style="text-align: left;">مزمن و پایدار (ماه‌ها در صورت عدم درمان)</td>
+<td style="text-align: left;">بدون درمان تداوم داشته و تشدید می‌شود</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>علائم و نشانه‌های بارز</strong></td>
+<td style="text-align: left;">گریه بی‌دلیل و اشک‌ریزش زودرس، تحریک‌پذیری، نوسان خلق، خستگی، اضطراب خفیف و احساس ناتوانی موقت</td>
+<td style="text-align: left;">غم عمیق و مداوم، احساس پوچی و ناامیدی، احساس گناه شدید ناشی از بی‌کفایتی، بی‌علاقگی کامل به امور لذت‌بخش (Anhedonia)، اختلال شدید خواب حتی در زمان خواب نوزاد، ناتوانی در برقراری ارتباط عاطفی با نوزاد</td>
+<td style="text-align: left;">توهمات شنوایی یا بینایی (شنیدن صداهایی که دستور قتل نوزاد را می‌دهند)، هذیان‌های گزند و پارانوئید (اعتقاد به شیطان بودن فرزند)، هذیان‌های مذهبی، بی‌قراری شدید، گیجی ذهنی، کنش‌های غیرقابل پیش‌بینی</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ریسک آسیب به نوزاد یا خود</strong></td>
+<td style="text-align: left;"><strong>صفر</strong> — مادر توانایی کامل مراقبت از نوزاد را دارد</td>
+<td style="text-align: left;"><strong>متوسط</strong> — غفلت از مراقبت نوزاد، افکار نادر خودکشی یا مرگ</td>
+<td style="text-align: left;"><strong>فوق‌العاده بالا و اورژانسی</strong> — خطر اقدام مستقیم به <strong>فرزندکشی (Infanticide)</strong> و خودکشی</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>رویکرد درمانی و بالینی</strong></td>
+<td style="text-align: left;"><strong>اطمینان‌بخشی و آموزش</strong>؛ افزایش استراحت و خواب مادر؛ حمایت فعال عاطفی و تقسیم کار توسط همسر و خانواده (نیازی به دارو ندارد)</td>
+<td style="text-align: left;"><strong>روان‌درمانی حمایتی و رفتاری</strong>؛ دارودرمانی ضدافسردگی با SSRIهای سازگار با شیردهی (<strong>سرترالین - Sertraline</strong> داروی انتخابی اول)</td>
+<td style="text-align: left;"><strong>بستری فوری و اجباری در بخش روان‌پزشکی</strong>؛ جداسازی فوری نوزاد از مادر؛ داروهای آنتی‌سایکوتیک و تثبیت‌کننده خلق؛ درمان با شوک الکتریکی مغز (ECT)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_68">۴. غربالگری بالینی و نقش مداخله‌ای پرستار و ماما</h2>
+<ul>
+<li><strong>مقیاس سنجش افسردگی پس از زایمان ادینبورگ (Edinburgh Postnatal Depression Scale - EPDS):</strong></li>
+<li>پرسشنامه استاندارد ۱۰ سوالی که در ویزیت‌های هفته‌های اول تا ششم پس از زایمان تکمیل می‌شود. نمره بالای ۱۰ تا ۱۲ نیازمند ارزیابی فوری تخصصی است.</li>
+<li><strong>آموزش‌های خانوادگی:</strong></li>
+<li>آموزش به همسر و خانواده در خصوص علائم هشداردهنده افسردگی؛ مادر مبتلا به PPD معمولاً خود به دنبال درمان نمی‌رود زیرا از احساس شرم و گناه بابت دوست نداشتن نوزادش رنج می‌برد.</li>
+</ul>
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**جداسازی فوری نوزاد در موارد سایکوز پس از زایمان** — در مادری که نشانه‌هایی از جنون پس از زایمان، هذیان (Delusion) یا افکار آسیب‌رسان به کودک را بروز می‌دهد، هرگز نباید حتی برای یک لحظه نوزاد با مادر تنها بماند. کودک باید فوراً تحت محافظت مراقب سالم قرار گیرد و مادر تحت مراقبت اورژانس روان‌پزشکی بستری شود.
+
+</div>
+</div>
+
+<hr />
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**مرز افتراق اندوه گذرا (Baby Blues) از افسردگی پس از زایمان (PPD)** — تداوم علائم افسردگی، احساس گناه شدید و اختلال خواب بیش از دو هفته، نشانه قطعی افسردگی پس از زایمان است و باید درمان دارویی آغاز شود.
+
+</div>
+</div>
+
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** خطرناک‌ترین اختلال روانی پس از زایمان کدام است و اقدام درمانی فوری در مواجهه با آن چیست؟
+**پاسخ کلیدی:** جنون یا سایکوز پس از زایمان (**Postpartum Psychosis**)؛ مداخله فوری شامل بستری اجباری در بیمارستان روان‌پزشکی و جداسازی کامل و فوری نوزاد از مادر به دلیل ریسک بالای فرزندکشی (Infanticide) ناشی از توهمات است.
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** آیا داروی ضدافسردگی سرترالین با شیردهی نوزاد تداخل دارد؟
+**پاسخ و توضیح استاد:** خیر، سرترالین (Sertraline) داروی انتخابی اول در افسردگی پس از زایمان است زیرا کمترین میزان ترشح در شیر مادر را داشته و مصرف آن در دوران شیردهی ایمن است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_69">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>غم و اندوه پس از زایمان (Baby Blues):</strong> در ۵۰ تا ۸۰٪ زنان رخ داده، در روز ۳ تا ۵ شروع شده و ظرف ۱۰ تا ۱۴ روز خودبه‌خود برطرف می‌شود و نیازی به دارو ندارد.</li>
+<li><strong>افسردگی پس از زایمان (PPD):</strong> در ۱۰ تا ۱۵٪ زنان دیده می‌شود، بعد از ۲ هفته تداوم داشته و با احساس گناه، بی‌علاقگی و اختلال خواب همراه است؛ داروی انتخابی سرترالین است.</li>
+<li><strong>سایکوز پس از زایمان:</strong> اورژانس حاد روان‌پزشکی با خطر فرزندکشی ناشی از توهمات آمره؛ اقدام فوری بستری اجباری در بیمارستان و جداسازی نوزاد است.</li>
+<li><strong>دوگانگی احساسی (Ambivalence):</strong> ویژگی طبیعی و جهان‌شمول سازگاری مادر در سه ماهه اول بارداری.</li>
+<li><strong>رفتار آشیانه‌سازی (Nesting):</strong> تمایل شدید به نظافت و آماده‌سازی منزل در اواخر سه ماهه سوم به عنوان نشانه آمادگی برای زایمان.</li>
+</ol>
+<hr />
+<p><a id="ch_12"></a></p>
+<h1 id="_70">جلسه ۶ (پارت ۱) — مراقبت‌های پریناتال، ورزش، مسافرت و روابط جنسی در بارداری</h1>
+<h2 id="m4a_1"><strong>فایل‌های منبع:</strong> <code>مادر و نوزاد ۱۷ آبان .m4a</code> | <strong>مدت زمان تدریس:</strong> ۴۱:۱۷</h2>
+<h2 id="prenatal-visit-schedule">۱. جدول زمان‌بندی استاندارد ویزیت‌های پریناتال (Prenatal Visit Schedule)</h2>
+<p>مراقبت‌های دوران بارداری با هدف ارتقای سلامت مادر و جنین و شناسایی زودهنگام عوارض اجرا می‌شود. در یک بارداری کم‌خطر و بدون عارضه، توالی مراجعات به صورت زیر است:</p>
+<pre class="mermaid">flowchart LR
+    W1["از هفته ۱ تا ۲۸ بارداری<br/>(هر ۴ هفته یک‌بار / ماهیانه)"] --> W2["از هفته ۲۸ تا ۳۶ بارداری<br/>(هر ۲ هفته یک‌بار)"]
+    W2 --> W3["از هفته ۳۶ تا زایمان<br/>(هر هفته یک‌بار)"]</pre>
+
+<h3 id="_71">اجزای ارزیابی روتین در هر ویزیت:</h3>
+<ol>
+<li>پایش وزن مادری و مقایسه با نمودار وزن‌گیری استاندارد.</li>
+<li>اندازه‌گیری فشار خون با کاف مناسب در حالت نشسته.</li>
+<li>اندازه‌گیری <strong>ارتفاع فوندوس رحم (Fundal Height)</strong> با متر نواری از بالای سمفیز پوبیس تا قله فوندوس (بین هفته ۲۰ تا ۳۶، ارتفاع فوندوس بر حسب سانتی‌متر با سن بارداری بر حسب هفته با اختلاف $\pm ۲\text{ cm}$ مطابقت دارد).</li>
+<li>سمع صدای قلب جنین (FHR) و شمارش دقیق آن (۱۱۰ تا ۱۶۰ بار در دقیقه).</li>
+<li>آزمایش نواری ادرار (Dipstick) از نظر پروتئینوری (پره‌اکلامپسی) و گلوکوزوری (دیابت).</li>
+<li>بررسی وجود ادم غیرطبیعی در دست‌ها، صورت و بالای استخوان درشت‌نی (تیبا).</li>
+<li>ارزیابی حرکات جنین توسط مادر و پرسش در خصوص علائم هشدار.</li>
+</ol>
+<hr />
+<h2 id="exercise-in-pregnancy">۲. فعالیت بدنی و ورزش در بارداری (Exercise in Pregnancy)</h2>
+<p>ورزش منظم نه تنها در بارداری بی‌خطر است، بلکه به حفظ تناسب اندام، کاهش دردهای کمر، بهبود یبوست، پیشگیری از دیابت بارداری و تسهیل مراحل زایمان طبیعی کمک شایانی می‌کند.</p>
+<pre class="mermaid">flowchart TD
+    Ex["ورزش در دوران بارداری"]
+    Ex --> Safe["فعالیت‌های مجاز و ایده‌آل<br/>(Safe & Recommended)"]
+    Ex --> Unsafe["فعالیت‌های اکیداً ممنوع<br/>(Contraindicated)"]
+    Safe --> Walk["پیاده‌روی با شدت متوسط (۳۰ دقیقه روزانه)"]
+    Safe --> Swim["شنا در آب ولرم (بهترین ورزش غیرتماسی)"]
+    Safe --> Kegel["تمرینات کگل (تقویت عضلات کف لگن)"]
+    Safe --> Yoga["یوگا و پیلاتس بارداری، دوچرخه ثابت"]
+    Unsafe --> Scuba["غواصی با کپسول (خطر آمبولی گاز در جنین)"]
+    Unsafe --> Contact["ورزش‌های تماسی و پربرخورد (رزمی، بسکتبال)"]
+    Unsafe --> Fall["اسکی، سوارکاری، ژیمناستیک (خطر سقوط و تروما)"]
+    Unsafe --> Hot["سونا، جکوزی و ورزش در هوای گرم (خطر هایپرترمی)"]</pre>
+
+<h3 id="swimming">۱. ورزش شنا (Swimming):</h3>
+<ul>
+<li>استاد از شنا به عنوان یکی از بی‌نظیرترین ورزش‌های بارداری یاد کردند؛ آب حالت بی‌وزنی ایجاد کرده، فشار جاذبه بر مهره‌های کمر و مفاصل لگن را برمی‌دارد، حرارت اضافی بدن را دفع نموده و ضربان قلب مادر را به صورت ایمن بالا می‌برد. استخر باید بهداشتی و دمای آب ولرم باشد (پرهیز از آب داغ جکوزی).</li>
+</ul>
+<h3 id="kegel-exercises">۲. تمرینات کگل (Kegel Exercises):</h3>
+<ul>
+<li>انقباض و استراحت متوالی عضلات <strong>پوبوکوکسیژئوس (Pubococcygeus - PC)</strong> در کف لگن (عضلاتی که برای قطع ارادی جریان ادرار به کار می‌روند).</li>
+<li><strong>دستورالعمل:</strong> انقباض محکم عضلات کف لگن به مدت ۵ تا ۱۰ ثانیه و سپس رهاسازی به مدت ۱۰ ثانیه، تکرار ۱۰ بار در هر نوبت، حداقل ۳ نوبت در روز.</li>
+<li><strong>مزایای بالینی:</strong> افزایش حمایت عضلانی از احشای لگن، پیشگیری از بی‌اختیاری ادراری استرسی در اواخر بارداری و پس از زایمان، تسهیل خروج سر جنین حین زایمان واژینال و بازگشت سریع‌تر قوام واژن.</li>
+</ul>
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**ممنوعیت قطعی هایپرترمی و غواصی در بارداری** — هرگونه افزایش دمای مرکزی بدن مادر به بیش از ۳۸.۵ تا ۳۹ درجه سانتی‌گراد (ناشی از ورزش سنگین، سونا، جکوزی یا تب شدید) به‌ویژه در **سه ماهه اول بارداری** اثر تراتوژنیک قطعی داشته و سبب نقایص شدید لوله عصبی (NTD) و سقط جنین می‌شود. همچنین غواصی با کپسول (Scuba Diving) به دلیل ناتوانی ریه‌های نارس جنین در تصفیه حباب‌های نیتروژن و خطر آمبولی کشنده گاز در گردش خون جنینی، در کل بارداری **مطلقا ممنوع** است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="travel-air-travel">۳. مسافرت و پرواز هوایی در بارداری (Travel &amp; Air Travel)</h2>
+<ul>
+<li><strong>امن‌ترین زمان مسافرت:</strong> <strong>سه ماهه دوم بارداری (هفته ۱۴ تا ۲۸)</strong>؛ زیرا تهوع سه ماهه اول برطرف شده و خستگی و خطر زایمان زودرس سه ماهه سوم هنوز آغاز نشده است.</li>
+<li><strong>پرواز با هواپیما:</strong> در بارداری‌های تک‌قلوی سالم تا پایان <strong>هفته ۳۶</strong> (و در چندقلویی تا هفته ۳۲) مجاز است. کابین هواپیماهای مدرن تحت فشار کنترل‌شده قرار دارند و پرتوی کیهانی در پروازهای معمولی خطری ندارد.</li>
+<li><strong>راهکارهای پیشگیری از ترومبوز وریدهای عمقی (DVT):</strong></li>
+<li>در طول مسافرت‌های زمینی یا هوایی طولانی (بیش از ۴ ساعت)، مادر باید <strong>هر ۱ تا ۲ ساعت یک‌بار</strong> برخاسته و چند دقیقه قدم بزند.</li>
+<li>حرکات پمپاژی فلکشن و اکستنشن مچ پا در هنگام نشستن.</li>
+<li>مصرف مقادیر کافی آب و هیدراتاسیون و پوشیدن جوراب‌های واریس فشاری تدریجی (Graduated Compression Stockings).</li>
+<li><strong>بستن صحیح کمربند ایمنی خودرو:</strong> بند پایینی کمربند باید در پایین‌ترین نقطه ممکن <strong>زیر برجستگی شکم و روی استخوان‌های ران و سمفیز پوبیس</strong> قرار گیرد؛ بند بالایی باید به صورت مورب <strong>از بین پستان‌ها و روی استخوان ترقوه</strong> عبور کند. هرگز نباید کمربند از روی تنه رحم یا ناف رد شود.</li>
+</ul>
+<hr />
+<h2 id="sexual-activity">۴. روابط و فعالیت جنسی در بارداری (Sexual Activity)</h2>
+<p>در یک بارداری طبیعی، فیزیولوژیک و کم‌خطر، برقراری رابطه جنسی و ارگاسم تا زمان پاره شدن کیسه آب یا شروع انقباضات زایمانی کاملاً ایمن است؛ جنین در محافظت مایع آمنیوتیک و پلاک موکوسی متراکم سرویکس (Mucus Plug) قرار دارد.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">وضعیت بالینی مادر</th>
+<th style="text-align: left;">ایمنی فعالیت جنسی</th>
+<th style="text-align: left;">علت یا مداخله بالینی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>بارداری نرمال و فاقد عارضه</strong></td>
+<td style="text-align: left;"><strong>کاملاً مجاز و ایمن</strong></td>
+<td style="text-align: left;">ایجاد آرامش روانی و حفظ صمیمیت زوجین؛ استفاده از پوزیشن‌های فاقد فشار روی شکم (پهلو به پهلو)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>جفت سرراهی (Placenta Previa)</strong></td>
+<td style="text-align: left;"><strong>اکیداً ممنوع (Contraindicated)</strong></td>
+<td style="text-align: left;">خطر خونریزی حاد، صاعقه‌آسا و مرگبار مادری-جنینی ناشی از تماس با سرویکس</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>پارگی زودرس پرده‌ها (PROM)</strong></td>
+<td style="text-align: left;"><strong>اکیداً ممنوع</strong></td>
+<td style="text-align: left;">ورود مستقیم باکتری‌ها به داخل رحم و خطر کوریوآمنیونیت و سپسیس نوزادی</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>تهدید به زایمان زودرس یا سابقه نارسی</strong></td>
+<td style="text-align: left;"><strong>ممنوع یا بسیار محدود</strong></td>
+<td style="text-align: left;">ترشح اکسی‌توسین ناشی از ارگاسم و وجود پروستاگلاندین‌ها در مایع منی که انقباضات رحمی را تحریک می‌کنند</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>نارسایی سرویکس و سرکلاژ (Cerclage)</strong></td>
+<td style="text-align: left;"><strong>اکیداً ممنوع</strong></td>
+<td style="text-align: left;">خطر پاره شدن بخیه سرکلاژ و زایمان زودرس</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**تمرینات کگل (Kegel Exercises)** — انقباض منظم عضله پوبوکوکسیژئوس در دوران بارداری با تقویت دیافراگم لگنی، از افتادگی مثانه و بی‌اختیاری ادراری استرسی پس از زایمان پیشگیری می‌نماید.
+
+</div>
+</div>
+
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** کدام ورزش به دلیل خطر مستقیم آمبولی گاز در گردش خون جنینی در دوران بارداری اکیداً ممنوع است؟
+**پاسخ کلیدی:** **غواصی با کپسول (Scuba Diving)** به دلیل ناتوانی ریه‌های نارس جنین در تصفیه حباب‌های نیتروژن در کل دوران بارداری مطلقا ممنوع است.
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** چرا در مسافرت‌های هوایی و زمینی طولانی‌مدت، زن باردار باید هر ۲ ساعت یک‌بار قدم بزند؟
+**پاسخ و توضیح استاد:** به دلیل وضعیت هایپرکواگولابل (فوق‌انعقادی) بارداری و رکود وریدی ناشی از فشار رحم، بی‌حرکتی طولانی خطر بروز ترومبوز وریدهای عمقی (DVT) و آمبولی ریه را به شدت افزایش می‌دهد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_72">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>توالی ویزیت‌ها:</strong> تا هفته ۲۸ هر ۴ هفته، از ۲۸ تا ۳۶ هر ۲ هفته، و از ۳۶ به بعد هر هفته.</li>
+<li><strong>ورزش کگل:</strong> تقویت عضله پوبوکوکسیژئوس برای جلوگیری از بی‌اختیاری ادرار و تسریع مرحله خروجی زایمان.</li>
+<li><strong>ورزش‌های مطلقا ممنوع:</strong> غواصی با کپسول (خطر آمبولی جنین) و ورزش‌های تماسی/سقوطی.</li>
+<li><strong>پرواز با هواپیما:</strong> تا هفته ۳۶ مجاز است، با رعایت قدم زدن هر ۲ ساعت برای جلوگیری از DVT.</li>
+<li><strong>نحوه بستن کمربند خودرو:</strong> بند تحتانی زیر شکم و روی ران‌ها، بند مورب میان دو پستان.</li>
+<li><strong>ممنوعیت‌های رابطه جنسی:</strong> جفت سرراهی، پارگی کیسه آب، خونریزی فعال و خطر زایمان زودرس.</li>
+</ol>
+<hr />
+<p><a id="ch_13"></a></p>
+<h1 id="nstcst">جلسه ۶ (پارت ۲) — پایش سلامت جنین، تست‌های NST/CST، واکسیناسیون و روگام</h1>
+<h2 id="m4a_2"><strong>فایل‌های منبع:</strong> <code>مادر نوزاد ۱۷ آیان ۲.m4a</code> | <strong>مدت زمان تدریس:</strong> ۵۹:۴۶</h2>
+<h2 id="fetal-surveillance">۱. روش‌های پایش سلامت و بهزیستی جنین (Fetal Surveillance)</h2>
+<p>ارزیابی وضعیت اکسیژن‌رسانی جنین و عملکرد جفت در سه ماهه سوم، به‌ویژه در بارداری‌های پرخطر (دیابت، پره‌اکلامپسی، بارداری طول‌کشیده و تاخیر رشد داخل رحمی IUGR) نقشی حیاتی در پیشگیری از مرگ داخل رحمی جنین ایفا می‌کند:</p>
+<pre class="mermaid">flowchart TD
+    Surv["روش‌های ارزیابی سلامت جنین"]
+    Surv --> Daily["۱. شمارش حرکات جنین توسط مادر<br/>(Kick Counts - کاردیف ۱۰)"]
+    Surv --> NST["۲. تست بدون استرس جنینی<br/>(Non-Stress Test - NST)"]
+    Surv --> CST["۳. تست استرس انقباضی<br/>(Contraction Stress Test - CST)"]
+    Surv --> BPP["۴. پروفایل بیوفیزیکال جنین<br/>(Biophysical Profile - BPP)"]</pre>
+
+<hr />
+<h2 id="non-stress-test-nst">۲. تست بدون استرس جنینی (Non-Stress Test - NST)</h2>
+<p>ساده‌ترین، غیرتهاجمی‌ترین و رایج‌ترین روش ارزیابی سلامت جنین است که بر پایه پاسخ ضربان قلب جنین به حرکات فعال او استوار است:</p>
+<pre class="mermaid">flowchart LR
+    NST_Start["مانیتورینگ ۲۰ دقیقه‌ای CTG"] --> CheckAcc["بررسی افزایش ضربان قلب (Acceleration)"]
+    CheckAcc -->|حداقل ۲ بار افزایش $\ge 15\text{ bpm}$<br/>به مدت حداقل ۱۵ ثانیه| Reactive["تست واکنشی (Reactive NST)<br/>نشان‌دهنده سلامت کامل مغز و جفت"]
+    CheckAcc -->|عدم مشاهده معیار بالا<br/>ظرف ۴۰ دقیقه| NonReactive["تست غیرواکنشی (Non-Reactive NST)<br/>نیاز به ارزیابی فوری با BPP یا CST"]</pre>
+
+<h3 id="nst">تفسیر بالینی تست NST:</h3>
+<ol>
+<li><strong>تست واکنش‌پذیر یا ری‌اکتیو (Reactive NST):</strong></li>
+<li><strong>معیار طلایی در سن بارداری بالای ۳۲ هفته:</strong> حداقل <strong>۲ بار افزایش ضربان قلب جنین (Acceleration)</strong> به میزان حداقل <strong>۱۵ ضربه در دقیقه بالاتر از خط پایه</strong> که هر یک حداقل <strong>۱۵ ثانیه</strong> دوام داشته باشد (<strong>قاعده ۱۵ در ۱۵</strong>)، ظرف یک بازه زمانی ۲۰ دقیقه‌ای.</li>
+<li><strong>پیامد بالینی:</strong> نشانه سلامت کامل سیستم عصبی خودمختار و اکسیژن‌رسانی کافی جفت؛ پیش‌بینی‌کننده بقای جنین تا یک هفته آینده در ۹۹٪ موارد.</li>
+<li><strong>تست غیرواکنش‌پذیر یا نان‌ری‌اکتیو (Non-Reactive NST):</strong></li>
+<li>عدم تحقق معیارهای فوق پس از تداوم پایش به مدت ۴۰ دقیقه (با احتساب دوره خواب فیزیولوژیک جنین).</li>
+<li><strong>اقدامات تکمیلی:</strong> تحریک صوتی جنین با واک (Vibroacoustic Stimulation)، خوراندن آبمیوه شیرین به مادر، یا انجام فوری پروفایل بیوفیزیکال (BPP).</li>
+</ol>
+<hr />
+<h2 id="contraction-stress-test-cst">۳. تست استرس انقباضی (Contraction Stress Test - CST)</h2>
+<p>ارزیابی توانایی جفت در تأمین اکسیژن جنین در مواجهه با فشارهای مکانیکی و هیپوکسی موقت ناشی از انقباضات رحمی:<br />
+- <strong>تحریک انقباضات:</strong> با ترشح اکسی‌توسین اندوژن ناشی از مالش نوک پستان (Nipple Stimulation) یا تزریق وریدی رقیق اکسی‌توسین تا رسیدن به ۳ انقباض با دوام حداقل ۴۰ ثانیه در ۱۰ دقیقه.<br />
+- <strong>تفسیر نتایج:</strong><br />
+  - <strong>CST منفی (نرمال و مطلوب):</strong> هیچ‌گونه افت دیررس ضربان قلب جنین (Late Deceleration) دیده نمی‌شود؛ جنین تحمل استرس زایمان طبیعی را دارد.<br />
+  - <strong>CST مثبت (پاتولوژیک و خطرناک):</strong> بروز افت‌های دیررس مداوم در بیش از ۵۰ درصد انقباضات رحمی؛ نشانه نارسایی شدید رحمی-جفتی (<strong>Uteroplacental Insufficiency</strong>) و زجر جنینی و ضرورت انجام فوری <strong>سزارین</strong>.</p>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**افتراق افت زودهنگام و افت دیرهنگام ضربان قلب جنین** — **افت زودرس (Early Deceleration)** با انقباض رحم آغاز شده و همزمان با پایان انقباض پایان می‌یابد و ناشی از فشار طبیعی بر سر جنین و تحریک عصب واگ است و خطری ندارد؛ اما **افت دیررس (Late Deceleration)** پس از اوج انقباض شروع شده و با تأخیر پس از پایان انقباض برمی‌گردد که نشانه قطعی هیپوکسی جنین و نارسایی جفت است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="biophysical-profile-bpp">۴. پروفایل بیوفیزیکال جنین (Biophysical Profile - BPP)</h2>
+<p>ترکیبی جامع از تست اولتراسونوگرافی جنینی و تست NST برای تعیین میزان هیپوکسی حاد و مزمن جنین:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">متغیر بیوفیزیکال (هر بخش ۲ نمره)</th>
+<th style="text-align: left;">معیار نمره کامل (۲ نمره)</th>
+<th style="text-align: left;">معیار نمره صفر (۰ نمره)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>۱. تست NST</strong></td>
+<td style="text-align: left;">واکنش‌پذیر (Reactive) بر اساس قاعده ۱۵ در ۱۵</td>
+<td style="text-align: left;">غیرواکنش‌پذیر (Non-Reactive)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>۲. حرکات تنفسی جنین (FBM)</strong></td>
+<td style="text-align: left;">حداقل یک دوره تنفس مداوم به مدت حداقل ۳۰ ثانیه</td>
+<td style="text-align: left;">فقدان تنفس یا تداوم کمتر از ۳۰ ثانیه</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>۳. حرکات درشت بدن (Body Movements)</strong></td>
+<td style="text-align: left;">حداقل ۳ حرکت مجزای تنه یا اندام‌ها ظرف ۳۰ دقیقه</td>
+<td style="text-align: left;">کمتر از ۳ حرکت بدن</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>۴. تونوس عضلانی جنین (Tone)</strong></td>
+<td style="text-align: left;">حداقل یک بار باز شدن و جمع شدن فعال دست یا پا</td>
+<td style="text-align: left;">اندام‌ها در حالت شل و بازمانده</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>۵. حجم مایع آمنیوتیک (AFV)</strong></td>
+<td style="text-align: left;">حداقل یک پاکت عمودی مایع با عمق حداقل <strong>۲ سانتی‌متر</strong></td>
+<td style="text-align: left;">عدم وجود پاکت مایع $\ge ۲\text{ cm}$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bpp">تفسیر نمره کل BPP:</h3>
+<ul>
+<li><strong>نمره ۸ تا ۱۰:</strong> جنین کاملاً سالم و فاقد هیپوکسی (ریسک مرگ جنینی کمتر از ۱ در ۱۰۰۰).</li>
+<li><strong>نمره ۶:</strong> مشکوک به هیپوکسی؛ تکرار تست ظرف ۲۴ ساعت، یا در صورت وجود الیگوهیدروآمنیوس، ختم بارداری.</li>
+<li><strong>نمره ۰ تا ۴:</strong> نشانه خفگی حاد جنینی (Asphyxia) و لزوم <strong>ختم فوری بارداری</strong>.</li>
+</ul>
+<hr />
+<h2 id="_73">۵. دستورالعمل واکسیناسیون در دوران بارداری</h2>
+<pre class="mermaid">flowchart TD
+    Vaccine["واکسیناسیون در بارداری"]
+    Vaccine --> Live["واکسن‌های ویروسی زنده ضعیف‌شده<br/>(اکیداً ممنوع در بارداری)"]
+    Vaccine --> Inact["واکسن‌های کشته و توکسوئید<br/>(مجاز و دارای اندیکاسیون)"]
+    Live --> MMR["سرخک، سرخجه، اوریون (MMR)"]
+    Live --> VZV["آبله‌مرغان (Varicella)"]
+    Live --> OPV["فلج اطفال خوراکی و تب زرد"]
+    Inact --> Tdap["کزاز، دیفتری، سیاه‌سرفه (Tdap)<br/>هفته ۲۷ تا ۳۶"]
+    Inact --> Flu["آنفلوانزای غیرفعال تزریقی<br/>(در فصل سرما)"]
+    Inact --> HepB["هپاتیت B و کووید-۱۹"]</pre>
+
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**ممنوعیت مطلق واکسن سرخجه در بارداری** — واکسن MMR و سرخجه به دلیل داشتن ویروس زنده ضعیف‌شده، قابلیت عبور از جفت و ایجاد سندروم سرخجه مادرزادی (کاتاراکت، ناشنوایی، نقایص مادرزادی قلب) در جنین را دارد. هرگز نباید در بارداری تزریق شود و زن پس از دریافت واکسن سرخجه باید حداقل به مدت **یک ماه از بارداری اجتناب نماید**.
+
+</div>
+</div>
+
+<hr />
+<h2 id="rhogam">۶. پروتکل تزریق ایمونوگلوبولین ضد دی (RhoGAM)</h2>
+<ul>
+<li><strong>هدف بالینی:</strong> پیشگیری از ایزوایمونیزاسیون مادری و بروز بیماری همولیتیک جنین و نوزاد (Erythroblastosis Fetalis) در بارداری‌های بعدی.</li>
+<li><strong>جامعه هدف:</strong> مادران با گروه خونی <strong>Rh منفی</strong> که همسر آن‌ها Rh مثبت است و تست کومبس غیرمستقیم (Indirect Coombs) مادر منفی باشد.</li>
+<li><strong>زمان‌بندی دوزهای روگام (۳۰۰ میکروگرم عضلانی):</strong></li>
+<li><strong>دوز اول:</strong> به صورت روتین در <strong>هفته ۲۸ بارداری</strong>.</li>
+<li><strong>دوز دوم:</strong> ظرف حداکثر <strong>۷۲ ساعت پس از زایمان</strong> (در صورتی که نوزاد به دنیا آمده Rh مثبت و تست کومبس مستقیم نوزاد منفی باشد).</li>
+<li><strong>دوزهای اضافی:</strong> پس از هر رویداد همراه با خونریزی جفتی-مادری (سقط، حاملگی خارج رحمی، مول، آمنیوسنتز، ترومای شکمی).</li>
+</ul>
+<hr />
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** زمان‌های استاندارد تزریق ایمونوگلوبولین ضد دی (RhoGAM) در مادر با گروه خونی Rh منفی کدامند؟
+**پاسخ کلیدی:** یک دوز در **هفته ۲۸ بارداری**، و دوز دوم ظرف **۷۲ ساعت پس از زایمان** نوزاد با گروه خونی Rh مثبت (به شرط منفی بودن کومبس مستقیم نوزاد).
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** در صورتی که در تست NST افزایش ضربان قلب (Acceleration) مشاهده نشود، چه اقدامی باید انجام شود؟
+**پاسخ و توضیح استاد:** مانیتورینگ تا ۴۰ دقیقه ادامه می‌یابد تا دوره خواب جنین سپری شود؛ در صورت عدم پاسخ، تحریک صوتی با دستگاه ویبرواکوستیک یا انجام تست بیوفیزیکال پروفایل (BPP) الزامی است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_74">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>معیار واکنش‌پذیری NST:</strong> افزایش ضربان قلب به میزان ۱۵ ضربه به مدت ۱۵ ثانیه (۲ بار در ۲۰ دقیقه).</li>
+<li><strong>افت دیررس (Late Deceleration):</strong> نشانه نارسایی خون‌رسانی رحمی-جفتی و کمبود اکسیژن حاد جنین.</li>
+<li><strong>پنج شاخص BPP:</strong> تست NST، تنفس جنین، حرکت بدن، تونوس عضلانی، و پاکت مایع آمنیوتیک ($\ge 2\text{ cm}$).</li>
+<li><strong>واکسن‌های ممنوع در بارداری:</strong> تمام واکسن‌های زنده ضعیف‌شده شامل سرخجه، MMR و آبله‌مرغان.</li>
+<li><strong>واکسن‌های توصیه شده:</strong> Tdap در هفته ۲۷ تا ۳۶ و واکسن آنفلوانزای غیرفعال.</li>
+<li><strong>پروتکل روگام:</strong> در هفته ۲۸ و ظرف ۷۲ ساعت پس از زایمان نوزاد Rh مثبت در مادران Rh منفی غیرحساس‌شده.</li>
+</ol>
+<hr />
+<p><a id="ch_14"></a></p>
+<h1 id="_75">جلسه ۷ (پارت ۱) — مشاوره ژنتیک، شجره‌نامه و غربالگری‌های دوران بارداری</h1>
+<h2 id="m4a_3"><strong>فایل‌های منبع:</strong> <code>مادر نوزاد ۲۴ آبان ۱.m4a</code> | <strong>مدت زمان تدریس:</strong> ۵۶:۰۷</h2>
+<h2 id="principles-of-genetic-counseling">۱. اصول و رسالت مشاوره ژنتیک (Principles of Genetic Counseling)</h2>
+<p>مشاوره ژنتیک یک فرآیند ارتباطی و آموزشی تخصصی است که به افراد و خانواده‌ها کمک می‌کند تا جوانب پزشکی، وراثتی، روانی و خانوادگی بیماری‌های ژنتیکی را درک کرده و با ارزیابی دقیق ریسک، در خصوص ازدواج و فرزندآوری تصمیمی آگاهانه اتخاذ نمایند.</p>
+<h3 id="_76">اصول اخلاقی بنیادین مشاوره ژنتیک:</h3>
+<ol>
+<li><strong>غیردستوری بودن (Non-Directive Counseling):</strong> مشاور هرگز به زوجین دستور ازدواج نکردن، سقط یا باردار نشدن نمی‌دهد؛ بلکه صرفاً درصد خطر ریاضی و گزینه‌های علمی را روشن ساخته و حق تصمیم‌گیری نهایی را به خود زوجین واگذار می‌کند.</li>
+<li><strong>محرمانگی کامل اطلاعات ژنتیکی (Confidentiality).</strong></li>
+<li><strong>شفاف‌سازی واقع‌بینانه:</strong> پرهیز از اطمینان‌بخشی‌های کاذب یا ایجاد وحشت و اضطراب بی‌مورد.</li>
+</ol>
+<hr />
+<h2 id="_77">۲. اندیکاسیون‌های ارجاع به مشاوره ژنتیک بالینی</h2>
+<pre class="mermaid">flowchart TD
+    Ind["موارد نیازمند مشاوره ژنتیک"]
+    Ind --> Age["۱. سن مادر ۳۵ سال یا بالاتر در زمان زایمان<br/>(Advanced Maternal Age - AMA)"]
+    Ind --> Prior["۲. سابقه تولد فرزند قبلی مبتلا به<br/>ناهنجاری، عقب‌ماندگی ذهنی یا سندرم داون"]
+    Ind --> History["۳. سابقه سقط‌های مکرر خودبه‌خودی ($\ge 2$ بار)<br/>یا مرده‌زایی با علت نامشخص"]
+    Ind --> Consang["۴. ازدواج‌های فامیلی و خویشاوندی<br/>(خطر بیماری‌های مغلوب اتوزومی)"]
+    Ind --> Teratogen["۵. قرارگیری در معرض تراتوژن‌های قطعی<br/>(داروهای رتینوئید، ضدتشنج، اشعه)"]
+    Ind --> PositiveScreen["۶. تست‌های غربالگری سرمی یا سونوگرافی غیرطبیعی"]</pre>
+
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**سن بالای ۳۵ سال مادر و خطر تریزومی ۲۱ (سندرم داون)** — با افزایش سن مادر، احتمال خطای عدم تفکیک کروموزومی در حین میوز (Nondisjunction) به دلیل پیر شدن اووسیت‌های تخمدان به صورت نمایی بالا می‌رود. شانس تولد نوزاد مبتلا به سندرم داون در سن ۲۰ سالگی حدود ۱ در ۱۵۰۰ است، در سن ۳۰ سالگی به ۱ در ۱۰۰۰ می‌رسد، اما در سن ۳۵ سالگی ناگهان به **۱ در ۳۵۰** و در سن ۴۰ سالگی به **۱ در ۱۰۰** افزایش می‌یابد. بنابراین، سن بالای ۳۵ سال مادر اندیکاسیون قطعی مشاوره ژنتیک و پیشنهاد تست‌های تشخیصی دقیق جنین است.
+
+</div>
+</div>
+
+<hr />
+<h2 id="pedigree-chart">۳. ترسیم و تحلیل شجره‌نامه ژنتیکی (Pedigree Chart)</h2>
+<p>رسم دقیق شجره‌نامه خانواده با پوشش <strong>حداقل ۳ نسل گذشته</strong> (شامل خواهران، برادران، والدین، عموها، عمه‌ها، خاله‌ها، دایی‌ها و فرزندان آن‌ها) گام نخست ارزیابی ژنتیک است.</p>
+<h3 id="_78">نمادهای استاندارد بین‌المللی در شجره‌نامه:</h3>
+<ul>
+<li><strong>مربع (Square):</strong> جنس مذکر (مرد)</li>
+<li><strong>دایره (Circle):</strong> جنس مؤنث (زن)</li>
+<li><strong>لوزی (Diamond):</strong> جنسیت نامشخص یا جنین</li>
+<li><strong>اشکال توپر یا سیاه:</strong> فرد مبتلا به بیماری ژنتیکی مورد بررسی</li>
+<li><strong>خط افقی میان مربع و دایره:</strong> ازدواج یا رابطه زناشویی</li>
+<li><strong>دو خط افقی موازی:</strong> <strong>ازدواج فامیلی یا خویشاوندی (Consanguinity)</strong></li>
+<li><strong>خط مورب روی شکل:</strong> فرد متوفی</li>
+<li><strong>فلش کوچک (Arrow):</strong> فرد پروباند یا مراجعه‌کننده اصلی (Proband)</li>
+</ul>
+<hr />
+<h2 id="prenatal-screening-tests">۴. تست‌های غربالگری دوران بارداری (Prenatal Screening Tests)</h2>
+<p>تست‌های غربالگری بر روی تمام مادران باردار اجرا می‌شوند تا افراد پرخطر را شناسایی کنند (تست‌های غربالگری تشخیصی نیستند، بلکه تعیین ریسک می‌کنند):</p>
+<pre class="mermaid">flowchart LR
+    Screen["غربالگری‌های جنینی"]
+    Screen --> FTS["۱. غربالگری سه ماهه اول (هفته ۱۱ تا ۱۳+۶)<br/>سونوگرافی NT + مارکرهای PAPP-A و Free $\beta$-hCG"]
+    Screen --> STS["۲. غربالگری سه ماهه دوم (کواد مارکر - هفته ۱۵ تا ۲۰)<br/>سرمی: AFP, hCG, uE3, Inhibin-A"]
+    Screen --> NIPT["۳. تست پیشرفته DNA آزاد جنینی (NIPT)<br/>از هفته ۱۰ به بعد با خون مادری (دقت > ۹۹٪)"]</pre>
+
+<h3 id="first-trimester-combined-test">۱. غربالگری ترکیبی سه ماهه اول (First Trimester Combined Test):</h3>
+<ul>
+<li>در سن بارداری <strong>۱۱ هفته و ۰ روز تا ۱۳ هفته و ۶ روز</strong> انجام می‌گیرد.</li>
+<li>شامل دو جزء همگام است:</li>
+<li><strong>سونوگرافی اندازه‌گیری ضخامت چین پشت گردن جنین (NT - Nuchal Translucency):</strong> تجمع مایع ساب‌کوتانئوس در پشت گردن جنین؛ مقادیر بیش از <strong>۳ تا ۳.۵ میلی‌متر</strong> نشانه خطر بالای سندرم داون، سایر تریزومی‌ها و نقایص شدید قلبی جنین است. بررسی وجود <strong>استخوان بینی (Nasal Bone)</strong> نیز حائز اهمیت است (فقدان استخوان بینی نشانه تریزومی ۲۱).</li>
+<li><strong>مارکرهای بیوشیمیایی سرم مادر:</strong><ul>
+<li><strong>PAPP-A:</strong> پروتئین پلاسمایی بارداری آ (در سندرم داون به طور بارز <strong>کاهش می‌یابد</strong>).</li>
+<li><strong>Free $\beta$-hCG:</strong> زیرواحد آزاد بتای گنادوتروپین جفتی (در سندرم داون <strong>افزایش می‌یابد</strong>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="quadruple-marker-test-quad-screen">۲. غربالگری چهارگانه سه ماهه دوم (Quadruple Marker Test - Quad Screen):</h3>
+<ul>
+<li>در سن بارداری <strong>۱۵ تا ۲۰ هفته</strong> (بهترین زمان هفته ۱۶ تا ۱۸) بر روی نمونه خون مادر انجام می‌گیرد:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">مارکر بیوشیمیایی</th>
+<th style="text-align: left;">وضعیت در بارداری طبیعی</th>
+<th style="text-align: left;">تغییرات در سندرم داون (تریزومی ۲۱)</th>
+<th style="text-align: left;">تغییرات در نقایص لوله عصبی (NTD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>آلفافتوپروتئین (AFP)</strong></td>
+<td style="text-align: left;">پروتئین اصلی تولیدی کبد جنین</td>
+<td style="text-align: left;"><strong>کاهش می‌یابد ($\downarrow$)</strong></td>
+<td style="text-align: left;"><strong>افزایش شدید ($\uparrow\uparrow$)</strong> ناشی از نشت از ضایعه باز</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>گنادوتروپین جفتی (hCG)</strong></td>
+<td style="text-align: left;">هورمون جفتی</td>
+<td style="text-align: left;"><strong>افزایش می‌یابد ($\uparrow$)</strong></td>
+<td style="text-align: left;">بدون تغییر یا نرمال</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>استریول غیرکونژوگه (uE3)</strong></td>
+<td style="text-align: left;">استروژن تولیدی کبد و جفت</td>
+<td style="text-align: left;"><strong>کاهش می‌یابد ($\downarrow$)</strong></td>
+<td style="text-align: left;">نرمال یا بدون تغییر</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>اینهیبین آ (Inhibin-A)</strong></td>
+<td style="text-align: left;">مارکر ترشحی جفت</td>
+<td style="text-align: left;"><strong>افزایش می‌یابد ($\uparrow$)</strong></td>
+<td style="text-align: left;">بدون تغییر یا نرمال</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** الگوی چهارگانه مارکرهای سرمی تست کواد (Quad Screen) در سندرم داون چیست و افزایش شدید سطح مارکر آلفافتوپروتئین (AFP) نشانه چیست؟
+**پاسخ کلیدی:** در سندرم داون، سطوح **AFP و uE3 کاهش می‌یابند** و در مقابل سطوح **hCG و Inhibin-A افزایش می‌یابند**؛ افزایش شدید و غیرطبیعی سطح آلفافتوپروتئین مادری نشانه خطر بالای **نقایص باز لوله عصبی (Open NTD)** مانند آنانسفالی یا اسپینا بیفیدا باز، و یا نقایص جدار شکم جنین (امفالوسل/گاستروشیزیس) است.
+
+</div>
+</div>
+
+<h3 id="dna-nipt-cell-free-dna">۳. غربالگری غیرتهاجمی با DNA آزاد جنینی در خون مادر (NIPT / Cell-free DNA):</h3>
+<ul>
+<li>از هفته <strong>دهم بارداری</strong> به بعد با گرفتن یک نمونه خون ساده از ورید بازوی مادر قابل انجام است؛ قطعات DNA مشتق از سین‌سیشیوتروفوبلاست جفت که در خون مادر شناور هستند آنالیز می‌شوند.</li>
+<li>دقت و اختصاصیت آن برای سندرم داون بالاتر از <strong>۹۹ درصد</strong> با حداقل میزان مثبت کاذب است.</li>
+</ul>
+<hr />
+<h2 id="invasive-diagnostic-tests">۵. تست‌های تشخیصی تهاجمی جنین (Invasive Diagnostic Tests)</h2>
+<p>در صورت مثبت شدن تست‌های غربالگری، تشخیص قطعی ناهنجاری نیازمند بررسی مستقیم سلول‌ها و کاریوتایپ جنین از طریق روش‌های تهاجمی است:</p>
+<pre class="mermaid">flowchart TD
+    Invasive["روش‌های تشخیصی تهاجمی"]
+    Invasive --> CVS["۱. بیوپسی پرزهای کوریونی (CVS)<br/>هفته ۱۰ تا ۱۳ بارداری (نمونه‌برداری از جفت)"]
+    Invasive --> Amnio["۲. آمنیوسنتز (Amniocentesis)<br/>هفته ۱۵ تا ۲۰ بارداری (کشیدن مایع آمنیوتیک)"]
+    CVS --> Karyotype["تهیه کاریوتایپ کروموزومی قطعی جنین"]
+    Amnio --> Karyotype</pre>
+
+<ol>
+<li><strong>نمونه‌برداری از پرزهای کوریونی (Chorionic Villus Sampling - CVS):</strong></li>
+<li>بین هفته‌های <strong>۱۰ تا ۱۳</strong> بارداری از طریق کاتتر ترانس‌سرویکال یا سوزن ترانس‌ابدومینال تحت هدایت سونوگرافی از بافت جفت نمونه‌برداری می‌شود.</li>
+<li><strong>مزیت:</strong> تشخیص بسیار زودهنگام در سه ماهه اول.</li>
+<li><strong>ریسک سقط:</strong> حدود ۰.۵ تا ۱ درصد.</li>
+<li><strong>آمنیوسنتز (Amniocentesis):</strong></li>
+<li>استاندارد طلایی تشخیص ژنتیک در هفته‌های <strong>۱۵ تا ۲۰</strong> بارداری. با ورود یک سوزن بلند نخاعی از جدار شکم به داخل حفره آمنیوتیک تحت سونوگرافی پیوسته، حدود ۱۵ تا ۲۰ سی‌سی مایع آمنیوتیک حاوی سلول‌های ریزش‌یافته جنین کشیده شده و کشت داده می‌شود.</li>
+<li><strong>ریسک سقط جنین:</strong> بسیار پایین (حدود ۰.۱ تا ۰.۳ درصد در مراکز مجرب).</li>
+</ol>
+<hr />
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**افزایش شدید آلفافتوپروتئین مادری (MSAFP)** — افزایش بیش از حد AFP در غربالگری سه ماهه دوم، زنگ خطری حاد برای نقایص باز لوله عصبی (اسپینا بیفیدا و آنانسفالی) یا نقایص جدار شکم جنین است و نیازمند سونوگرافی هدفمند ستون فقرات و آمنیوسنتز فوری است.
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** تفاوت تست غربالگری غیرتهاجمی (NIPT) با تست‌های تشخیصی نظیر آمنیوسنتز چیست؟
+**پاسخ و توضیح استاد:** تست‌های غربالگری نظیر NIPT صرفاً احتمال خطر آماری را تخمین می‌زنند؛ در حالی که آمنیوسنتز با کشت مستقیم سلول‌های جنین، کاریوتایپ کروموزومی قطعی و ۱۰۰ درصدی جنین را مشخص می‌سازد.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_79">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>سن بالای ۳۵ سال مادر (AMA):</strong> افزایش نمایی خطر تریزومی ۲۱ به دلیل اختلال تفکیک کروموزومی (Nondisjunction) در اووسیت‌های پیر.</li>
+<li><strong>شجره‌نامه ژنتیکی:</strong> پوشش حداقل ۳ نسل با نمادهای مربع (مرد)، دایره (زن) و دو خط موازی (ازدواج فامیلی).</li>
+<li><strong>مارکرهای سندرم داون در سه ماهه اول:</strong> ضخامت غیرطبیعی NT بالای ۳ تا ۳.۵ میلی‌متر، فقدان استخوان بینی، کاهش PAPP-A، و افزایش Free $\beta$-hCG.</li>
+<li><strong>الگوی کواد مارکر در داون:</strong> کاهش AFP و uE3 در برابر افزایش hCG و اینهیبین آ.</li>
+<li><strong>افزایش شدید آلفافتوپروتئین (AFP):</strong> زنگ خطری مهم برای نقایص باز لوله عصبی (اسپینا بیفیدا و آنانسفالی).</li>
+<li><strong>آمنیوسنتز:</strong> روش قطعی تشخیص کاریوتایپ کروموزومی جنین در هفته ۱۵ تا ۲۰ با هدایت سونوگرافی.</li>
+</ol>
+<hr />
+<p><a id="ch_15"></a></p>
+<h1 id="_80">جلسه ۷ (پارت ۲) — ضمیمه تخصصی بالینی: ایمنی بیمار در اتاق عمل و چک‌لیست‌های جراحی</h1>
+<h2 id="m4a_4"><strong>فایل‌های منبع:</strong> <code>جراحی و داخلی دو ۲۴ آبان ۲.m4a</code> | <strong>مدت زمان تدریس:</strong> ۴۳:۲۷</h2>
+<h2 id="surgical-patient-safety">۱. فلسفه ایمنی بیمار و خطاهای پزشکی در محیط‌های جراحی (Surgical Patient Safety)</h2>
+<p>محیط اتاق عمل (OR) به دلیل پیچیدگی رویه‌ها، شرایط بحرانی بیمار، استرس بالا، سرعت عملکرد و تعامل میان‌رشته‌ای تیم جراحی و بیهوشی، پرخطرترین بخش بیمارستان از نظر بروز رویدادهای ناگوار و خطاهای پزشکی محسوب می‌شود.</p>
+<h3 id="human-error-system-error">تفاوت خطای انسانی (Human Error) و خطای سیستمی (System Error):</h3>
+<ul>
+<li>استاد تأکید نمودند که در اکثر حوادث پزشکی، اشتباه ناشی از یک فرد منفرد نیست؛ بلکه زنجیره‌ای از نواقص سیستمی (مدل پنیر سوئیسی جیمز ریزن - Swiss Cheese Model) شامل خستگی کادر، عدم کالیبراسیون تجهیزات، ضعف در ارتباطات تیمی و عدم رعایت پروتکل‌های استاندارد دست به دست هم داده و خطای فعال را پدید می‌آورند.</li>
+<li><strong>فرهنگ ایمنی عادلانه (Just Culture):</strong> رویکردی مدرن در مدیریت بالینی که بر گزارش‌دهی داوطلبانه، ریشه‌یابی خطاها و اصلاح فرآیندها بدون سرزنش فردی تأکید دارد، مگر در مواردی که اهمال عمدی و نقض آشکار پروتکل ایمنی رخ داده باشد.</li>
+</ul>
+<hr />
+<h2 id="who-surgical-safety-checklist">۲. چک‌لیست جراحی ایمن سازمان جهانی بهداشت (WHO Surgical Safety Checklist)</h2>
+<p>سازمان جهانی بهداشت برای کاهش عوارض جراحی و به حداقل رساندن خطاهای مرگبار (نظیر جراحی روی عضو اشتباه یا بیمار اشتباه)، چک‌لیست سه‌مرحله‌ای جراحی ایمن را الزامی نموده است:</p>
+<pre class="mermaid">flowchart TD
+    A["گام اول: قبل از القای بیهوشی<br/>(Sign In)"] --> B["گام دوم: قبل از برش جراحی<br/>(Time Out)"]
+    B --> C["گام سوم: قبل از خروج از اتاق عمل<br/>(Sign Out)"]
+    A -. "بررسی هویت، موضع، رضایت‌نامه، آلرژی و راه هوایی" .-> A
+    B -. "توقف کامل و معرفی تیم، مرور ریسک‌ها و تزریق آنتی‌بیوتیک" .-> B
+    C -. "شمارش گازها و ابزار، ثبت نمونه پاتولوژی و ریکاوری" .-> C</pre>
+
+<h3 id="sign-in">۱. گام نخست: قبل از القای بیهوشی (Sign In):</h3>
+<p>با حضور بیمار هوشیار، پرستار بیهوشی و متخصص بیهوشی انجام می‌شود:<br />
+- تأیید هویت بیمار (با تطابق دستبند شناسایی و پرسش از خود بیمار).<br />
+- تأیید موضع دقیق جراحی و <strong>علامت‌گذاری موضع با ماژیک جراحی (Surgical Site Marking)</strong> توسط خود جراح.<br />
+- اخذ رضایت‌نامه کتبی آگاهانه برای عمل و بیهوشی.<br />
+- بررسی دستگاه پالس‌اکسی‌متر و علائم حیاتی.<br />
+- بررسی حساسیت‌های دارویی و آلرژی بیمار.<br />
+- ارزیابی خطر راه هوایی دشوار و آسپیراسیون ریوی و آماده بودن تجهیزات اینتوباسیون دشوار.<br />
+- بررسی ریسک خونریزی شدید (بیش از ۵۰۰ میلی‌لیتر در بزرگسالان یا بالای ۷ سی‌سی به ازای هر کیلوگرم در کودکان) و رزرو واحدهای خون در بانک خون.</p>
+<h3 id="time-out">۲. گام دوم: قبل از ایجاد برش جراحی (Time Out):</h3>
+<p>یک توقف چند ثانیه‌ای اجباری با حضور کل تیم جراحی (جراح، دستیاران، متخصص بیهوشی، پرستار اسکراب و پرستار سیرکولار):<br />
+- معرفی نام و نقش تمام اعضای حاضر در اتاق عمل با صدای رسا.<br />
+- تأیید مجدد نام بیمار، نوع جراحی و موضع دقیق برش.<br />
+- <strong>تأیید تزریق آنتی‌بیوتیک پروفیلاکسی:</strong> تزریق وریدی آنتی‌بیوتیک باید حتماً در بازه زمانی <strong>۶۰ دقیقه قبل از ایجاد برش پوست</strong> انجام شده باشد.<br />
+- مرور گام‌های بحرانی توسط جراح: زمان تخمینی عمل، مراحل خطرناک پیش‌بینی‌شده و میزان خونریزی انتظاری.<br />
+- مرور موارد حیاتی توسط متخصص بیهوشی: وضعیت قلبی-تنفسی بیمار و پیش‌بینی چالش‌های احتمالی.<br />
+- تأیید وضعیت استریلیزاسیون ست‌های جراحی و اندیکاتورهای اتوکلاو توسط پرستار اسکراب.<br />
+- قرار گرفتن تصاویر رادیولوژی و مدارک تصویربرداری ضروری بیمار در نگاتوسکوپ اتاق عمل.</p>
+<h3 id="sign-out">۳. گام سوم: قبل از خروج بیمار از اتاق عمل (Sign Out):</h3>
+<p>پیش از انتقال بیمار به ریکاوری (PACU):<br />
+- ثبت دقیق نام رویه جراحی انجام‌شده در پرونده.<br />
+- <strong>تأیید قطعی و کلامی شمارش صحیح و کامل ابزارها، سوزن‌ها و گازهای جراحی.</strong><br />
+- برچسب‌گذاری صحیح و قرائت با صدای بلند مشخصات نمونه‌های بافتی پاتولوژی (نام بیمار، عضو نمونه‌برداری‌شده).<br />
+- بررسی عملکرد درن‌های جراحی، کاتترها و پانسمان محل زخم.<br />
+- مرور نکات اختصاصی ریکاوری و مراقبت‌های پس از عمل توسط جراح و بیهوشی.</p>
+<hr />
+<h2 id="surgical-count-protocol">۳. پروتکل استاندارد شمارش گازها و ابزارهای جراحی (Surgical Count Protocol)</h2>
+<p>جا ماندن اجسام خارجی در بدن بیمار پس از جراحی (<strong>Retained Surgical Items - RSI / Gossypiboma</strong>) از خطاهای فاجعه‌بار و غیرقابل بخشش اتاق عمل به شمار می‌رود:</p>
+<pre class="mermaid">flowchart LR
+    C1["۱. شمارش اولیه<br/>(Initial Count)<br/>پیش از شروع عمل"] --> C2["۲. شمارش حفره عمیق<br/>(Cavity Count)<br/>قبل از بستن رحم/ارگان"]
+    C2 --> C3["۳. شمارش فاشیا<br/>(Closure Count)<br/>قبل از بستن صفاق"]
+    C3 --> C4["۴. شمارش نهایی پوست<br/>(Final Skin Count)<br/>حین بستن پوست"]</pre>
+
+<h3 id="_81">اجزای مشمول شمارش الزامی:</h3>
+<ol>
+<li>انواع گازهای جراحی (Gauzes, Sponges, Laparotomy Pads) که همگی باید دارای <strong>نوار حاجب اشعه ایکس (Radiopaque Line)</strong> باشند.</li>
+<li>سوزن‌های جراحی (Suture Needles).</li>
+<li>تیغه‌های بیستوری (Scalpel Blades).</li>
+<li>ابزارها و کلمپ‌های فلزی جراحی (کلمپ‌ها، قیچی‌ها، پنست‌ها).</li>
+</ol>
+<h3 id="_82">مقاطع زمانی الزامی شمارش:</h3>
+<ul>
+<li>پیش از شروع جراحی و چیدن ست استریل.</li>
+<li>پیش از بستن هر ارگان توخالی یا حفره عمیق (نظیر بستن عضله میومتر رحم در جراحی سزارین).</li>
+<li>پیش از شروع بستن فاشیا و صفاق دیواره شکم.</li>
+<li>در حین بستن نهایی لایه پوست.</li>
+</ul>
+<div class="callout callout-star">
+<div class="callout-header">⭐ نکته بسیار مهم (تأکید استاد)</div>
+<div class="callout-body">
+
+**فرآیند بالینی در صورت عدم انطباق شمارش (Count Discrepancy)** — اگر در هنگام شمارش گازها یا سوزن‌ها، حتی یک عدد کسری وجود داشته باشد:
+۱. بلافاصله به جراح اطلاع داده شده و فرآیند بستن لایه‌های عمقی شکم فوراً متوقف می‌شود.
+۲. تیم جراحی تمام فیلد استریل، زیر درپ‌ها، سطل‌های زباله و کف اتاق عمل را جستجو می‌کنند.
+۳. بازشماری دقیق با همکاری پرستار اسکراب و سیرکولار انجام می‌شود.
+۴. در صورت عدم پیدا شدن وسیله، **انجام رادیوگرافی پرتابل فوری با اشعه ایکس از موضع جراحی** در همان اتاق عمل الزامی است تا وجود نوار باریم رادیواپک گاز در داخل شکم بررسی شود. هرگز نباید تا زمان اثبات عدم حضور جسم خارجی در بدن، اجازه خروج بیمار از اتاق عمل داده شود.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_83">۴. ایمنی تجهیزات پزشکی و پیشگیری از خطرات الکتروسرجری</h2>
+<h3 id="pm-preventive-maintenance">۱. کالیبراسیون و نگهداری پیشگیرانه (PM - Preventive Maintenance):</h3>
+<ul>
+<li>دستگاه‌های حساس حیاتی مانند ونتیلاتور بیهوشی، پالس‌اکسی‌متر، دفیبریلاتور، مانیتورهای قلبی و فشارسنج‌ها باید در دوره‌های زمانی مشخص کالیبره شوند. خطای یک فشارسنج کالیبره‌نشده می‌تواند فشار ۱۴۰ را ۱۲۰ نشان داده و بحران پرفشاری خون را از دید تیم پنهان سازد.</li>
+</ul>
+<h3 id="electrosurgery-safety">۲. ایمنی دستگاه الکتروکوتری (Electrosurgery Safety):</h3>
+<ul>
+<li>دستگاه کوتر با جریان متناوب فرکانس بالا برای برش بافت و هموستاز (انعقاد عروق خونریزی‌دهنده) به کار می‌رود.</li>
+<li>در کوتر مونوپالار (Monopolar)، جریان برق از نوک قلم جراحی وارد بافت شده و باید از طریق <strong>پد خنثی یا پلیت بیمار (Grounding / Dispersive Plate)</strong> به صورت ایمن خارج شود.</li>
+<li><strong>اصول نصب پد پلیت کوتر:</strong></li>
+<li>باید روی یک سطح عضلانی وسیع، صاف، تمیز و پرعروق (مانند ران یا بازو) نزدیک به موضع عمل چسبانده شود.</li>
+<li>پرهیز اکید از چسباندن روی برجستگی‌های استخوانی، نواحی مودار، جای اسکار یا پروتزهای فلزی مفصلی؛ زیرا کاهش سطح تماس باعث تمرکز بار الکتریکی و ایجاد <strong>سوختگی‌های عمیق درجه ۳ الکتریکی</strong> در زیر پد بیمار می‌شود.</li>
+</ul>
+<hr />
+<div class="callout callout-exam">
+<div class="callout-header">📝 سوال احتمالی امتحان</div>
+<div class="callout-body">
+
+**سوال:** سه مرحله چک‌لیست جراحی ایمن سازمان جهانی بهداشت (WHO) کدامند و تزریق آنتی‌بیوتیک پروفیلاکسی در کدام مرحله بازبینی می‌شود؟
+**پاسخ کلیدی:** ۱. قبل از القای بیهوشی (Sign In) ۲. قبل از برش جراحی (Time Out) ۳. قبل از خروج از اتاق عمل (Sign Out)؛ تزریق آنتی‌بیوتیک ظرف ۶۰ دقیقه گذشته در مرحله **Time Out** بررسی می‌شود.
+
+</div>
+</div>
+
+<div class="callout callout-warning">
+<div class="callout-header">⚠️ هشدار بالینی مهم</div>
+<div class="callout-body">
+
+**توقف قطعی بستن شکم در صورت کسری گازهای جراحی** — در صورت مغایرت در شمارش گازها، جراح باید فوراً بستن فاشیا را متوقف کرده و فیلد عمل جستجو شود؛ در صورت عدم کشف، انجام فوری رادیوگرافی پرتابل با اشعه ایکس در اتاق عمل برای یافتن نوار رادیواپک گاز الزامی است.
+
+</div>
+</div>
+
+<div class="callout callout-question">
+<div class="callout-header">💬 پرسش و نکته کلاسی</div>
+<div class="callout-body">
+
+**پرسش:** چرا پد پلیت کوتر الکتروسرجری نباید بر روی برجستگی‌های استخوانی چسبانده شود؟
+**پاسخ و توضیح استاد:** به دلیل کاهش سطح تماس و افزایش مقاومت الکتریکی، بار الکتریکی متمرکز شده و باعث سوختگی‌های عمیق درجه ۳ الکتریکی در بیمار می‌شود؛ پلیت باید روی بافت عضلانی پرعروق و صاف چسبانده شود.
+
+</div>
+</div>
+
+<hr />
+<h2 id="_84">🎯 جمع‌بندی طلایی و سوالات احتمالی امتحان این جلسه</h2>
+<ol>
+<li><strong>سه مرحله چک‌لیست WHO:</strong> قبل از بیهوشی (Sign In)، قبل از برش جراحی (Time Out)، و قبل از خروج از اتاق عمل (Sign Out).</li>
+<li><strong>زمان استاندارد آنتی‌بیوتیک پروفیلاکسی:</strong> حداکثر ۶۰ دقیقه پیش از ایجاد برش جراحی.</li>
+<li><strong>نوار رادیواپک در گازهای جراحی:</strong> تمام گازهای مجاز اتاق عمل باید حاوی نوار حاجب پرتو باشند تا در رادیوگرافی شکم در صورت مفقودی دیده شوند.</li>
+<li><strong>مداخله قطعی در کسری شمارش گازها:</strong> توقف فوری بستن شکم توسط جراح، جستجوی میدان عمل، و انجام گرافی پرتابل X-Ray در اتاق عمل.</li>
+<li><strong>پلیت کوتر مونوپالار:</strong> نصب محکم روی توده عضلانی پرعروق و پرهیز از نواحی استخوانی برای پیشگیری از سوختگی الکتریکی.</li>
+</ol>
+<hr />
+            </article>
+        </main>
+    </div>
+</body>
+</html>
